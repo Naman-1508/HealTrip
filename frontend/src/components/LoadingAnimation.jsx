@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function LoadingAnimation() {
+export default function LoadingAnimation({ onComplete }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         // Simulate loading time (e.g., 2.5 seconds)
         const timer = setTimeout(() => {
             setLoading(false);
+            if (onComplete) setTimeout(onComplete, 800); // Call onComplete after exit animation (0.8s)
         }, 2800);
         return () => clearTimeout(timer);
-    }, []);
+    }, [onComplete]);
 
     return (
         <AnimatePresence>

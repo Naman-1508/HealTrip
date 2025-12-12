@@ -1,501 +1,550 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
-import MagicBento from "../components/MagicBento";
+import ScrollStack, { ScrollStackItem } from "../components/ScrollStack";
 import Threads from "../components/Threads";
-import { Plane, Hotel, Car, Hospital, Search, MapPin, Calendar, Users } from "lucide-react";
+import { Plane, Hotel, Hospital, Search } from "lucide-react";
 import toast from "react-hot-toast";
 
-// Comprehensive hardcoded data for demo
-const MOCK_DATA = {
-  flights: {
-    "delhi-bangalore": [
-      { airline: "IndiGo", flightNumber: "6E-532", origin: "Delhi", destination: "Bangalore", departureTime: "2024-12-15T08:00:00", arrivalTime: "2024-12-15T10:45:00", price: 5400, duration: "2h 45m", stops: 0 },
-      { airline: "Air India", flightNumber: "AI-803", origin: "Delhi", destination: "Bangalore", departureTime: "2024-12-15T14:30:00", arrivalTime: "2024-12-15T17:15:00", price: 6100, duration: "2h 45m", stops: 0 },
-      { airline: "Vistara", flightNumber: "UK-811", origin: "Delhi", destination: "Bangalore", departureTime: "2024-12-15T18:00:00", arrivalTime: "2024-12-15T20:45:00", price: 7200, duration: "2h 45m", stops: 0 },
-      { airline: "SpiceJet", flightNumber: "SG-456", origin: "Delhi", destination: "Bangalore", departureTime: "2024-12-15T11:00:00", arrivalTime: "2024-12-15T13:45:00", price: 4800, duration: "2h 45m", stops: 0 },
-    ],
-    "mumbai-bangalore": [
-      { airline: "IndiGo", flightNumber: "6E-345", origin: "Mumbai", destination: "Bangalore", departureTime: "2024-12-16T09:00:00", arrivalTime: "2024-12-16T10:30:00", price: 4200, duration: "1h 30m", stops: 0 },
-      { airline: "Air India", flightNumber: "AI-612", origin: "Mumbai", destination: "Bangalore", departureTime: "2024-12-16T15:00:00", arrivalTime: "2024-12-16T16:30:00", price: 4800, duration: "1h 30m", stops: 0 },
-      { airline: "Vistara", flightNumber: "UK-723", origin: "Mumbai", destination: "Bangalore", departureTime: "2024-12-16T19:00:00", arrivalTime: "2024-12-16T20:30:00", price: 5500, duration: "1h 30m", stops: 0 },
-    ],
-  },
-  hotels: {
-    "bangalore": [
-      { name: "Grand Palace Hotel", location: "MG Road, Bangalore", rating: 4.3, pricePerNight: 4500, images: ["https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"], amenities: ["WiFi", "Pool", "Gym"] },
-      { name: "Sunrise Resort", location: "Whitefield, Bangalore", rating: 4.5, pricePerNight: 5200, images: ["https://images.unsplash.com/photo-1551776235-dde6d4829808"], amenities: ["WiFi", "Spa", "Restaurant"] },
-      { name: "Royal Inn", location: "Koramangala, Bangalore", rating: 4.1, pricePerNight: 3800, images: ["https://images.unsplash.com/photo-1566073771259-6a8506099945"], amenities: ["WiFi", "Parking"] },
-      { name: "Luxury Suites", location: "Indiranagar, Bangalore", rating: 4.7, pricePerNight: 6500, images: ["https://images.unsplash.com/photo-1542314831-068cd1dbfeeb"], amenities: ["WiFi", "Pool", "Spa", "Gym"] },
-    ],
-    "delhi": [
-      { name: "Delhi Grand", location: "Connaught Place, Delhi", rating: 4.4, pricePerNight: 5500, images: ["https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"], amenities: ["WiFi", "Restaurant"] },
-      { name: "Capital Heights", location: "Karol Bagh, Delhi", rating: 4.2, pricePerNight: 4200, images: ["https://images.unsplash.com/photo-1551776235-dde6d4829808"], amenities: ["WiFi", "Gym"] },
-    ],
-  },
-  cabs: {
-    "bangalore": [
-      { driverName: "Ramesh Kumar", vehicleModel: "Toyota Etios", vehicleType: "Sedan", location: "Bangalore", pricePerKm: 18, basePrice: 150, rating: 4.5 },
-      { driverName: "Vikram Singh", vehicleModel: "Innova Crysta", vehicleType: "SUV", location: "Bangalore", pricePerKm: 25, basePrice: 300, rating: 4.7 },
-      { driverName: "Suresh Reddy", vehicleModel: "Swift Dzire", vehicleType: "Sedan", location: "Bangalore", pricePerKm: 16, basePrice: 120, rating: 4.6 },
-      { driverName: "Anil Sharma", vehicleModel: "Ertiga", vehicleType: "SUV", location: "Bangalore", pricePerKm: 22, basePrice: 250, rating: 4.4 },
-    ],
-    "delhi": [
-      { driverName: "Rajesh Verma", vehicleModel: "Honda City", vehicleType: "Sedan", location: "Delhi", pricePerKm: 20, basePrice: 180, rating: 4.3 },
-      { driverName: "Deepak Sharma", vehicleModel: "Hyundai Aura", vehicleType: "Sedan", location: "Delhi", pricePerKm: 15, basePrice: 100, rating: 4.5 },
-    ],
-  },
-  hospitals: {
-    "bangalore": [
-      { name: "Manipal Hospital", address: "Whitefield, Bangalore", rating: 4.4, specializations: ["Neurosurgery", "Pediatrics", "Cardiology"], images: ["https://images.unsplash.com/photo-1586773860418-d37222d8fce3"] },
-      { name: "Fortis Hospital", address: "Bannerghatta Road, Bangalore", rating: 4.2, specializations: ["Cancer Care", "Urology", "Orthopedics"], images: ["https://images.unsplash.com/photo-1600962815726-457c3ca38f7d"] },
-      { name: "Apollo Hospital", address: "HSR Layout, Bangalore", rating: 4.6, specializations: ["Cardiology", "Neurology", "Emergency Care"], images: ["https://images.unsplash.com/photo-1586773860418-d37222d8fce3"] },
-      { name: "Columbia Asia", address: "Hebbal, Bangalore", rating: 4.3, specializations: ["General Medicine", "Surgery", "ICU"], images: ["https://images.unsplash.com/photo-1600962815726-457c3ca38f7d"] },
-    ],
-    "delhi": [
-      { name: "AIIMS Delhi", address: "Ansari Nagar, Delhi", rating: 4.8, specializations: ["All Specialties", "Research", "Emergency"], images: ["https://images.unsplash.com/photo-1586773860418-d37222d8fce3"] },
-      { name: "Max Hospital", address: "Saket, Delhi", rating: 4.5, specializations: ["Cardiology", "Oncology", "Neurology"], images: ["https://images.unsplash.com/photo-1600962815726-457c3ca38f7d"] },
-    ],
-  },
-};
+// Image pools for visual variety
+const HOTEL_IMAGES = [
+  "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+  "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+  "https://images.unsplash.com/photo-1551776235-dde6d4829808",
+  "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb",
+  "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9",
+  "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
+  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
+  "https://images.unsplash.com/photo-1611892440504-42a792e24d32"
+];
 
 export default function TravelPlanner() {
-  const [activeTab, setActiveTab] = useState("flights");
-  
-  // Search states
+  const navigate = useNavigate();
+
+  // Separate Search States
   const [flightSearch, setFlightSearch] = useState({ from: "", to: "", date: "" });
-  const [locationSearch, setLocationSearch] = useState("");
+  const [hotelLocation, setHotelLocation] = useState("");
+  const [hospitalCity, setHospitalCity] = useState("");
+  
+  // Filter States
+  const [flightFilters, setFlightFilters] = useState({ maxPrice: "", airline: "" });
+  const [hotelFilters, setHotelFilters] = useState({ minRating: "", maxPrice: "" });
+  const [hospitalFilters, setHospitalFilters] = useState({ specialty: "", minRating: "" });
   
   // Results
   const [flights, setFlights] = useState([]);
   const [hotels, setHotels] = useState([]);
-  const [cabs, setCabs] = useState([]);
   const [hospitals, setHospitals] = useState([]);
+  
+  // Unfiltered results (for client-side filtering)
+  const [allFlights, setAllFlights] = useState([]);
+  const [allHotels, setAllHotels] = useState([]);
+  const [allHospitals, setAllHospitals] = useState([]);
 
-  // Search Flights
-  const handleFlightSearch = () => {
+  // Loaders
+  const [loadingHotels, setLoadingHotels] = useState(false);
+  const [loadingHospitals, setLoadingHospitals] = useState(false);
+  const [loadingFlights, setLoadingFlights] = useState(false);
+
+  // Search Flights (Backend Port 8002)
+  const handleFlightSearch = async () => {
     if (!flightSearch.from || !flightSearch.to) {
       toast.error("Please enter origin and destination");
       return;
     }
 
-    const key = `${flightSearch.from.toLowerCase()}-${flightSearch.to.toLowerCase()}`;
-    const results = MOCK_DATA.flights[key] || [];
-    
-    setFlights(results);
-    if (results.length > 0) {
-      toast.success(`Found ${results.length} flights!`);
-    } else {
-      toast.error("No flights found for this route");
+    setLoadingFlights(true);
+
+    try {
+        const response = await fetch(`http://localhost:8002/recommend-flights?origin=${flightSearch.from}&destination=${flightSearch.to}`);
+        if(response.ok) {
+            const data = await response.json();
+            if(data && data.length > 0) {
+                // Map ML data to UI
+                const mappedFlights = data.map((f, i) => ({
+                    airline: f.Airline,
+                    flightNumber: `HT-${100+i}`, // Synthesized
+                    origin: f.Origin, 
+                    destination: f.Destination,
+                    departureTime: new Date().setHours(8 + i, 0), // Mock times for demo
+                    arrivalTime: new Date().setHours(8 + i + (f.duration_minutes/60), (f.duration_minutes%60)),
+                    price: f.Price,
+                    duration: `${Math.floor(f.duration_minutes/60)}h ${f.duration_minutes%60}m`,
+                    stops: f.num_stops
+                }));
+                setAllFlights(mappedFlights);
+                setFlights(mappedFlights);
+                toast.success(`Found ${data.length} flights!`);
+            } else {
+                setFlights([]);
+                toast.error("No flights found for this route");
+            }
+        } else {
+             toast.error("Flight Service Error");
+        }
+    } catch(err) {
+        console.error(err);
+        toast.error("Could not connect to Flight Service");
+    } finally {
+        setLoadingFlights(false);
     }
   };
 
-  // Search Location-based services
-  const handleLocationSearch = () => {
-    if (!locationSearch) {
-      toast.error("Please enter a location");
+  // Image Utilities
+  const PLACEHOLDER_IMAGES = [
+    "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d",
+    "https://images.unsplash.com/photo-1586773860418-d37222d8fce3",
+    "https://images.unsplash.com/photo-1516549655169-df83a253836f",
+    "https://images.unsplash.com/photo-1587351021759-3e566b9af6f7"
+  ];
+
+  const getRandomImage = (name, type = 'hotel') => {
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    const list = type === 'hotel' ? HOTEL_IMAGES : PLACEHOLDER_IMAGES;
+    return list[Math.abs(hash) % list.length];
+  };
+
+  // 1. HOTEL SEARCH (Backend Port 8000)
+  const handleHotelSearch = async () => {
+    if (!hotelLocation) {
+      toast.error("Please enter a city");
       return;
     }
 
-    const loc = locationSearch.toLowerCase();
-    const hotelResults = MOCK_DATA.hotels[loc] || [];
-    const cabResults = MOCK_DATA.cabs[loc] || [];
-    const hospitalResults = MOCK_DATA.hospitals[loc] || [];
+    setLoadingHotels(true);
+    const loc = hotelLocation.toLowerCase();
 
-    setHotels(hotelResults);
-    setCabs(cabResults);
-    setHospitals(hospitalResults);
-
-    const total = hotelResults.length + cabResults.length + hospitalResults.length;
-    if (total > 0) {
-      toast.success(`Found ${hotelResults.length} hotels, ${cabResults.length} cabs, ${hospitalResults.length} hospitals`);
-    } else {
-      toast.error("No results found for this location");
+    try {
+      const response = await fetch(`http://localhost:8000/recommend?location=${loc}`);
+      if (response.ok) {
+        const data = await response.json();
+        if (data.results && data.results.length > 0) {
+          const transformedHotels = data.results.map(h => ({
+            name: h.Hotel_Name,
+            location: h.City,
+            rating: h.Hotel_Rating,
+            pricePerNight: h.Hotel_Price,
+            images: [getRandomImage(h.Hotel_Name, 'hotel')], 
+            amenities: h.amenities ? h.amenities.split(' ').slice(0, 5) : ["WiFi", "Parking"]
+          }));
+          setAllHotels(transformedHotels);
+          setHotels(transformedHotels);
+          toast.success(`Found ${data.count} hotels in ${loc}`);
+        } else {
+           setHotels([]);
+           toast.error("No hotels found");
+        }
+      } else {
+        toast.error("Hotel Service Error");
+      }
+    } catch (error) {
+      console.error("Hotel API Error:", error);
+      toast.error("Could not connect to Hotel Service");
+    } finally {
+      setLoadingHotels(false);
     }
   };
 
+  // 2. HOSPITAL SEARCH (Backend Port 8001)
+  const handleHospitalSearch = async () => {
+    if (!hospitalCity) {
+      toast.error("Please enter a city");
+      return;
+    }
+
+    setLoadingHospitals(true);
+    
+    try {
+      // Calls ML City-based Service
+      const response = await fetch(`http://localhost:8001/hospitals-by-city?city=${encodeURIComponent(hospitalCity)}`);
+      
+      if (response.ok) {
+        const data = await response.json();
+        if (data && data.length > 0) {
+          const transformedHospitals = data.map(h => ({
+            name: h.name,
+            address: h.city,
+            rating: h.rating,
+            specialty: h.summary.slice(0, 50), // Extract specialty from summary
+            images: [getRandomImage(h.name, 'hospital')],
+            match: h.match_score
+          }));
+          setAllHospitals(transformedHospitals);
+          setHospitals(transformedHospitals);
+          toast.success(`Found ${data.length} hospitals in ${hospitalCity}!`);
+        } else {
+          setAllHospitals([]);
+          setHospitals([]);
+          toast.error("No hospitals found in this city");
+        }
+      } else {
+         toast.error("Hospital Service Error");
+      }
+    } catch (error) {
+       console.error("Hospital API Error:", error);
+       toast.error("Could not connect to Hospital Service");
+    } finally {
+      setLoadingHospitals(false);
+    }
+  };
+
+  // Apply filters
+  const applyFilters = () => {
+    // Filter flights
+    let filteredFlights = [...allFlights];
+    if (flightFilters.maxPrice) {
+      filteredFlights = filteredFlights.filter(f => f.price <= parseFloat(flightFilters.maxPrice));
+    }
+    if (flightFilters.airline) {
+      filteredFlights = filteredFlights.filter(f => f.airline.toLowerCase().includes(flightFilters.airline.toLowerCase()));
+    }
+    setFlights(filteredFlights);
+
+    // Filter hotels
+    let filteredHotels = [...allHotels];
+    if (hotelFilters.minRating) {
+      filteredHotels = filteredHotels.filter(h => h.rating >= parseFloat(hotelFilters.minRating));
+    }
+    if (hotelFilters.maxPrice) {
+      filteredHotels = filteredHotels.filter(h => h.pricePerNight <= parseFloat(hotelFilters.maxPrice));
+    }
+    setHotels(filteredHotels);
+
+    // Filter hospitals
+    let filteredHospitals = [...allHospitals];
+    if (hospitalFilters.specialty) {
+      filteredHospitals = filteredHospitals.filter(h => 
+        h.specialty.toLowerCase().includes(hospitalFilters.specialty.toLowerCase())
+      );
+    }
+    if (hospitalFilters.minRating) {
+      filteredHospitals = filteredHospitals.filter(h => h.rating >= parseFloat(hospitalFilters.minRating));
+    }
+    setHospitals(filteredHospitals);
+  };
+
   return (
-    <div className="relative pt-28 px-8 pb-20 min-h-screen bg-zinc-950 text-white overflow-hidden">
+    <div className="relative min-h-screen bg-zinc-950 text-white overflow-hidden">
       {/* Background Threads */}
       <div className="absolute inset-0 z-0">
         <Threads amplitude={1} distance={0} color={[0.4, 0.2, 0.8]} />
       </div>
-      
-      <div className="relative z-10">
-      
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="mb-8"
-      >
-        <h1 className="text-4xl font-heading font-bold text-white mb-2">
-          Travel Planner
-        </h1>
-        <p className="text-zinc-400 font-light">
-          Plan your medical tourism journey with flights, hotels, cabs, and nearby hospitals.
-        </p>
-      </motion.div>
 
-      {/* Tabs */}
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="flex gap-2 mb-8 bg-zinc-900/50 p-2 rounded-lg border border-zinc-800">
-          <TabsTrigger
-            value="flights"
-            className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-all ${
-              activeTab === "flights"
-                ? "bg-blue-600 text-white"
-                : "bg-transparent text-zinc-400 hover:text-white hover:bg-zinc-800"
-            }`}
-          >
-            <Plane className="w-4 h-4" />
-            Flights
-          </TabsTrigger>
-          <TabsTrigger
-            value="hotels"
-            className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-all ${
-              activeTab === "hotels"
-                ? "bg-yellow-600 text-white"
-                : "bg-transparent text-zinc-400 hover:text-white hover:bg-zinc-800"
-            }`}
-          >
-            <Hotel className="w-4 h-4" />
-            Hotels
-          </TabsTrigger>
-          <TabsTrigger
-            value="cabs"
-            className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-all ${
-              activeTab === "cabs"
-                ? "bg-purple-600 text-white"
-                : "bg-transparent text-zinc-400 hover:text-white hover:bg-zinc-800"
-            }`}
-          >
-            <Car className="w-4 h-4" />
-            Cabs
-          </TabsTrigger>
-          <TabsTrigger
-            value="hospitals"
-            className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-all ${
-              activeTab === "hospitals"
-                ? "bg-red-600 text-white"
-                : "bg-transparent text-zinc-400 hover:text-white hover:bg-zinc-800"
-            }`}
-          >
-            <Hospital className="w-4 h-4" />
-            Hospitals
-          </TabsTrigger>
-        </TabsList>
+      <div className="relative z-10 h-screen">
+        <ScrollStack 
+          itemDistance={50} 
+          itemStackDistance={30} 
+          stackPosition="15%" 
+          itemScale={0.05} 
+          blurAmount={2}
+        >
 
-        {/* Flights Tab */}
-        <TabsContent value="flights">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="space-y-6"
-          >
-            {/* Search */}
-            <div className="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-white/10">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <Search className="w-5 h-5 text-blue-500" />
-                Search Flights
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          {/* Intro Card */}
+          <ScrollStackItem>
+             <div className="w-full max-w-4xl mx-auto p-4 pt-20 text-center mb-20">
+               <motion.div
+                 initial={{ opacity: 0, y: -20 }}
+                 animate={{ opacity: 1, y: 0 }}
+               >
+                 <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-4">
+                   Travel Planner
+                 </h1>
+                 <p className="text-zinc-400 font-light text-xl">
+                   Your complete medical tourism journey in one flow.
+                 </p>
+                 <p className="text-zinc-600 text-sm mt-4">Scroll to explore</p>
+               </motion.div>
+             </div>
+          </ScrollStackItem>
+
+          {/* FLIGHTS CARD */}
+          <ScrollStackItem>
+            <div className="w-full max-w-5xl mx-auto min-h-[80vh] bg-zinc-900 border border-white/10 rounded-3xl p-8 shadow-2xl mb-10">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-3 bg-blue-600/20 rounded-xl">
+                  <Plane className="w-6 h-6 text-blue-500" />
+                </div>
+                <h2 className="text-3xl font-heading font-bold">Flights</h2>
+              </div>
+
+              {/* Search */}
+              <div className="bg-black/40 rounded-xl p-6 border border-white/5 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                  <input
+                    type="text"
+                    placeholder="From (e.g., Delhi)"
+                    value={flightSearch.from}
+                    onChange={(e) => setFlightSearch({ ...flightSearch, from: e.target.value })}
+                    className="px-4 py-3 bg-zinc-800 border-zinc-700 text-white rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
+                  />
+                  <input
+                    type="text"
+                    placeholder="To (e.g., Bangalore)"
+                    value={flightSearch.to}
+                    onChange={(e) => setFlightSearch({ ...flightSearch, to: e.target.value })}
+                    className="px-4 py-3 bg-zinc-800 border-zinc-700 text-white rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
+                  />
+                  <input
+                    type="date"
+                    value={flightSearch.date}
+                    onChange={(e) => setFlightSearch({ ...flightSearch, date: e.target.value })}
+                    className="px-4 py-3 bg-zinc-800 border-zinc-700 text-white rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
+                  />
+                  <button
+                    onClick={handleFlightSearch}
+                    className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-bold"
+                  >
+                    Find Flights
+                  </button>
+                </div>
+              </div>
+
+              {/* Flight Filters */}
+              {allFlights.length > 0 && (
+                <div className="bg-zinc-800/50 rounded-lg p-4 mb-6 border border-zinc-700">
+                  <h3 className="text-sm font-bold text-blue-400 mb-3">Filters</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <input
+                      type="number"
+                      placeholder="Max price (₹)"
+                      value={flightFilters.maxPrice}
+                      onChange={(e) => setFlightFilters({...flightFilters, maxPrice: e.target.value})}
+                      className="px-3 py-2 bg-zinc-900 border-zinc-700 text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Filter by airline..."
+                      value={flightFilters.airline}
+                      onChange={(e) => setFlightFilters({...flightFilters, airline: e.target.value})}
+                      className="px-3 py-2 bg-zinc-900 border-zinc-700 text-white text-sm rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                    />
+                    <button
+                      onClick={applyFilters}
+                      className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition font-bold"
+                    >
+                      Apply Filters
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Results */}
+              {flights.length > 0 ? (
+                <div className="grid grid-cols-1 gap-4">
+                  {flights.map((f, i) => (
+                    <div key={i} className="bg-zinc-800/50 p-6 rounded-xl border border-white/5 flex justify-between items-center hover:bg-zinc-800 transition">
+                       <div>
+                          <h3 className="text-xl font-bold">{f.airline} <span className="text-sm font-normal text-zinc-400">{f.flightNumber}</span></h3>
+                          <p className="text-zinc-400 mt-1">{f.origin} → {f.destination}</p>
+                          <p className="text-sm text-zinc-500">{new Date(f.departureTime).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} - {new Date(f.arrivalTime).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</p>
+                       </div>
+                       <div className="text-right">
+                          <p className="text-2xl font-bold text-blue-400">₹{f.price}</p>
+                          <button className="mt-2 px-4 py-2 bg-white text-black rounded-lg text-sm font-bold hover:bg-gray-200">Book</button>
+                       </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-20 text-zinc-600">
+                  <Search className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                  <p>Search for flights to start your journey</p>
+                </div>
+              )}
+            </div>
+          </ScrollStackItem>
+
+          {/* HOTELS CARD */}
+          <ScrollStackItem>
+             <div className="w-full max-w-5xl mx-auto min-h-[80vh] bg-zinc-900 border border-white/10 rounded-3xl p-8 shadow-2xl mb-10">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-3 bg-violet-600/20 rounded-xl">
+                  <Hotel className="w-6 h-6 text-violet-500" />
+                </div>
+                <h2 className="text-3xl font-heading font-bold">Hotels</h2>
+              </div>
+
+              <div className="flex gap-4 mb-8">
                 <input
                   type="text"
-                  placeholder="From (e.g., Delhi)"
-                  value={flightSearch.from}
-                  onChange={(e) => setFlightSearch({ ...flightSearch, from: e.target.value })}
-                  className="px-4 py-3 bg-zinc-900 border border-zinc-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                />
-                <input
-                  type="text"
-                  placeholder="To (e.g., Bangalore)"
-                  value={flightSearch.to}
-                  onChange={(e) => setFlightSearch({ ...flightSearch, to: e.target.value })}
-                  className="px-4 py-3 bg-zinc-900 border border-zinc-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                />
-                <input
-                  type="date"
-                  value={flightSearch.date}
-                  onChange={(e) => setFlightSearch({ ...flightSearch, date: e.target.value })}
-                  className="px-4 py-3 bg-zinc-900 border border-zinc-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  placeholder="Enter city for hotels..."
+                  value={hotelLocation}
+                  onChange={(e) => setHotelLocation(e.target.value)}
+                  className="flex-1 px-4 py-3 bg-zinc-800 border-zinc-700 text-white rounded-lg focus:ring-2 focus:ring-violet-600 outline-none"
                 />
                 <button
-                  onClick={handleFlightSearch}
-                  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
+                  onClick={handleHotelSearch}
+                  className="px-8 py-3 bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition font-bold"
+                  disabled={loadingHotels}
                 >
-                  Search
+                  {loadingHotels ? "Searching..." : "Search All"}
                 </button>
               </div>
-              <p className="text-xs text-zinc-500 mt-2">Try: Delhi → Bangalore or Mumbai → Bangalore</p>
-            </div>
 
-            {/* Results */}
-            {flights.length > 0 && (
-              <div>
-                <h3 className="text-2xl font-semibold mb-4">Available Flights ({flights.length})</h3>
-                <MagicBento
-                  cards={flights.map(f => ({
-                    title: `${f.airline} ${f.flightNumber}`,
-                    description: `${f.origin} → ${f.destination}`,
-                    label: f.stops === 0 ? "Non-Stop" : `${f.stops} Stop`,
-                    color: "rgba(59, 130, 246, 0.3)",
-                    content: (
-                      <div className="flex flex-col h-full">
-                        <h3 className="font-heading text-xl font-bold">{f.airline}</h3>
-                        <p className="text-sm text-zinc-400">{f.flightNumber}</p>
-                        <p className="text-xs text-zinc-500 mt-3">
-                          {new Date(f.departureTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} → {new Date(f.arrivalTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                        </p>
-                        <div className="mt-auto pt-4 border-t border-zinc-800 flex justify-between items-center">
-                          <div>
-                            <p className="text-2xl font-bold text-blue-400">₹{f.price}</p>
-                            <p className="text-xs text-zinc-500">{f.duration}</p>
-                          </div>
-                          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-semibold transition">
-                            Book Now
-                          </button>
-                        </div>
+              {/* Hotel Filters */}
+              {allHotels.length > 0 && (
+                <div className="bg-zinc-800/50 rounded-lg p-4 mb-6 border border-zinc-700">
+                  <h3 className="text-sm font-bold text-violet-400 mb-3">Filters</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <input
+                      type="number"
+                      placeholder="Min rating (e.g., 4.0)"
+                      value={hotelFilters.minRating}
+                      onChange={(e) => setHotelFilters({...hotelFilters, minRating: e.target.value})}
+                      className="px-3 py-2 bg-zinc-900 border-zinc-700 text-white text-sm rounded-lg focus:ring-2 focus:ring-violet-500 outline-none"
+                    />
+                    <input
+                      type="number"
+                      placeholder="Max price per night (₹)"
+                      value={hotelFilters.maxPrice}
+                      onChange={(e) => setHotelFilters({...hotelFilters, maxPrice: e.target.value})}
+                      className="px-3 py-2 bg-zinc-900 border-zinc-700 text-white text-sm rounded-lg focus:ring-2 focus:ring-violet-500 outline-none"
+                    />
+                    <button
+                      onClick={applyFilters}
+                      className="px-4 py-2 bg-violet-600 text-white text-sm rounded-lg hover:bg-violet-700 transition font-bold"
+                    >
+                      Apply Filters
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {loadingHotels && (
+                 <div className="text-center py-10">
+                    <div className="animate-spin w-8 h-8 border-4 border-violet-500 border-t-transparent rounded-full mx-auto mb-4"></div>
+                    <p className="text-zinc-400">Fetching best rates...</p>
+                 </div>
+              )}
+
+              {!loadingHotels && hotels.length > 0 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                   {hotels.map((h, i) => (
+                      <div key={i} className="bg-zinc-800 rounded-xl overflow-hidden border border-white/5 group">
+                         <div className="h-48 overflow-hidden relative">
+                           <img src={h.images[0]} alt={h.name} className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                           <div className="absolute top-2 right-2 bg-black/60 px-2 py-1 rounded text-xs text-violet-400 font-bold">★ {h.rating}</div>
+                         </div>
+                         <div className="p-4">
+                            <h3 className="font-bold text-lg truncate">{h.name}</h3>
+                            <p className="text-zinc-400 text-sm">{h.location}</p>
+                            <div className="flex flex-wrap gap-1 my-3">
+                               {h.amenities.slice(0, 3).map((a, idx) => (
+                                  <span key={idx} className="text-[10px] bg-zinc-700 px-2 py-1 rounded-full">{a}</span>
+                               ))}
+                            </div>
+                            <div className="flex justify-between items-center mt-4">
+                               <p className="text-xl font-bold text-violet-400">₹{h.pricePerNight}</p>
+                               <button className="px-3 py-1.5 bg-violet-600 rounded-md text-sm font-bold hover:bg-violet-700">Book</button>
+                            </div>
+                         </div>
                       </div>
-                    )
-                  }))}
-                  glowColor="59, 130, 246"
-                  enableStars={true}
-                />
-              </div>
-            )}
-          </motion.div>
-        </TabsContent>
+                   ))}
+                </div>
+              )}
+            </div>
+          </ScrollStackItem>
 
-        {/* Hotels Tab */}
-        <TabsContent value="hotels">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="space-y-6"
-          >
-            {/* Search */}
-            <div className="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-white/10">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-yellow-500" />
-                Search Hotels
-              </h2>
-              <div className="flex gap-4">
+          {/* HOSPITALS CARD */}
+          <ScrollStackItem>
+             <div className="w-full max-w-5xl mx-auto min-h-[80vh] bg-zinc-900 border border-white/10 rounded-3xl p-8 shadow-2xl">
+               <div className="flex items-center gap-3 mb-8">
+                <div className="p-3 bg-emerald-600/20 rounded-xl">
+                  <Hospital className="w-6 h-6 text-emerald-500" />
+                </div>
+                <h2 className="text-3xl font-heading font-bold">Hospitals</h2>
+              </div>
+
+               {/* Search for Hospitals */}
+               <div className="flex gap-4 mb-4">
                 <input
                   type="text"
-                  placeholder="Enter city (e.g., Bangalore, Delhi)"
-                  value={locationSearch}
-                  onChange={(e) => setLocationSearch(e.target.value)}
-                  className="flex-1 px-4 py-3 bg-zinc-900 border border-zinc-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-600"
+                  placeholder="Enter city (e.g., Bangalore, Mumbai, Delhi)"
+                  value={hospitalCity}
+                  onChange={(e) => setHospitalCity(e.target.value)}
+                  className="flex-1 px-4 py-3 bg-zinc-800 border-zinc-700 text-white rounded-lg focus:ring-2 focus:ring-emerald-600 outline-none"
                 />
                 <button
-                  onClick={handleLocationSearch}
-                  className="px-6 py-3 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition font-semibold"
+                  onClick={handleHospitalSearch}
+                  className="px-8 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition font-bold"
+                  disabled={loadingHospitals}
                 >
-                  Search
+                  {loadingHospitals ? "Searching..." : "Search Hospitals"}
                 </button>
               </div>
-              <p className="text-xs text-zinc-500 mt-2">Try: Bangalore or Delhi</p>
-            </div>
 
-            {/* Results */}
-            {hotels.length > 0 && (
-              <div>
-                <h3 className="text-2xl font-semibold mb-4">Available Hotels ({hotels.length})</h3>
-                <MagicBento
-                  cards={hotels.map(h => ({
-                    title: h.name,
-                    description: h.location,
-                    label: "Hotel",
-                    color: "rgba(234, 179, 8, 0.3)",
-                    content: (
-                      <div className="flex flex-col h-full">
-                        <div className="h-32 w-full rounded-lg overflow-hidden mb-4">
-                          <img src={h.images[0]} alt={h.name} className="w-full h-full object-cover" />
-                        </div>
-                        <h3 className="font-heading text-lg font-bold">{h.name}</h3>
-                        <p className="text-sm text-zinc-400">{h.location}</p>
-                        <div className="flex gap-1 mt-2 flex-wrap">
-                          {h.amenities.map((a, i) => (
-                            <span key={i} className="text-xs bg-zinc-800 px-2 py-1 rounded-full">{a}</span>
-                          ))}
-                        </div>
-                        <div className="mt-auto pt-4 border-t border-zinc-800 flex justify-between items-center">
-                          <div>
-                            <p className="text-2xl font-bold text-yellow-400">₹{h.pricePerNight}</p>
-                            <p className="text-xs text-zinc-500">per night</p>
-                          </div>
-                          <div className="text-right">
-                            <p className="text-yellow-400 font-semibold">★ {h.rating}</p>
-                            <button className="mt-1 px-4 py-2 bg-yellow-600 hover:bg-yellow-700 rounded-lg text-sm font-semibold transition">
-                              Book
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    )
-                  }))}
-                  glowColor="234, 179, 8"
-                  enableStars={true}
-                />
-              </div>
-            )}
-          </motion.div>
-        </TabsContent>
+              {/* Hospital Filters */}
+              {allHospitals.length > 0 && (
+                <div className="bg-zinc-800/50 rounded-lg p-4 mb-6 border border-zinc-700">
+                  <h3 className="text-sm font-bold text-emerald-400 mb-3">Filters</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <input
+                      type="text"
+                      placeholder="Filter by specialty..."
+                      value={hospitalFilters.specialty}
+                      onChange={(e) => setHospitalFilters({...hospitalFilters, specialty: e.target.value})}
+                      className="px-3 py-2 bg-zinc-900 border-zinc-700 text-white text-sm rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none"
+                    />
+                    <input
+                      type="number"
+                      placeholder="Min rating (e.g., 4.0)"
+                      value={hospitalFilters.minRating}
+                      onChange={(e) => setHospitalFilters({...hospitalFilters, minRating: e.target.value})}
+                      className="px-3 py-2 bg-zinc-900 border-zinc-700 text-white text-sm rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none"
+                    />
+                    <button
+                      onClick={applyFilters}
+                      className="px-4 py-2 bg-emerald-600 text-white text-sm rounded-lg hover:bg-emerald-700 transition font-bold"
+                    >
+                      Apply Filters
+                    </button>
+                  </div>
+                </div>
+              )}
 
-        {/* Cabs Tab */}
-        <TabsContent value="cabs">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="space-y-6"
-          >
-            {/* Search */}
-            <div className="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-white/10">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-purple-500" />
-                Search Cabs
-              </h2>
-              <div className="flex gap-4">
-                <input
-                  type="text"
-                  placeholder="Enter city (e.g., Bangalore, Delhi)"
-                  value={locationSearch}
-                  onChange={(e) => setLocationSearch(e.target.value)}
-                  className="flex-1 px-4 py-3 bg-zinc-900 border border-zinc-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-                />
-                <button
-                  onClick={handleLocationSearch}
-                  className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-semibold"
-                >
-                  Search
-                </button>
-              </div>
-              <p className="text-xs text-zinc-500 mt-2">Try: Bangalore or Delhi</p>
-            </div>
+               {loadingHospitals && (
+                 <div className="text-center py-10">
+                    <div className="animate-spin w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full mx-auto mb-4"></div>
+                    <p className="text-zinc-400">Analyzing medical data...</p>
+                 </div>
+              )}
 
-            {/* Results */}
-            {cabs.length > 0 && (
-              <div>
-                <h3 className="text-2xl font-semibold mb-4">Available Cabs ({cabs.length})</h3>
-                <MagicBento
-                  cards={cabs.map(c => ({
-                    title: c.driverName,
-                    description: `${c.vehicleModel} • ${c.vehicleType}`,
-                    label: c.vehicleType,
-                    color: "rgba(168, 85, 247, 0.3)",
-                    content: (
-                      <div className="flex flex-col h-full">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-2xl">
-                            🚗
+               {!loadingHospitals && hospitals.length > 0 ? (
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {hospitals.map((h, i) => (
+                       <div key={i} className="bg-zinc-800 rounded-xl overflow-hidden border border-white/5 flex flex-col">
+                          <img src={h.images[0]} alt={h.name} className="h-40 w-full object-cover" />
+                          <div className="p-5 flex-1 flex flex-col">
+                             <h3 className="text-xl font-bold">{h.name}</h3>
+                             <p className="text-zinc-400 text-sm mb-2">{h.address}</p>
+                             <p className="text-xs text-emerald-300 mb-4 bg-emerald-900/30 px-2 py-1 rounded inline-block">{h.specialty}</p>
+                             <div className="mt-auto flex justify-between items-center gap-2">
+                                <span className="flex items-center gap-1 text-emerald-400 font-bold"><span className="text-lg">★</span> {h.rating.toFixed(1)}</span>
+                                <button 
+                                  onClick={() => navigate('/package', { state: { hospital: h } })}
+                                  className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold rounded-lg transition"
+                                >
+                                  View Package →
+                                </button>
+                             </div>
                           </div>
-                          <div>
-                            <h3 className="font-heading text-lg font-bold">{c.driverName}</h3>
-                            <p className="text-sm text-zinc-400">{c.vehicleModel}</p>
-                          </div>
-                        </div>
-                        <div className="space-y-2 text-sm">
-                          <p className="text-zinc-400">Vehicle: <span className="text-white">{c.vehicleType}</span></p>
-                          <p className="text-zinc-400">Base Fare: <span className="text-white">₹{c.basePrice}</span></p>
-                          <p className="text-zinc-400">Per KM: <span className="text-white">₹{c.pricePerKm}</span></p>
-                        </div>
-                        <div className="mt-auto pt-4 border-t border-zinc-800 flex justify-between items-center">
-                          <div className="flex items-center gap-1">
-                            <span className="text-purple-400 text-xl">★</span>
-                            <span className="font-semibold">{c.rating}</span>
-                          </div>
-                          <button className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-sm font-semibold transition">
-                            Book Ride
-                          </button>
-                        </div>
-                      </div>
-                    )
-                  }))}
-                  glowColor="168, 85, 247"
-                  enableStars={true}
-                />
-              </div>
-            )}
-          </motion.div>
-        </TabsContent>
+                       </div>
+                    ))}
+                 </div>
+              ) : (
+                !loadingHospitals && (
+                  <div className="text-center py-10 text-zinc-500">
+                     Enter a medical condition to see AI-ranked hospital recommendations
+                  </div>
+                )
+              )}
+             </div>
+          </ScrollStackItem>
 
-        {/* Hospitals Tab */}
-        <TabsContent value="hospitals">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="space-y-6"
-          >
-            {/* Search */}
-            <div className="bg-black/40 backdrop-blur-md rounded-xl p-6 border border-white/10">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-red-500" />
-                Search Hospitals
-              </h2>
-              <div className="flex gap-4">
-                <input
-                  type="text"
-                  placeholder="Enter city (e.g., Bangalore, Delhi)"
-                  value={locationSearch}
-                  onChange={(e) => setLocationSearch(e.target.value)}
-                  className="flex-1 px-4 py-3 bg-zinc-900 border border-zinc-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
-                />
-                <button
-                  onClick={handleLocationSearch}
-                  className="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition font-semibold"
-                >
-                  Search
-                </button>
-              </div>
-              <p className="text-xs text-zinc-500 mt-2">Try: Bangalore or Delhi</p>
-            </div>
-
-            {/* Results */}
-            {hospitals.length > 0 && (
-              <div>
-                <h3 className="text-2xl font-semibold mb-4">Nearby Hospitals ({hospitals.length})</h3>
-                <MagicBento
-                  cards={hospitals.map(h => ({
-                    title: h.name,
-                    description: h.address,
-                    label: "Hospital",
-                    color: "rgba(239, 68, 68, 0.3)",
-                    content: (
-                      <div className="flex flex-col h-full">
-                        <div className="h-32 w-full rounded-lg overflow-hidden mb-4">
-                          <img src={h.images[0]} alt={h.name} className="w-full h-full object-cover" />
-                        </div>
-                        <h3 className="font-heading text-lg font-bold">{h.name}</h3>
-                        <p className="text-sm text-zinc-400 mb-3">{h.address}</p>
-                        <div className="flex gap-1 flex-wrap mb-3">
-                          {h.specializations.slice(0, 3).map((s, i) => (
-                            <span key={i} className="text-xs bg-red-900/30 text-red-300 px-2 py-1 rounded-full border border-red-800">
-                              {s}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="mt-auto pt-4 border-t border-zinc-800 flex justify-between items-center">
-                          <div className="flex items-center gap-1">
-                            <span className="text-red-400 text-xl">★</span>
-                            <span className="font-semibold">{h.rating}</span>
-                          </div>
-                          <button className="px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-sm font-semibold transition">
-                            View Details
-                          </button>
-                        </div>
-                      </div>
-                    )
-                  }))}
-                  glowColor="239, 68, 68"
-                  enableStars={true}
-                />
-              </div>
-            )}
-          </motion.div>
-        </TabsContent>
-      </Tabs>
+        </ScrollStack>
       </div>
     </div>
   );
 }
+

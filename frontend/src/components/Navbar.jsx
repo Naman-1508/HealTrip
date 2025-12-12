@@ -57,7 +57,6 @@ export default function Navbar() {
     { name: "Hospitals", path: "/hospitals" },
     { name: "Travel", path: "/travel" },
     { name: "Wellness", path: "/yoga" },
-    { name: "AI Assistant", path: "/heal-chat" },
     { name: "Dashboard", path: "/dashboard" },
   ];
 

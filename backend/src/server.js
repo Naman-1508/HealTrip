@@ -11,9 +11,10 @@ import diagnosisRoutes from './routes/diagnosis.routes.js';
 import wellnessRoutes from './routes/wellness.routes.js';
 import paymentRoutes from './routes/payment.routes.js';
 import flightRoutes from './routes/flight.routes.js';
-import cabRoutes from './routes/cab.routes.js';
+
 
 import aiRoutes from './routes/ai.routes.js';
+import chatRoutes from './routes/chat.routes.js';
 
 // Load environment variables
 dotenv.config();
@@ -52,8 +53,9 @@ app.use('/api/diagnosis', diagnosisRoutes);
 app.use('/api/wellness', wellnessRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/flights', flightRoutes);
-app.use('/api/cabs', cabRoutes);
+app.use('/api/flights', flightRoutes);
 app.use('/api/ai', aiRoutes);
+app.use('/api/chat', chatRoutes);
 
 // 404 handler
 app.use((req, res) => {
@@ -100,7 +102,7 @@ const startServer = async () => {
             console.log('  - /api/wellness      (Yoga Shivir & Wellness Sessions)');
             console.log('  - /api/payment       (Payment & Booking Management)');
             console.log('  - /api/flights       (Flight Search & Booking)');
-            console.log('  - /api/cabs          (Cab Search & Booking)');
+
             console.log('='.repeat(50));
         });
     } catch (error) {

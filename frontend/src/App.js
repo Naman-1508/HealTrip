@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 import Landing from "./pages/Landing";
 import Hospitals from "./pages/Hospitals";
@@ -7,6 +8,7 @@ import MedicalForm from "./pages/MedicalForm";
 import DiagnosisResult from "./pages/DiagnosisResult";
 import Dashboard from "./pages/Dashboard";
 import TravelPlanner from "./pages/TravelPlanner";
+import PackageDetails from "./pages/PackageDetails";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import VerifyEmail from "./pages/VerifyEmail";
@@ -21,6 +23,7 @@ import HealChat from "./pages/HealChat";
 import SmoothScroll from "./components/SmoothScroll";
 import CustomCursor from "./components/CustomCursor";
 import LoadingAnimation from "./components/LoadingAnimation";
+import ChatWidget from "./components/ChatWidget";
 
 function Layout() {
   const location = useLocation();
@@ -34,15 +37,17 @@ function Layout() {
   // I will conditionally hide it only if it's a specific "splash" screen, but here Landing is the home.
   // I will Show it everywhere for now to match "Landon Norris" style which usually has a persistent nav.
 
-  const hideNav = false; // Override original logic for better UX
+  const hideNav = false;
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <SmoothScroll>
-      <LoadingAnimation />
+      <LoadingAnimation onComplete={() => setIsLoading(false)} />
       <CustomCursor />
       <div className="noise-overlay" />
 
-      {!hideNav && <Navbar />}
+      {!isLoading && <ChatWidget />}
+      {!hideNav && location.pathname !== '/package' && location.pathname !== '/package/' && <Navbar />}
 
       <Routes>
         <Route path="/" element={<Landing />} />
@@ -53,6 +58,7 @@ function Layout() {
         <Route path="/diagnosis-upload" element={<DiagnosisUpload />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/travel" element={<TravelPlanner />} />
+        <Route path="/package" element={<PackageDetails />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/emergency" element={<EmergencySOS />} />
         <Route path="/payment" element={<Payment />} />

@@ -1,9 +1,60 @@
+# Node modules
 node_modules/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment
 .env
-.DS_Store
-*.log
+.env.*
+
+# Build output
 dist/
 build/
-coverage/
+out/
+.next/
+.vercel/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE
 .vscode/
 .idea/
+
+# Python virtual env
+venv/
+ENV/
+
+# ML artifacts (DO NOT COMMIT)
+*.pkl
+*.pickle
+*.pt
+*.h5
+*.joblib
+
+# ML cache
+backend/ml/**/__pycache__/
+backend/ml/**/processed_*.pkl
+backend/ml/**/tfidf_*.pkl
+backend/ml/**/encoders.pkl
+backend/ml/**/cluster_model.pkl
+backend/ml/**/price_model.pkl
+
+# Allow only the datasets
+!backend/ml/**/data/*.csv
+
+# Transpiled files
+*.tsbuildinfo
+
+# Misc
+*.bak
+*.temp
+*.tmp

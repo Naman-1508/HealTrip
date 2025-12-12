@@ -5,7 +5,7 @@ import { successResponse, errorResponse } from '../utils/apiResponse.js';
  * Handles interactions with Hugging Face Inference API
  */
 
-const HF_API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2";
+const HF_API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
 
 export const chatWithAI = async (req, res) => {
     try {
@@ -29,12 +29,23 @@ export const chatWithAI = async (req, res) => {
 
         // Construct prompt for Mistral
         // We instruct it to be a helpful medical assistant
-        const systemPrompt = `You are HealAI, a compassionate and professional medical assistant. 
-        Your goal is to help patients organize their medical information.
-        - Be concise and reassuring.
-        - If they mention symptoms, acknowledge them.
-        - Do not give definitive medical diagnoses (you are an AI).
-        - Ask clarifying questions to gather history (age, chronic conditions, medications).
+        const systemPrompt = `You are HealAI, an expert Medical Tourism Guide and Assistant. 
+        Your goal is to help patients effectively plan their medical travel and organize their health information.
+
+        CAPABILITIES:
+        1. MEDICAL GUIDE: Organize symptoms and medical history. Be compassionate but professional.
+        2. TRAVEL AGENT: Suggest complete itineraries for medical trips (e.g., "Plan a trip from Delhi to Bangalore for heart surgery").
+        3. COST ESTIMATOR: Provide *estimated* costs for Flights, Hotels, and Medical procedures in INR.
+
+        GUIDELINES:
+        - When asked for an itinerary, structure it clearly: 
+          * Day 1: Arrival & Hotel Check-in (suggest specific areas like Whitefield/Indiranagar)
+          * Day 2: Hospital Consultation (suggest top hospitals like Manipal/Apollo)
+          * Day 3: Surgery/Treatment
+          * Day 7: Follow-up & Return
+        - Include price estimates (e.g., "Flights: ₹5,000-8,000", "Hotel: ₹4,000/night").
+        - Be enthusiastic and helpful.
+        - If they mention symptoms, acknowledge them first before planning travel.
         
         Context (Symptoms found so far): ${JSON.stringify(context || {})}
         `;
@@ -144,4 +155,4 @@ const generateFallbackResponse = (text, context) => {
     ];
     return genericResponses[Math.floor(Math.random() * genericResponses.length)];
 };
-```
+

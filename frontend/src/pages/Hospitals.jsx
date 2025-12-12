@@ -107,7 +107,8 @@ export default function Hospitals() {
   const filtered = hospitals.filter(
     (h) =>
       h.name.toLowerCase().includes(search.toLowerCase()) ||
-      h.address.toLowerCase().includes(search.toLowerCase())
+      h.address.toLowerCase().includes(search.toLowerCase()) ||
+      h.specialties.some(s => s.toLowerCase().includes(search.toLowerCase()))
   );
 
   return (

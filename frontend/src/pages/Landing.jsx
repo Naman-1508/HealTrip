@@ -89,9 +89,9 @@ export default function Landing() {
   // Show personalized content if user is signed in
   if (isLoaded && isSignedIn) {
     return (
-      <div className="w-full bg-zinc-950 text-white snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth no-scrollbar">
+      <div className="w-full h-screen bg-zinc-950 text-white flex overflow-x-scroll overflow-y-hidden scroll-smooth no-scrollbar" style={{ scrollSnapType: 'x mandatory' }}>
         {/* SECTION 1: PERSONALIZED HERO */}
-        <div className="snap-start w-full min-h-screen">
+        <div className="min-w-full h-screen flex-shrink-0" style={{ scrollSnapAlign: 'start' }}>
           <HeroSection 
             badge={`Welcome back, ${user.firstName}!`}
             title1="Your Journey"
@@ -103,7 +103,8 @@ export default function Landing() {
         </div>
 
         {/* SECTION 2: QUICK ACTIONS */}
-        <Section className="bg-zinc-900 border-t border-white/5">
+        <div className="min-w-full h-screen flex-shrink-0 bg-zinc-900 border-l border-white/5" style={{ scrollSnapAlign: 'start' }}>
+        <Section className="bg-zinc-900 border-t-0 border-l-0">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-heading font-bold">Quick Actions</h2>
             <p className="text-zinc-400 mt-4">Everything you need at your fingertips</p>
@@ -143,9 +144,11 @@ export default function Landing() {
             </Link>
           </div>
         </Section>
+        </div>
 
         {/* SECTION 3: YOUR HEALTH STATS */}
-        <Section className="bg-zinc-950">
+        <div className="min-w-full h-screen flex-shrink-0 bg-zinc-950 border-l border-white/5" style={{ scrollSnapAlign: 'start' }}>
+        <Section className="bg-zinc-950 border-t-0 border-l-0">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <motion.h2
@@ -186,9 +189,11 @@ export default function Landing() {
             </div>
           </div>
         </Section>
+        </div>
 
         {/* SECTION 4: CALL TO ACTION */}
-        <Section className="bg-white text-black">
+        <div className="min-w-full h-screen flex-shrink-0 bg-white border-l border-zinc-200" style={{ scrollSnapAlign: 'start' }}>
+        <Section className="bg-white text-black border-t-0 border-l-0">
           <div className="text-center max-w-4xl">
             <h2 className="text-5xl md:text-8xl font-heading font-black mb-8 tracking-tighter">
               Ready for your next journey?
@@ -202,6 +207,7 @@ export default function Landing() {
             </div>
           </div>
         </Section>
+        </div>
       </div>
     );
   }
