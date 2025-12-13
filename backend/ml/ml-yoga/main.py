@@ -15,9 +15,11 @@ app.add_middleware(
 
 app.include_router(yoga_router, prefix="/api")
 
+
 @app.get("/")
 def health_check():
     return {"status": "ok", "service": "Yoga Engine"}
+
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8005, reload=True)

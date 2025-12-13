@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from models import VisaQuery, VisaResponse
@@ -15,6 +14,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.post("/visa-requirements", response_model=VisaResponse)
 def get_visa_requirements(query: VisaQuery):
     """
@@ -22,11 +22,13 @@ def get_visa_requirements(query: VisaQuery):
     """
     return process_visa_query(query)
 
+
 @app.get("/")
 def health_check():
     return {"status": "ok", "service": "Visa Engine"}
 
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="127.0.0.1", port=8003, reload=False)
 
+    uvicorn.run("main:app", host="127.0.0.1", port=8003, reload=False)
