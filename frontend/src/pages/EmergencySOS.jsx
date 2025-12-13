@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import { PhoneCall, MapPin, Ambulance, AlertTriangle } from "lucide-react";
 
 export default function EmergencySOS() {
-
   const handleSOS = () => {
-    alert("🚨 SOS Alert Sent!\nNearby hospitals and emergency contacts notified.");
+    alert(
+      "🚨 SOS Alert Sent!\nNearby hospitals and emergency contacts notified.",
+    );
   };
 
   const handleCall = () => {
@@ -14,7 +15,9 @@ export default function EmergencySOS() {
   const handleLocationShare = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((pos) => {
-        alert(`📍 Location Sent:\nLat: ${pos.coords.latitude}, Long: ${pos.coords.longitude}`);
+        alert(
+          `📍 Location Sent:\nLat: ${pos.coords.latitude}, Long: ${pos.coords.longitude}`,
+        );
       });
     } else {
       alert("Location access denied.");
@@ -23,7 +26,6 @@ export default function EmergencySOS() {
 
   return (
     <div className="pt-28 px-6 pb-20 min-h-screen bg-red-50 flex flex-col items-center">
-
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -41,13 +43,13 @@ export default function EmergencySOS() {
       <motion.button
         onClick={handleSOS}
         whileTap={{ scale: 0.9 }}
-        animate={{ 
-          scale: [1, 1.08, 1], 
+        animate={{
+          scale: [1, 1.08, 1],
           boxShadow: [
             "0 0 0px rgba(220,38,38,0.4)",
             "0 0 40px rgba(220,38,38,0.6)",
             "0 0 0px rgba(220,38,38,0.4)",
-          ]
+          ],
         }}
         transition={{ repeat: Infinity, duration: 1.2 }}
         className="w-56 h-56 bg-red-600 text-white rounded-full flex items-center justify-center text-4xl font-bold shadow-xl border-4 border-red-300"
@@ -57,7 +59,6 @@ export default function EmergencySOS() {
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-14 w-full max-w-3xl">
-
         {/* CALL AMBULANCE */}
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -65,7 +66,9 @@ export default function EmergencySOS() {
         >
           <Ambulance className="text-red-600 w-10 h-10" />
           <h3 className="font-semibold mt-3">Call Ambulance</h3>
-          <p className="text-gray-600 text-sm text-center">Connect with emergency services immediately</p>
+          <p className="text-gray-600 text-sm text-center">
+            Connect with emergency services immediately
+          </p>
           <button
             onClick={handleCall}
             className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
@@ -103,13 +106,12 @@ export default function EmergencySOS() {
             Notify nearby hospitals about your emergency
           </p>
           <button
-            onClick={() => window.location.href = "/hospitals"}
+            onClick={() => (window.location.href = "/hospitals")}
             className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
           >
             View Hospitals
           </button>
         </motion.div>
-
       </div>
     </div>
   );

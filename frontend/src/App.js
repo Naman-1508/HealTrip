@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { useState } from "react";
 
 import Landing from "./pages/Landing";
@@ -33,8 +38,8 @@ function Layout() {
   // Hide Navbar + Footer ONLY on landing page IF DESIRED, but current design has a nice navbar everywhere
   // Let's keep navbar everywhere for consistency in the new design
   // Or if the original logic was to hide it on landing (which is odd for a landing page usually?), let's respect user original intent IF RELEVANT.
-  // Original code:   const hideNav = location.pathname === "/"; 
-  // Wait, usually Landing pages HAVE navbars. The original code hid it? That's weird. 
+  // Original code:   const hideNav = location.pathname === "/";
+  // Wait, usually Landing pages HAVE navbars. The original code hid it? That's weird.
   // Let's SHOW it on Landing for the premium feel (sticky nav).
   // I will conditionally hide it only if it's a specific "splash" screen, but here Landing is the home.
   // I will Show it everywhere for now to match "Landon Norris" style which usually has a persistent nav.
@@ -50,7 +55,9 @@ function Layout() {
       <ChatWidget />
       <div className="noise-overlay" />
 
-      {!hideNav && location.pathname !== '/package' && location.pathname !== '/package/' && <Navbar />}
+      {!hideNav &&
+        location.pathname !== "/package" &&
+        location.pathname !== "/package/" && <Navbar />}
 
       <Routes>
         <Route path="/" element={<Landing />} />

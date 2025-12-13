@@ -30,7 +30,7 @@ export default function DiagnosisUpload() {
     setTimeout(() => {
       setLoading(false);
       setResult(
-        "Possible diagnosis: Mild respiratory infection.\nRecommended tests: CBC, Chest X-Ray.\nSuggested specialist: Pulmonologist."
+        "Possible diagnosis: Mild respiratory infection.\nRecommended tests: CBC, Chest X-Ray.\nSuggested specialist: Pulmonologist.",
       );
     }, 2500);
   };
@@ -48,9 +48,7 @@ export default function DiagnosisUpload() {
         animate={{ opacity: 1, y: 0 }}
         className="mt-10 bg-white rounded-xl shadow-md p-8 border max-w-2xl"
       >
-        <label
-          className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-green-500 transition"
-        >
+        <label className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-green-500 transition">
           <Upload className="w-12 h-12 text-gray-500" />
           <span className="mt-3 text-gray-600 font-medium">
             Click to upload medical report

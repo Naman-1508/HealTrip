@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const ChaosContext = createContext();
 
@@ -7,13 +7,13 @@ export function ChaosProvider({ children }) {
 
   useEffect(() => {
     if (isChaos) {
-      document.body.classList.add('chaos-mode');
+      document.body.classList.add("chaos-mode");
     } else {
-      document.body.classList.remove('chaos-mode');
+      document.body.classList.remove("chaos-mode");
     }
-    
+
     return () => {
-      document.body.classList.remove('chaos-mode');
+      document.body.classList.remove("chaos-mode");
     };
   }, [isChaos]);
 
@@ -27,7 +27,7 @@ export function ChaosProvider({ children }) {
 export function useChaos() {
   const context = useContext(ChaosContext);
   if (context === undefined) {
-    throw new Error('useChaos must be used within a ChaosProvider');
+    throw new Error("useChaos must be used within a ChaosProvider");
   }
   return context;
 }

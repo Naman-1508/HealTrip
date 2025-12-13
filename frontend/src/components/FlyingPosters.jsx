@@ -1,6 +1,14 @@
-import { useRef, useEffect } from 'react';
-import { Renderer, Camera, Transform, Plane, Program, Mesh, Texture } from 'ogl';
-import './FlyingPosters.css';
+import { useRef, useEffect } from "react";
+import {
+  Renderer,
+  Camera,
+  Transform,
+  Plane,
+  Program,
+  Mesh,
+  Texture,
+} from "ogl";
+import "./FlyingPosters.css";
 
 const vertexShader = `
 precision highp float;
@@ -97,18 +105,22 @@ void main() {
 `;
 
 function AutoBind(self, { include, exclude } = {}) {
-  const getAllProperties = object => {
+  const getAllProperties = (object) => {
     const properties = new Set();
     do {
       for (const key of Reflect.ownKeys(object)) {
         properties.add([object, key]);
       }
-    } while ((object = Reflect.getPrototypeOf(object)) && object !== Object.prototype);
+    } while (
+      (object = Reflect.getPrototypeOf(object)) &&
+      object !== Object.prototype
+    );
     return properties;
   };
 
-  const filter = key => {
-    const match = pattern => (typeof pattern === 'string' ? key === pattern : pattern.test(key));
+  const filter = (key) => {
+    const match = (pattern) =>
+      typeof pattern === "string" ? key === pattern : pattern.test(key);
 
     if (include) return include.some(match);
     if (exclude) return !exclude.some(match);
@@ -116,9 +128,9 @@ function AutoBind(self, { include, exclude } = {}) {
   };
 
   for (const [object, key] of getAllProperties(self.constructor.prototype)) {
-    if (key === 'constructor' || !filter(key)) continue;
+    if (key === "constructor" || !filter(key)) continue;
     const descriptor = Reflect.getOwnPropertyDescriptor(object, key);
-    if (descriptor && typeof descriptor.value === 'function') {
+    if (descriptor && typeof descriptor.value === "function") {
       self[key] = self[key].bind(self);
     }
   }
@@ -136,7 +148,19 @@ function map(num, min1, max1, min2, max2, round = false) {
 }
 
 class Media {
-  constructor({ gl, geometry, scene, screen, viewport, image, length, index, planeWidth, planeHeight, distortion }) {
+  constructor({
+    gl,
+    geometry,
+    scene,
+    screen,
+    viewport,
+    image,
+    length,
+    index,
+    planeWidth,
+    planeHeight,
+    distortion,
+  }) {
     this.extra = 0;
     this.gl = gl;
     this.geometry = geometry;
@@ -157,7 +181,7 @@ class Media {
 
   createShader() {
     const texture = new Texture(this.gl, {
-      generateMipmaps: false
+      generateMipmaps: false,
     });
 
     this.program = new Program(this.gl, {
@@ -175,42 +199,53 @@ class Media {
         distortionAxis: { value: [1, 0, 0] }, // Distort along X axis
         uDistortion: { value: this.distortion },
         uViewportSize: { value: [this.viewport.width, this.viewport.height] },
-        uTime: { value: 0 }
+        uTime: { value: 0 },
       },
-      cullFace: false
+      cullFace: false,
     });
 
     const img = new Image();
-    img.crossOrigin = 'anonymous';
+    img.crossOrigin = "anonymous";
     img.src = this.image;
     img.onload = () => {
       texture.image = img;
-      this.program.uniforms.uImageSize.value = [img.naturalWidth, img.naturalHeight];
+      this.program.uniforms.uImageSize.value = [
+        img.naturalWidth,
+        img.naturalHeight,
+      ];
     };
   }
 
   createMesh() {
     this.plane = new Mesh(this.gl, {
       geometry: this.geometry,
-      program: this.program
+      program: this.program,
     });
     this.plane.setParent(this.scene);
   }
 
   setScale() {
     // Correct scaling logic
-    this.plane.scale.x = (this.viewport.width * this.planeWidth) / this.screen.width;
-    this.plane.scale.y = (this.viewport.height * this.planeHeight) / this.screen.height;
+    this.plane.scale.x =
+      (this.viewport.width * this.planeWidth) / this.screen.width;
+    this.plane.scale.y =
+      (this.viewport.height * this.planeHeight) / this.screen.height;
 
     this.plane.position.y = 0; // Center vertically
-    this.plane.program.uniforms.uPlaneSize.value = [this.plane.scale.x, this.plane.scale.y];
+    this.plane.program.uniforms.uPlaneSize.value = [
+      this.plane.scale.x,
+      this.plane.scale.y,
+    ];
   }
 
   onResize({ screen, viewport } = {}) {
     if (screen) this.screen = screen;
     if (viewport) {
       this.viewport = viewport;
-      this.plane.program.uniforms.uViewportSize.value = [this.viewport.width, this.viewport.height];
+      this.plane.program.uniforms.uViewportSize.value = [
+        this.viewport.width,
+        this.viewport.height,
+      ];
     }
     this.setScale();
 
@@ -228,7 +263,13 @@ class Media {
     this.plane.position.x = this.x - scroll.current - this.extra;
 
     // Distortion calculation based on X position relative to viewport
-    const position = map(this.plane.position.x, -this.viewport.width, this.viewport.width, 5, 15);
+    const position = map(
+      this.plane.position.x,
+      -this.viewport.width,
+      this.viewport.width,
+      5,
+      15,
+    );
 
     this.program.uniforms.uPosition.value = position;
     this.program.uniforms.uTime.value += 0.04;
@@ -250,7 +291,17 @@ class Media {
 }
 
 class Canvas {
-  constructor({ container, canvas, items, planeWidth, planeHeight, distortion, scrollEase, cameraFov, cameraZ }) {
+  constructor({
+    container,
+    canvas,
+    items,
+    planeWidth,
+    planeHeight,
+    distortion,
+    scrollEase,
+    cameraFov,
+    cameraZ,
+  }) {
     this.container = container;
     this.canvas = canvas;
     this.items = items;
@@ -261,7 +312,7 @@ class Canvas {
       ease: scrollEase,
       current: 0,
       target: 0,
-      last: 0
+      last: 0,
     };
     this.cameraFov = cameraFov;
     this.cameraZ = cameraZ;
@@ -285,7 +336,7 @@ class Canvas {
       canvas: this.canvas,
       alpha: true,
       antialias: true,
-      dpr: Math.min(window.devicePixelRatio, 2)
+      dpr: Math.min(window.devicePixelRatio, 2),
     });
     this.gl = this.renderer.gl;
   }
@@ -303,7 +354,7 @@ class Canvas {
   createGeometry() {
     this.planeGeometry = new Plane(this.gl, {
       heightSegments: 20, // Increased for better distortion
-      widthSegments: 20
+      widthSegments: 20,
     });
   }
 
@@ -320,7 +371,7 @@ class Canvas {
         index,
         planeWidth: this.planeWidth,
         planeHeight: this.planeHeight,
-        distortion: this.distortion
+        distortion: this.distortion,
       });
     });
   }
@@ -329,9 +380,9 @@ class Canvas {
     this.loaded = 0;
     if (!this.items.length) return;
 
-    this.items.forEach(src => {
+    this.items.forEach((src) => {
       const image = new Image();
-      image.crossOrigin = 'anonymous';
+      image.crossOrigin = "anonymous";
       image.src = src;
       image.onload = () => {
         this.loaded += 1;
@@ -346,13 +397,13 @@ class Canvas {
     const rect = this.container.getBoundingClientRect();
     this.screen = {
       width: rect.width,
-      height: rect.height
+      height: rect.height,
     };
 
     this.renderer.setSize(this.screen.width, this.screen.height);
 
     this.camera.perspective({
-      aspect: this.gl.canvas.width / this.gl.canvas.height
+      aspect: this.gl.canvas.width / this.gl.canvas.height,
     });
 
     const fov = (this.camera.fov * Math.PI) / 180;
@@ -362,7 +413,9 @@ class Canvas {
     this.viewport = { height, width };
 
     if (this.medias) {
-      this.medias.forEach(media => media.onResize({ screen: this.screen, viewport: this.viewport }));
+      this.medias.forEach((media) =>
+        media.onResize({ screen: this.screen, viewport: this.viewport }),
+      );
     }
   }
 
@@ -391,10 +444,14 @@ class Canvas {
   }
 
   update() {
-    this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
+    this.scroll.current = lerp(
+      this.scroll.current,
+      this.scroll.target,
+      this.scroll.ease,
+    );
 
     if (this.medias) {
-      this.medias.forEach(media => media.update(this.scroll));
+      this.medias.forEach((media) => media.update(this.scroll));
     }
     this.renderer.render({ scene: this.scene, camera: this.camera });
     this.scroll.last = this.scroll.current;
@@ -402,32 +459,32 @@ class Canvas {
   }
 
   addEventListeners() {
-    window.addEventListener('resize', this.onResize);
-    window.addEventListener('wheel', this.onWheel);
-    window.addEventListener('mousewheel', this.onWheel);
+    window.addEventListener("resize", this.onResize);
+    window.addEventListener("wheel", this.onWheel);
+    window.addEventListener("mousewheel", this.onWheel);
 
-    window.addEventListener('mousedown', this.onTouchDown);
-    window.addEventListener('mousemove', this.onTouchMove);
-    window.addEventListener('mouseup', this.onTouchUp);
+    window.addEventListener("mousedown", this.onTouchDown);
+    window.addEventListener("mousemove", this.onTouchMove);
+    window.addEventListener("mouseup", this.onTouchUp);
 
-    window.addEventListener('touchstart', this.onTouchDown);
-    window.addEventListener('touchmove', this.onTouchMove);
-    window.addEventListener('touchend', this.onTouchUp);
+    window.addEventListener("touchstart", this.onTouchDown);
+    window.addEventListener("touchmove", this.onTouchMove);
+    window.addEventListener("touchend", this.onTouchUp);
   }
 
   destroy() {
     cancelAnimationFrame(this.frameId);
-    window.removeEventListener('resize', this.onResize);
-    window.removeEventListener('wheel', this.onWheel);
-    window.removeEventListener('mousewheel', this.onWheel);
+    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener("wheel", this.onWheel);
+    window.removeEventListener("mousewheel", this.onWheel);
 
-    window.removeEventListener('mousedown', this.onTouchDown);
-    window.removeEventListener('mousemove', this.onTouchMove);
-    window.removeEventListener('mouseup', this.onTouchUp);
+    window.removeEventListener("mousedown", this.onTouchDown);
+    window.removeEventListener("mousemove", this.onTouchMove);
+    window.removeEventListener("mouseup", this.onTouchUp);
 
-    window.removeEventListener('touchstart', this.onTouchDown);
-    window.removeEventListener('touchmove', this.onTouchMove);
-    window.removeEventListener('touchend', this.onTouchUp);
+    window.removeEventListener("touchstart", this.onTouchDown);
+    window.removeEventListener("touchmove", this.onTouchMove);
+    window.removeEventListener("touchend", this.onTouchUp);
   }
 }
 
@@ -451,7 +508,7 @@ export default function FlyingPosters({
 
     // Clean up previous instance
     if (instanceRef.current) {
-        instanceRef.current.destroy();
+      instanceRef.current.destroy();
     }
 
     instanceRef.current = new Canvas({
@@ -463,7 +520,7 @@ export default function FlyingPosters({
       distortion,
       scrollEase,
       cameraFov,
-      cameraZ
+      cameraZ,
     });
 
     return () => {
@@ -472,10 +529,22 @@ export default function FlyingPosters({
         instanceRef.current = null;
       }
     };
-  }, [items, planeWidth, planeHeight, distortion, scrollEase, cameraFov, cameraZ]);
+  }, [
+    items,
+    planeWidth,
+    planeHeight,
+    distortion,
+    scrollEase,
+    cameraFov,
+    cameraZ,
+  ]);
 
   return (
-    <div ref={containerRef} className={`posters-container ${className}`} {...props}>
+    <div
+      ref={containerRef}
+      className={`posters-container ${className}`}
+      {...props}
+    >
       <canvas ref={canvasRef} className="posters-canvas" />
     </div>
   );

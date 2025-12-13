@@ -10,7 +10,7 @@ export default function HotelCard({
   image,
   phone,
   coords,
-  amenities = []
+  amenities = [],
 }) {
   const [distance, setDistance] = useState(null);
   const [open, setOpen] = useState(false);
@@ -23,7 +23,7 @@ export default function HotelCard({
     if (!coords) return;
 
     navigator.geolocation.getCurrentPosition((pos) => {
-      const R = 6371; 
+      const R = 6371;
       const dLat = ((coords[0] - pos.coords.latitude) * Math.PI) / 180;
       const dLon = ((coords[1] - pos.coords.longitude) * Math.PI) / 180;
 
@@ -45,8 +45,8 @@ export default function HotelCard({
     Number(price.replace(/[^0-9]/g, "")) > 6000
       ? "text-red-600"
       : Number(price.replace(/[^0-9]/g, "")) > 3500
-      ? "text-yellow-600"
-      : "text-green-600";
+        ? "text-yellow-600"
+        : "text-green-600";
 
   return (
     <>
@@ -79,9 +79,7 @@ export default function HotelCard({
 
           {/* DISTANCE */}
           {distance && (
-            <p className="text-gray-500 text-sm mt-1">
-              📍 {distance} km away
-            </p>
+            <p className="text-gray-500 text-sm mt-1">📍 {distance} km away</p>
           )}
 
           {/* AMENITIES TAGS */}
@@ -97,9 +95,7 @@ export default function HotelCard({
           </div>
 
           {/* PRICE BADGE */}
-          <p className={`mt-3 font-semibold ${priceColor}`}>
-            {price} / night
-          </p>
+          <p className={`mt-3 font-semibold ${priceColor}`}>{price} / night</p>
 
           <button className="mt-4 w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition">
             View Details
@@ -169,7 +165,7 @@ export default function HotelCard({
                 onClick={() =>
                   window.open(
                     `https://www.google.com/maps/dir/?api=1&destination=${coords[0]},${coords[1]}`,
-                    "_blank"
+                    "_blank",
                   )
                 }
                 className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"

@@ -68,18 +68,30 @@ export default function DiagnosisResult() {
         {/* Patient Info Summary */}
         <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
           <h2 className="text-lg font-semibold mb-2">Patient Summary</h2>
-          <p><strong>Age:</strong> {formData.age}</p>
-          <p><strong>Gender:</strong> {formData.gender}</p>
-          <p><strong>Duration:</strong> {formData.duration}</p>
-          <p><strong>Symptoms:</strong> {formData.symptoms}</p>
-          <p><strong>Medical History:</strong> {formData.medicalHistory || "None"}</p>
+          <p>
+            <strong>Age:</strong> {formData.age}
+          </p>
+          <p>
+            <strong>Gender:</strong> {formData.gender}
+          </p>
+          <p>
+            <strong>Duration:</strong> {formData.duration}
+          </p>
+          <p>
+            <strong>Symptoms:</strong> {formData.symptoms}
+          </p>
+          <p>
+            <strong>Medical History:</strong>{" "}
+            {formData.medicalHistory || "None"}
+          </p>
         </div>
 
         {/* Severity Indicator */}
         <div className="flex items-center gap-3 bg-yellow-50 p-4 border border-yellow-200 rounded-lg mb-8">
           <AlertCircle size={28} className="text-yellow-600" />
           <p className="text-lg font-semibold">
-            Severity Level: <span className="text-yellow-700">{mockDiagnosis.severity}</span>
+            Severity Level:{" "}
+            <span className="text-yellow-700">{mockDiagnosis.severity}</span>
           </p>
         </div>
 
@@ -87,12 +99,14 @@ export default function DiagnosisResult() {
         <h2 className="text-2xl font-semibold mb-4">Possible Conditions</h2>
         <ul className="space-y-3 mb-8">
           {mockDiagnosis.possibleConditions.map((cond, index) => (
-            <li 
-              key={index} 
+            <li
+              key={index}
               className="flex justify-between bg-gray-50 p-3 rounded-md border"
             >
               <span className="font-medium">{cond.name}</span>
-              <span className="text-gray-600">{cond.probability} probability</span>
+              <span className="text-gray-600">
+                {cond.probability} probability
+              </span>
             </li>
           ))}
         </ul>

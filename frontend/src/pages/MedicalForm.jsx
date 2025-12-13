@@ -43,7 +43,8 @@ export default function MedicalForm() {
         </h1>
 
         <p className="text-gray-600 mb-6">
-          Please provide your basic health details. This helps our AI provide more accurate diagnosis suggestions.
+          Please provide your basic health details. This helps our AI provide
+          more accurate diagnosis suggestions.
         </p>
 
         <form className="space-y-6" onSubmit={handleSubmit}>
@@ -79,7 +80,9 @@ export default function MedicalForm() {
 
           {/* Symptoms */}
           <div>
-            <label className="block mb-1 font-medium">Describe Your Symptoms</label>
+            <label className="block mb-1 font-medium">
+              Describe Your Symptoms
+            </label>
             <textarea
               name="symptoms"
               value={formData.symptoms}

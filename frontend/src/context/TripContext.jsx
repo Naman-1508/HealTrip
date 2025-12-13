@@ -1,17 +1,17 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext } from "react";
 
 const TripContext = createContext();
 
 export const TripProvider = ({ children }) => {
-    const [tripDetails, setTripDetails] = useState(null);
+  const [tripDetails, setTripDetails] = useState(null);
 
-    const updateTrip = (details) => setTripDetails(details);
+  const updateTrip = (details) => setTripDetails(details);
 
-    return (
-        <TripContext.Provider value={{ tripDetails, updateTrip }}>
-            {children}
-        </TripContext.Provider>
-    );
+  return (
+    <TripContext.Provider value={{ tripDetails, updateTrip }}>
+      {children}
+    </TripContext.Provider>
+  );
 };
 
 export const useTrip = () => useContext(TripContext);

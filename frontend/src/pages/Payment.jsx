@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { CheckCircle, CreditCard, QrCode, Smartphone, ShieldCheck, ArrowLeft } from "lucide-react";
+import {
+  CheckCircle,
+  CreditCard,
+  QrCode,
+  Smartphone,
+  ShieldCheck,
+  ArrowLeft,
+} from "lucide-react";
 import BackgroundSwitcher from "../components/BackgroundSwitcher";
 import { useAuth } from "@clerk/clerk-react";
-import axios from 'axios';
+import axios from "axios";
 import toast from "react-hot-toast";
 
 export default function Payment() {
@@ -14,27 +21,28 @@ export default function Payment() {
   const { packageData } = location.state || {};
   const [method, setMethod] = useState("upi");
   const [paid, setPaid] = useState(false);
-  
+
   // Get total amount from package data or use default
   const totalAmount = packageData?.packageDetails?.totalAmount || 999;
 
   const handlePayment = async () => {
     try {
-      if (!packageData) { 
+      if (!packageData) {
         // Allow mock view without data
-        setPaid(true); 
-        return; 
+        setPaid(true);
+        return;
       }
-      
+
       const token = await getToken();
-      await axios.post('http://localhost:5000/api/payment/book-package', 
-        { 
+      await axios.post(
+        "http://localhost:5000/api/payment/book-package",
+        {
           packageData,
-          paymentMethod: method 
+          paymentMethod: method,
         },
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } },
       );
-      
+
       setPaid(true);
       toast.success("Booking Confirmed!");
     } catch (err) {
@@ -49,7 +57,7 @@ export default function Payment() {
         <div className="absolute inset-0 z-0">
           <BackgroundSwitcher />
         </div>
-        
+
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -58,11 +66,11 @@ export default function Payment() {
           <CheckCircle className="w-20 h-20 text-emerald-500 mx-auto" />
           <h1 className="text-3xl font-bold mt-5">Payment Successful!</h1>
           <p className="text-zinc-400 mt-3">
-            Your booking has been confirmed.  
-            You will receive an email with the details shortly.
+            Your booking has been confirmed. You will receive an email with the
+            details shortly.
           </p>
           <button
-            onClick={() => navigate('/dashboard')}
+            onClick={() => navigate("/dashboard")}
             className="mt-6 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-semibold transition"
           >
             Go to Dashboard
@@ -86,12 +94,12 @@ export default function Payment() {
           <ArrowLeft className="w-5 h-5" />
           Back to Package
         </button>
-        
+
         <h1 className="text-4xl font-bold">Complete Your Payment</h1>
         <p className="text-zinc-400 mt-2">
           Select your payment method and finish booking securely.
         </p>
-        
+
         {/* Package Summary */}
         {packageData && (
           <div className="bg-zinc-900/50 backdrop-blur-xl border border-white/10 rounded-2xl p-6 mt-6">
@@ -103,36 +111,49 @@ export default function Payment() {
               </div>
               <div className="flex justify-between">
                 <span className="text-zinc-400">Hotel:</span>
-                <span className="font-medium">{packageData.hotel.name} ({packageData.packageDetails.duration} nights)</span>
+                <span className="font-medium">
+                  {packageData.hotel.name} (
+                  {packageData.packageDetails.duration} nights)
+                </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-zinc-400">Flight:</span>
-                <span className="font-medium">{packageData.flight.airline} ({packageData.packageDetails.travelers} travelers × 2)</span>
+                <span className="font-medium">
+                  {packageData.flight.airline} (
+                  {packageData.packageDetails.travelers} travelers × 2)
+                </span>
               </div>
               <div className="border-t border-white/10 pt-3 mt-3">
                 <div className="flex justify-between text-zinc-400">
                   <span>Hospital Cost:</span>
-                  <span>₹{packageData.breakdown.hospitalCost.toLocaleString()}</span>
+                  <span>
+                    ₹{packageData.breakdown.hospitalCost.toLocaleString()}
+                  </span>
                 </div>
                 <div className="flex justify-between text-zinc-400">
                   <span>Hotel Cost:</span>
-                  <span>₹{packageData.breakdown.hotelCost.toLocaleString()}</span>
+                  <span>
+                    ₹{packageData.breakdown.hotelCost.toLocaleString()}
+                  </span>
                 </div>
                 <div className="flex justify-between text-zinc-400">
                   <span>Flight Cost:</span>
-                  <span>₹{packageData.breakdown.flightCost.toLocaleString()}</span>
+                  <span>
+                    ₹{packageData.breakdown.flightCost.toLocaleString()}
+                  </span>
                 </div>
               </div>
               <div className="flex justify-between font-bold text-xl border-t border-white/10 pt-3 mt-3">
                 <span>Total Amount:</span>
-                <span className="text-emerald-400">₹{totalAmount.toLocaleString()}</span>
+                <span className="text-emerald-400">
+                  ₹{totalAmount.toLocaleString()}
+                </span>
               </div>
             </div>
           </div>
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
-
           {/* LEFT → PAYMENT METHODS */}
           <div className="bg-zinc-900/50 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
             <h2 className="text-xl font-semibold mb-4">Payment Method</h2>
@@ -142,7 +163,9 @@ export default function Payment() {
               <div
                 onClick={() => setMethod("upi")}
                 className={`p-4 rounded-xl border cursor-pointer flex items-center gap-4 transition ${
-                  method === "upi" ? "border-emerald-500 bg-emerald-500/10" : "border-white/10 hover:border-white/20"
+                  method === "upi"
+                    ? "border-emerald-500 bg-emerald-500/10"
+                    : "border-white/10 hover:border-white/20"
                 }`}
               >
                 <Smartphone className="w-6 h-6 text-emerald-400" />
@@ -153,7 +176,9 @@ export default function Payment() {
               <div
                 onClick={() => setMethod("card")}
                 className={`p-4 rounded-xl border cursor-pointer flex items-center gap-4 transition ${
-                  method === "card" ? "border-emerald-500 bg-emerald-500/10" : "border-white/10 hover:border-white/20"
+                  method === "card"
+                    ? "border-emerald-500 bg-emerald-500/10"
+                    : "border-white/10 hover:border-white/20"
                 }`}
               >
                 <CreditCard className="w-6 h-6 text-emerald-400" />
@@ -164,7 +189,9 @@ export default function Payment() {
               <div
                 onClick={() => setMethod("qr")}
                 className={`p-4 rounded-xl border cursor-pointer flex items-center gap-4 transition ${
-                  method === "qr" ? "border-emerald-500 bg-emerald-500/10" : "border-white/10 hover:border-white/20"
+                  method === "qr"
+                    ? "border-emerald-500 bg-emerald-500/10"
+                    : "border-white/10 hover:border-white/20"
                 }`}
               >
                 <QrCode className="w-6 h-6 text-emerald-400" />

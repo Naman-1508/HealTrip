@@ -10,7 +10,7 @@ export default function HospitalCard({
   image,
   phone,
   coords,
-  specialties = []
+  specialties = [],
 }) {
   const [distance, setDistance] = useState(null);
   const [open, setOpen] = useState(false);
@@ -43,8 +43,8 @@ export default function HospitalCard({
     beds > 10
       ? "text-green-600"
       : beds > 5
-      ? "text-yellow-500"
-      : "text-red-500";
+        ? "text-yellow-500"
+        : "text-red-500";
 
   return (
     <>
@@ -172,7 +172,7 @@ export default function HospitalCard({
                 onClick={() =>
                   window.open(
                     `https://www.google.com/maps/dir/?api=1&destination=${coords[0]},${coords[1]}`,
-                    "_blank"
+                    "_blank",
                   )
                 }
                 className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
@@ -187,5 +187,3 @@ export default function HospitalCard({
     </>
   );
 }
-
-

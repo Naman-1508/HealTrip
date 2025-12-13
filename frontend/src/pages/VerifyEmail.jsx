@@ -37,7 +37,10 @@ export default function VerifyEmail() {
   // Cooldown timer
   useEffect(() => {
     if (resendCooldown > 0) {
-      const timer = setTimeout(() => setResendCooldown(resendCooldown - 1), 1000);
+      const timer = setTimeout(
+        () => setResendCooldown(resendCooldown - 1),
+        1000,
+      );
       return () => clearTimeout(timer);
     }
   }, [resendCooldown]);
@@ -144,9 +147,7 @@ export default function VerifyEmail() {
             <h1 className="text-4xl font-heading font-bold text-white mb-2 tracking-tight">
               Verify Your Email
             </h1>
-            <p className="text-zinc-400 text-sm">
-              We sent a 6-digit code to
-            </p>
+            <p className="text-zinc-400 text-sm">We sent a 6-digit code to</p>
             <p className="text-white font-medium mt-1">{email}</p>
           </div>
 
@@ -182,7 +183,9 @@ export default function VerifyEmail() {
 
             {/* Resend Code */}
             <div className="text-center">
-              <p className="text-zinc-500 text-sm mb-2">Didn't receive the code?</p>
+              <p className="text-zinc-500 text-sm mb-2">
+                Didn't receive the code?
+              </p>
               <button
                 type="button"
                 onClick={handleResend}

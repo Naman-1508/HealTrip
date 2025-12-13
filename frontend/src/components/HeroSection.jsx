@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 import TextReveal from "./TextReveal";
 import Threads from "./Threads";
 
-
-export default function HeroSection({ 
+export default function HeroSection({
   badge = "AI-Powered Health Travel",
   title1 = "Heal Better",
   title2 = "Travel Smarter.",
   description = "Experience the future of medical tourism. AI-diagnostics, premium hospital networks, and curated wellness retreats—seamlessly integrated.",
   primaryButton = { text: "Get Started", link: "/signup" },
-  secondaryButton = { text: "View Destinations", link: "/hospitals" }
+  secondaryButton = { text: "View Destinations", link: "/hospitals" },
 }) {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -30,10 +29,27 @@ export default function HeroSection({
     >
       {/* ======= ABSTRACT BACKGROUND ======= */}
       <div className="absolute inset-0 z-0 bg-zinc-950">
-        <Threads amplitude={3} distance={1} color={[0.4, 0.8, 1.0]} enableMouseInteraction={true} />
-        <div className="absolute top-[-20%] left-[-10%] w-[80vw] h-[80vw] bg-purple-900/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '8s' }} />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] bg-blue-900/10 rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '10s' }} />
-        <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' opacity=\'0.05\'/%3E%3C/svg%3E")' }} />
+        <Threads
+          amplitude={3}
+          distance={1}
+          color={[0.4, 0.8, 1.0]}
+          enableMouseInteraction={true}
+        />
+        <div
+          className="absolute top-[-20%] left-[-10%] w-[80vw] h-[80vw] bg-purple-900/10 rounded-full blur-[120px] animate-pulse"
+          style={{ animationDuration: "8s" }}
+        />
+        <div
+          className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] bg-blue-900/10 rounded-full blur-[100px] animate-pulse"
+          style={{ animationDuration: "10s" }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")",
+          }}
+        />
       </div>
 
       {/* ======= CONTENT ======= */}
@@ -48,14 +64,19 @@ export default function HeroSection({
           className="mb-6 flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm"
         >
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-xs font-medium text-zinc-300 tracking-wide uppercase">{badge}</span>
+          <span className="text-xs font-medium text-zinc-300 tracking-wide uppercase">
+            {badge}
+          </span>
         </motion.div>
 
         <div className="flex flex-col items-center">
           <TextReveal className="text-6xl md:text-8xl lg:text-9xl font-heading font-extrabold text-white tracking-tighter leading-[0.9] md:leading-[0.85] text-center justify-center">
             {title1}
           </TextReveal>
-          <TextReveal delay={0.3} className="text-6xl md:text-8xl lg:text-9xl font-heading font-extrabold text-zinc-500 tracking-tighter leading-[0.9] md:leading-[0.85] text-center justify-center">
+          <TextReveal
+            delay={0.3}
+            className="text-6xl md:text-8xl lg:text-9xl font-heading font-extrabold text-zinc-500 tracking-tighter leading-[0.9] md:leading-[0.85] text-center justify-center"
+          >
             {title2}
           </TextReveal>
         </div>

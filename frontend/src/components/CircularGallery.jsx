@@ -1,7 +1,15 @@
-import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
-import { useEffect, useRef } from 'react';
+import {
+  Camera,
+  Mesh,
+  Plane,
+  Program,
+  Renderer,
+  Texture,
+  Transform,
+} from "ogl";
+import { useEffect, useRef } from "react";
 
-import './CircularGallery.css';
+import "./CircularGallery.css";
 
 function debounce(func, wait) {
   let timeout;
@@ -17,37 +25,42 @@ function lerp(p1, p2, t) {
 
 function autoBind(instance) {
   const proto = Object.getPrototypeOf(instance);
-  Object.getOwnPropertyNames(proto).forEach(key => {
-    if (key !== 'constructor' && typeof instance[key] === 'function') {
+  Object.getOwnPropertyNames(proto).forEach((key) => {
+    if (key !== "constructor" && typeof instance[key] === "function") {
       instance[key] = instance[key].bind(instance);
     }
   });
 }
 
-function createPlaceholderTexture(gl, text = 'Loading', width = 800, height = 600) {
-  const canvas = document.createElement('canvas');
+function createPlaceholderTexture(
+  gl,
+  text = "Loading",
+  width = 800,
+  height = 600,
+) {
+  const canvas = document.createElement("canvas");
   canvas.width = width;
   canvas.height = height;
-  const ctx = canvas.getContext('2d');
-  
+  const ctx = canvas.getContext("2d");
+
   // Dark Premium Background
-  ctx.fillStyle = '#18181b'; // Zinc-900
+  ctx.fillStyle = "#18181b"; // Zinc-900
   ctx.fillRect(0, 0, width, height);
-  
+
   // Subtle Gradient
   const gradient = ctx.createLinearGradient(0, 0, width, height);
-  gradient.addColorStop(0, '#27272a');
-  gradient.addColorStop(1, '#09090b');
+  gradient.addColorStop(0, "#27272a");
+  gradient.addColorStop(1, "#09090b");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, width, height);
 
   // Text
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+  ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
   ctx.font = 'bold 50px "Outfit", sans-serif'; // Consistent font
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
   ctx.fillText(text, width / 2, height / 2);
-  
+
   const texture = new Texture(gl, { generateMipmaps: false });
   texture.image = canvas;
   return { texture, width, height };
@@ -68,7 +81,7 @@ class Media {
     bend,
     textColor,
     borderRadius = 0,
-    font
+    font,
   }) {
     this.extra = 0;
     this.geometry = geometry;
@@ -85,7 +98,7 @@ class Media {
     this.textColor = textColor;
     this.borderRadius = borderRadius;
     this.font = font;
-    
+
     // Create initial placeholder texture
     const placeholder = createPlaceholderTexture(this.gl, this.text);
     this.initialTexture = placeholder.texture;
@@ -157,55 +170,63 @@ class Media {
         uImageSizes: { value: [this.imgWidth, this.imgHeight] },
         uSpeed: { value: 0 },
         uTime: { value: 100 * Math.random() },
-        uBorderRadius: { value: this.borderRadius }
+        uBorderRadius: { value: this.borderRadius },
       },
-      transparent: true
+      transparent: true,
     });
 
     // Load actual image
     const img = new Image();
-    img.crossOrigin = 'anonymous';
+    img.crossOrigin = "anonymous";
     img.src = this.image;
     img.onload = () => {
-       // BAKE TEXT ONTO IMAGE
-      const canvas = document.createElement('canvas');
+      // BAKE TEXT ONTO IMAGE
+      const canvas = document.createElement("canvas");
       canvas.width = img.naturalWidth;
       canvas.height = img.naturalHeight;
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext("2d");
       ctx.drawImage(img, 0, 0);
 
       // Add Gradient for text readability
-      const gradient = ctx.createLinearGradient(0, canvas.height * 0.6, 0, canvas.height);
-      gradient.addColorStop(0, 'transparent');
-      gradient.addColorStop(1, 'rgba(0,0,0,0.85)');
+      const gradient = ctx.createLinearGradient(
+        0,
+        canvas.height * 0.6,
+        0,
+        canvas.height,
+      );
+      gradient.addColorStop(0, "transparent");
+      gradient.addColorStop(1, "rgba(0,0,0,0.85)");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, canvas.height * 0.6, canvas.width, canvas.height * 0.4);
-      
+
       // Draw Text
       const fontSize = Math.max(24, Math.floor(canvas.height * 0.06));
-      ctx.fillStyle = 'white';
+      ctx.fillStyle = "white";
       ctx.font = `bold ${fontSize}px "Outfit", sans-serif`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'bottom';
+      ctx.textAlign = "center";
+      ctx.textBaseline = "bottom";
       ctx.fillText(this.text, canvas.width / 2, canvas.height * 0.92);
 
       // Create new texture
       const newCtx = new Texture(this.gl, { generateMipmaps: true });
       newCtx.image = canvas;
-      
+
       this.program.uniforms.tMap.value = newCtx;
-      this.program.uniforms.uImageSizes.value = [img.naturalWidth, img.naturalHeight];
+      this.program.uniforms.uImageSizes.value = [
+        img.naturalWidth,
+        img.naturalHeight,
+      ];
     };
     // Add error handling
     img.onerror = () => {
-        console.warn('Failed to load image, using placeholder:', this.image);
-        // Do nothing, keep using placeholder
+      console.warn("Failed to load image, using placeholder:", this.image);
+      // Do nothing, keep using placeholder
     };
   }
   createMesh() {
     this.plane = new Mesh(this.gl, {
       geometry: this.geometry,
-      program: this.program
+      program: this.program,
     });
     this.plane.setParent(this.scene);
   }
@@ -241,11 +262,11 @@ class Media {
     const viewportOffset = this.viewport.width / 2;
     this.isBefore = this.plane.position.x + planeOffset < -viewportOffset;
     this.isAfter = this.plane.position.x - planeOffset > viewportOffset;
-    if (direction === 'right' && this.isBefore) {
+    if (direction === "right" && this.isBefore) {
       this.extra -= this.widthTotal;
       this.isBefore = this.isAfter = false;
     }
-    if (direction === 'left' && this.isAfter) {
+    if (direction === "left" && this.isAfter) {
       this.extra += this.widthTotal;
       this.isBefore = this.isAfter = false;
     }
@@ -255,13 +276,21 @@ class Media {
     if (viewport) {
       this.viewport = viewport;
       if (this.plane.program.uniforms.uViewportSizes) {
-        this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
+        this.plane.program.uniforms.uViewportSizes.value = [
+          this.viewport.width,
+          this.viewport.height,
+        ];
       }
     }
     this.scale = this.screen.height / 1500;
-    this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height;
-    this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width;
-    this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
+    this.plane.scale.y =
+      (this.viewport.height * (900 * this.scale)) / this.screen.height;
+    this.plane.scale.x =
+      (this.viewport.width * (700 * this.scale)) / this.screen.width;
+    this.plane.program.uniforms.uPlaneSizes.value = [
+      this.plane.scale.x,
+      this.plane.scale.y,
+    ];
     this.padding = 2; // Increased padding slightly
     this.width = this.plane.scale.x + this.padding;
     this.widthTotal = this.width * this.length;
@@ -275,14 +304,14 @@ class App {
     {
       items,
       bend,
-      textColor = '#ffffff',
+      textColor = "#ffffff",
       borderRadius = 0,
-      font = 'bold 30px Figtree',
+      font = "bold 30px Figtree",
       scrollSpeed = 2,
-      scrollEase = 0.05
-    } = {}
+      scrollEase = 0.05,
+    } = {},
   ) {
-    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.remove("no-js");
     this.container = container;
     this.scrollSpeed = scrollSpeed;
     this.scroll = { ease: scrollEase, current: 0, target: 0, last: 0 };
@@ -300,7 +329,7 @@ class App {
     this.renderer = new Renderer({
       alpha: true,
       antialias: true,
-      dpr: Math.min(window.devicePixelRatio || 1, 2)
+      dpr: Math.min(window.devicePixelRatio || 1, 2),
     });
     this.gl = this.renderer.gl;
     this.gl.clearColor(0, 0, 0, 0);
@@ -317,12 +346,15 @@ class App {
   createGeometry() {
     this.planeGeometry = new Plane(this.gl, {
       heightSegments: 50,
-      widthSegments: 100
+      widthSegments: 100,
     });
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: `https://picsum.photos/seed/1/800/600?grayscale`, text: 'Bridge' }
+      {
+        image: `https://picsum.photos/seed/1/800/600?grayscale`,
+        text: "Bridge",
+      },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);
@@ -341,7 +373,7 @@ class App {
         bend,
         textColor,
         borderRadius,
-        font
+        font,
       });
     });
   }
@@ -361,37 +393,38 @@ class App {
   onTouchUp(e) {
     if (!this.isDown) return;
     this.isDown = false;
-    
-    // Detect Click (Drag distance < 5 pixels)
-    const x = e.changedTouches ? e.changedTouches[0].clientX : e.clientX; 
-    const dist = Math.abs(this.start - x);
-    
-    if (dist < 5) {
-        // It's a click! Trigger the CENTERED item.
-        if (this.medias && this.medias[0]) {
-             // Calculate index wrapping around the infinite gallery
-            const width = this.medias[0].width;
-            let index = Math.round(-this.scroll.target / width);
-            
-            // Normalize index to array length
-            const totalItems = this.mediasImages.length;
-            let realIndex = index % totalItems;
-            if (realIndex < 0) realIndex += totalItems;
 
-            // Trigger callback
-            const itemData = this.mediasImages[realIndex];
-            if (itemData && itemData.onClick) {
-                console.log("Triggering click for:", itemData.text);
-                itemData.onClick();
-            }
+    // Detect Click (Drag distance < 5 pixels)
+    const x = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+    const dist = Math.abs(this.start - x);
+
+    if (dist < 5) {
+      // It's a click! Trigger the CENTERED item.
+      if (this.medias && this.medias[0]) {
+        // Calculate index wrapping around the infinite gallery
+        const width = this.medias[0].width;
+        let index = Math.round(-this.scroll.target / width);
+
+        // Normalize index to array length
+        const totalItems = this.mediasImages.length;
+        let realIndex = index % totalItems;
+        if (realIndex < 0) realIndex += totalItems;
+
+        // Trigger callback
+        const itemData = this.mediasImages[realIndex];
+        if (itemData && itemData.onClick) {
+          console.log("Triggering click for:", itemData.text);
+          itemData.onClick();
         }
+      }
     }
 
     this.onCheck();
   }
   onWheel(e) {
     const delta = e.deltaY || e.wheelDelta || e.detail;
-    this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.2;
+    this.scroll.target +=
+      (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.2;
     this.onCheckDebounce();
   }
   onCheck() {
@@ -404,25 +437,31 @@ class App {
   onResize() {
     this.screen = {
       width: this.container.clientWidth,
-      height: this.container.clientHeight
+      height: this.container.clientHeight,
     };
     this.renderer.setSize(this.screen.width, this.screen.height);
     this.camera.perspective({
-      aspect: this.screen.width / this.screen.height
+      aspect: this.screen.width / this.screen.height,
     });
     const fov = (this.camera.fov * Math.PI) / 180;
     const height = 2 * Math.tan(fov / 2) * this.camera.position.z;
     const width = height * this.camera.aspect;
     this.viewport = { width, height };
     if (this.medias) {
-      this.medias.forEach(media => media.onResize({ screen: this.screen, viewport: this.viewport }));
+      this.medias.forEach((media) =>
+        media.onResize({ screen: this.screen, viewport: this.viewport }),
+      );
     }
   }
   update() {
-    this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
-    const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
+    this.scroll.current = lerp(
+      this.scroll.current,
+      this.scroll.target,
+      this.scroll.ease,
+    );
+    const direction = this.scroll.current > this.scroll.last ? "right" : "left";
     if (this.medias) {
-      this.medias.forEach(media => media.update(this.scroll, direction));
+      this.medias.forEach((media) => media.update(this.scroll, direction));
     }
     this.renderer.render({ scene: this.scene, camera: this.camera });
     this.scroll.last = this.scroll.current;
@@ -434,39 +473,49 @@ class App {
     this.boundOnTouchDown = this.onTouchDown.bind(this);
     this.boundOnTouchMove = this.onTouchMove.bind(this);
     this.boundOnTouchUp = this.onTouchUp.bind(this);
-    
+
     // Bind Start events to CONTAINER only
-    this.container.addEventListener('mousedown', this.boundOnTouchDown);
-    this.container.addEventListener('touchstart', this.boundOnTouchDown, { passive: true });
-    this.container.addEventListener('wheel', this.boundOnWheel, { passive: true });
-    this.container.addEventListener('mousewheel', this.boundOnWheel, { passive: true });
+    this.container.addEventListener("mousedown", this.boundOnTouchDown);
+    this.container.addEventListener("touchstart", this.boundOnTouchDown, {
+      passive: true,
+    });
+    this.container.addEventListener("wheel", this.boundOnWheel, {
+      passive: true,
+    });
+    this.container.addEventListener("mousewheel", this.boundOnWheel, {
+      passive: true,
+    });
 
     // Bind Move/End events to WINDOW (to handle dragging outside)
-    window.addEventListener('resize', this.boundOnResize);
-    window.addEventListener('mousemove', this.boundOnTouchMove);
-    window.addEventListener('mouseup', this.boundOnTouchUp);
-    window.addEventListener('touchmove', this.boundOnTouchMove);
-    window.addEventListener('touchend', this.boundOnTouchUp);
+    window.addEventListener("resize", this.boundOnResize);
+    window.addEventListener("mousemove", this.boundOnTouchMove);
+    window.addEventListener("mouseup", this.boundOnTouchUp);
+    window.addEventListener("touchmove", this.boundOnTouchMove);
+    window.addEventListener("touchend", this.boundOnTouchUp);
   }
   destroy() {
     window.cancelAnimationFrame(this.raf);
-    window.removeEventListener('resize', this.boundOnResize);
-    
+    window.removeEventListener("resize", this.boundOnResize);
+
     // Remove container listeners
     if (this.container) {
-        this.container.removeEventListener('mousedown', this.boundOnTouchDown);
-        this.container.removeEventListener('touchstart', this.boundOnTouchDown);
-        this.container.removeEventListener('wheel', this.boundOnWheel);
-        this.container.removeEventListener('mousewheel', this.boundOnWheel);
+      this.container.removeEventListener("mousedown", this.boundOnTouchDown);
+      this.container.removeEventListener("touchstart", this.boundOnTouchDown);
+      this.container.removeEventListener("wheel", this.boundOnWheel);
+      this.container.removeEventListener("mousewheel", this.boundOnWheel);
     }
 
     // Remove window listeners
-    window.removeEventListener('mousemove', this.boundOnTouchMove);
-    window.removeEventListener('mouseup', this.boundOnTouchUp);
-    window.removeEventListener('touchmove', this.boundOnTouchMove);
-    window.removeEventListener('touchend', this.boundOnTouchUp);
+    window.removeEventListener("mousemove", this.boundOnTouchMove);
+    window.removeEventListener("mouseup", this.boundOnTouchUp);
+    window.removeEventListener("touchmove", this.boundOnTouchMove);
+    window.removeEventListener("touchend", this.boundOnTouchUp);
 
-    if (this.renderer && this.renderer.gl && this.renderer.gl.canvas.parentNode) {
+    if (
+      this.renderer &&
+      this.renderer.gl &&
+      this.renderer.gl.canvas.parentNode
+    ) {
       this.renderer.gl.canvas.parentNode.removeChild(this.renderer.gl.canvas);
     }
   }
@@ -475,15 +524,23 @@ class App {
 export default function CircularGallery({
   items,
   bend = 2.5,
-  textColor = '#ffffff',
+  textColor = "#ffffff",
   borderRadius = 0.05,
-  font = 'bold 30px Figtree',
+  font = "bold 30px Figtree",
   scrollSpeed = 2,
-  scrollEase = 0.05
+  scrollEase = 0.05,
 }) {
   const containerRef = useRef(null);
   useEffect(() => {
-    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase });
+    const app = new App(containerRef.current, {
+      items,
+      bend,
+      textColor,
+      borderRadius,
+      font,
+      scrollSpeed,
+      scrollEase,
+    });
     return () => {
       app.destroy();
     };
