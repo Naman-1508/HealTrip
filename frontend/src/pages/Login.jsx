@@ -86,7 +86,7 @@ export default function Login() {
               />
               <label
                 htmlFor="email"
-                className="absolute left-0 top-3 text-zinc-500 text-sm transition-all peer-focus:-top-3 peer-focus:text-xs peer-focus:text-blue-500 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-zinc-500"
+                className="absolute left-0 -top-3 text-zinc-500 text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-zinc-500 peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-blue-500"
               >
                 Email Address
               </label>
@@ -105,7 +105,7 @@ export default function Login() {
               />
               <label
                 htmlFor="password"
-                className="absolute left-0 top-3 text-zinc-500 text-sm transition-all peer-focus:-top-3 peer-focus:text-xs peer-focus:text-blue-500 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-zinc-500"
+                className="absolute left-0 -top-3 text-zinc-500 text-xs transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-zinc-500 peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-blue-500"
               >
                 Password
               </label>

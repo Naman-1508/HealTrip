@@ -1,6 +1,7 @@
 import { useUser } from "@clerk/clerk-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import { Bot } from "lucide-react";
 import HeroSection from "../components/HeroSection";
 import Section from "../components/Section";
 import Button from "../components/Button";
@@ -310,6 +311,7 @@ export default function Landing() {
         </div>
       </Section>
       </div>
+
     </div>
   );
 }

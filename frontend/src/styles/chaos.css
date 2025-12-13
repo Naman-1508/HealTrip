@@ -68,22 +68,23 @@ body.chaos-mode p, body.chaos-mode h1, body.chaos-mode h2 {
 
 /* The Toggle Button Itself - Should stay stable and ALWAYS be visible */
 .chaos-toggle-btn {
+  display: none !important; /* Hidden for Demo */
   position: fixed;
-  bottom: 80px; /* Moved up slightly */
-  right: 20px; /* Moved to RIGHT side */
-  z-index: 2147483647 !important; /* Max Z-Index to stay on top of everything */
+  bottom: 20px;
+  left: 20px;
+  right: auto;
+  z-index: 2147483647 !important;
   background: black;
   color: #0f0;
   border: 3px solid #0f0;
   font-family: monospace;
   padding: 15px 25px;
   cursor: pointer;
-  box-shadow: 0 0 20px #0f0, 0 0 40px rgba(0, 255, 0, 0.5); /* extra glow */
+  box-shadow: 0 0 20px #0f0, 0 0 40px rgba(0, 255, 0, 0.5);
   font-weight: 900;
   text-transform: uppercase;
   font-size: 1.2rem;
   
-  /* CRITICAL: Do NOT animate this button so user can stop the chaos! */
   animation: none !important;
   transform: none !important;
   filter: none !important;

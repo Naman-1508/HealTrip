@@ -9,7 +9,8 @@ const chatSchema = new mongoose.Schema({
     messages: [{
         role: { type: String, enum: ['user', 'bot'], required: true },
         content: { type: String, required: true },
-        type: { type: String, default: 'text' }, // text, file
+        type: { type: String, default: 'text' }, // text, packages
+        packages: [Object], // Store package cards
         timestamp: { type: Date, default: Date.now }
     }],
     createdAt: {

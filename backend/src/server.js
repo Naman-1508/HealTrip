@@ -11,9 +11,7 @@ import diagnosisRoutes from './routes/diagnosis.routes.js';
 import wellnessRoutes from './routes/wellness.routes.js';
 import paymentRoutes from './routes/payment.routes.js';
 import flightRoutes from './routes/flight.routes.js';
-
-
-
+import buddyRoutes from './routes/buddy.routes.js';
 
 // Load environment variables
 // Environment variables loaded via import 'dotenv/config'
@@ -52,6 +50,7 @@ app.use('/api/diagnosis', diagnosisRoutes);
 app.use('/api/wellness', wellnessRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/flights', flightRoutes);
+app.use('/api/buddy', buddyRoutes);
 
 
 // 404 handler
