@@ -3,10 +3,14 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CheckCircle, CreditCard, QrCode, Smartphone, ShieldCheck, ArrowLeft } from "lucide-react";
 import Threads from "../components/Threads";
+import { useAuth } from "@clerk/clerk-react";
+import axios from 'axios';
+import toast from "react-hot-toast";
 
 export default function Payment() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { getToken } = useAuth();
   const { packageData } = location.state || {};
   const [method, setMethod] = useState("upi");
   const [paid, setPaid] = useState(false);
@@ -14,10 +18,29 @@ export default function Payment() {
   // Get total amount from package data or use default
   const totalAmount = packageData?.packageDetails?.totalAmount || 999;
 
-  const handlePayment = () => {
-    setTimeout(() => {
+  const handlePayment = async () => {
+    try {
+      if (!packageData) { 
+        // Allow mock view without data
+        setPaid(true); 
+        return; 
+      }
+      
+      const token = await getToken();
+      await axios.post('http://localhost:5000/api/payment/book-package', 
+        { 
+          packageData,
+          paymentMethod: method 
+        },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      
       setPaid(true);
-    }, 1500);
+      toast.success("Booking Confirmed!");
+    } catch (err) {
+      console.error("Booking Error", err);
+      toast.error("Failed to confirm booking");
+    }
   };
 
   if (paid) {

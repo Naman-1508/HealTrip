@@ -1,0 +1,1001 @@
+Flight_Number,Airline,Airline_Code,Origin_Code,Origin_City,Origin_Country,Destination_Code,Destination_City,Destination_Country,Departure_Time,Arrival_Time,Duration_Minutes,Stops,Economy_Price_INR,Business_Price_INR,Currency,Direction
+AI8413,Air India,AI,BLR,Bengaluru,India,BKK,Bangkok,Thailand,2025-02-08 17:00,2025-02-09 02:14,554,Direct,96387,177968,INR,From India
+LH9364,Lufthansa,LH,BKK,Bangkok,Thailand,BOM,Mumbai,India,2025-02-06 07:00,2025-02-06 19:24,744,Direct,75642,139732,INR,To India
+LH2463,Lufthansa,LH,LHR,London,UK,TRV,Thiruvananthapuram,India,2025-01-27 07:00,2025-01-27 19:30,750,2+ Stops,37455,76096,INR,To India
+UK1128,Vistara,UK,DOH,Doha,Qatar,TRV,Thiruvananthapuram,India,2025-02-23 18:15,2025-02-24 03:36,561,2+ Stops,32770,73345,INR,To India
+SQ6024,Singapore Airlines,SQ,DXB,Dubai,UAE,TRV,Thiruvananthapuram,India,2025-10-01 13:30,2025-10-02 00:26,656,1 Stop,96750,245624,INR,To India
+EK7453,Emirates,EK,SYD,Sydney,Australia,BLR,Bengaluru,India,2025-02-12 18:30,2025-02-13 06:27,717,1 Stop,84895,212246,INR,To India
+LH1371,Lufthansa,LH,ICN,Seoul,South Korea,BOM,Mumbai,India,2025-03-27 10:15,2025-03-27 21:35,680,2+ Stops,75272,137850,INR,To India
+BA7867,British Airways,BA,CCU,Kolkata,India,SYD,Sydney,Australia,2025-09-13 18:45,2025-09-13 22:55,250,2+ Stops,32267,82466,INR,From India
+QR5785,Qatar Airways,QR,SYD,Sydney,Australia,DEL,New Delhi,India,2025-10-24 21:45,2025-10-25 05:36,471,Direct,113929,240234,INR,To India
+6E6619,IndiGo,6E,CCU,Kolkata,India,SFO,San Francisco,USA,2025-09-11 01:15,2025-09-11 09:09,474,1 Stop,36952,88340,INR,From India
+SQ4661,Singapore Airlines,SQ,BOM,Mumbai,India,SFO,San Francisco,USA,2025-07-26 17:30,2025-07-26 22:50,320,2+ Stops,76429,190398,INR,From India
+LH3922,Lufthansa,LH,CCU,Kolkata,India,FRA,Frankfurt,Germany,2025-04-30 04:00,2025-04-30 10:00,360,Direct,39830,79085,INR,From India
+QR9378,Qatar Airways,QR,TRV,Thiruvananthapuram,India,SFO,San Francisco,USA,2025-05-26 00:15,2025-05-26 10:24,609,1 Stop,90069,188730,INR,From India
+AI7989,Air India,AI,CDG,Paris,France,GOI,Goa,India,2025-08-23 21:45,2025-08-24 07:32,587,2+ Stops,72294,152923,INR,To India
+6E1777,IndiGo,6E,DEL,New Delhi,India,DXB,Dubai,UAE,2025-04-18 14:15,2025-04-18 19:07,292,Direct,64571,147259,INR,From India
+BA4232,British Airways,BA,JFK,New York,USA,GOI,Goa,India,2025-01-15 02:15,2025-01-15 15:43,808,1 Stop,69313,133000,INR,To India
+6E1774,IndiGo,6E,AMD,Ahmedabad,India,JFK,New York,USA,2025-09-08 14:45,2025-09-09 02:00,675,2+ Stops,60875,113757,INR,From India
+UK8999,Vistara,UK,HYD,Hyderabad,India,NRT,Tokyo,Japan,2025-09-23 00:15,2025-09-23 12:15,720,Direct,67415,129253,INR,From India
+QR8336,Qatar Airways,QR,BOM,Mumbai,India,SYD,Sydney,Australia,2025-09-24 11:15,2025-09-24 20:19,544,1 Stop,49201,109525,INR,From India
+EK574,Emirates,EK,YYZ,Toronto,Canada,TRV,Thiruvananthapuram,India,2025-05-04 12:15,2025-05-04 18:39,384,Direct,87847,192756,INR,To India
+EK3816,Emirates,EK,AMD,Ahmedabad,India,DOH,Doha,Qatar,2025-06-27 14:30,2025-06-27 23:43,553,1 Stop,30556,60389,INR,From India
+SQ2064,Singapore Airlines,SQ,DXB,Dubai,UAE,CCU,Kolkata,India,2025-01-02 15:30,2025-01-03 05:28,838,1 Stop,31112,76775,INR,To India
+LH1491,Lufthansa,LH,SFO,San Francisco,USA,AMD,Ahmedabad,India,2025-06-21 02:45,2025-06-21 13:39,654,2+ Stops,72610,173877,INR,To India
+AI9862,Air India,AI,SFO,San Francisco,USA,BLR,Bengaluru,India,2025-03-20 18:45,2025-03-21 08:56,851,1 Stop,39159,89645,INR,To India
+UK7207,Vistara,UK,BLR,Bengaluru,India,ICN,Seoul,South Korea,2025-01-12 00:00,2025-01-12 11:59,719,Direct,118237,301137,INR,From India
+EK6965,Emirates,EK,DOH,Doha,Qatar,DEL,New Delhi,India,2025-05-31 16:15,2025-06-01 05:15,780,Direct,62728,125925,INR,To India
+LH7311,Lufthansa,LH,NRT,Tokyo,Japan,CCU,Kolkata,India,2025-09-15 04:15,2025-09-15 16:11,716,Direct,86918,157753,INR,To India
+UK8592,Vistara,UK,SFO,San Francisco,USA,BLR,Bengaluru,India,2025-09-01 19:00,2025-09-02 07:29,749,2+ Stops,28094,57895,INR,To India
+AI9303,Air India,AI,BOM,Mumbai,India,ICN,Seoul,South Korea,2025-05-09 06:30,2025-05-09 10:13,223,Direct,32811,72386,INR,From India
+EK4353,Emirates,EK,SIN,Singapore,Singapore,AMD,Ahmedabad,India,2025-05-23 14:45,2025-05-24 02:24,699,2+ Stops,52460,123772,INR,To India
+LH7117,Lufthansa,LH,SFO,San Francisco,USA,AMD,Ahmedabad,India,2025-03-05 12:45,2025-03-05 21:08,503,Direct,29508,68957,INR,To India
+6E7763,IndiGo,6E,YYZ,Toronto,Canada,HYD,Hyderabad,India,2025-03-22 22:30,2025-03-23 03:56,326,Direct,53175,133270,INR,To India
+UK3307,Vistara,UK,NRT,Tokyo,Japan,COK,Kochi,India,2025-04-26 05:45,2025-04-26 17:32,707,1 Stop,72928,151055,INR,To India
+BA5531,British Airways,BA,BOM,Mumbai,India,SYD,Sydney,Australia,2025-01-11 10:45,2025-01-11 21:16,631,2+ Stops,112163,203515,INR,From India
+6E3074,IndiGo,6E,GOI,Goa,India,JFK,New York,USA,2025-04-29 03:00,2025-04-29 10:31,451,1 Stop,55641,101915,INR,From India
+QR1042,Qatar Airways,QR,FRA,Frankfurt,Germany,COK,Kochi,India,2025-07-28 04:45,2025-07-28 19:42,897,2+ Stops,62866,117658,INR,To India
+QR3743,Qatar Airways,QR,JFK,New York,USA,COK,Kochi,India,2025-01-10 20:00,2025-01-11 03:26,446,Direct,30976,70827,INR,To India
+AI8732,Air India,AI,BOM,Mumbai,India,NRT,Tokyo,Japan,2025-06-24 17:45,2025-06-25 01:19,454,2+ Stops,101487,193168,INR,From India
+QR3472,Qatar Airways,QR,SFO,San Francisco,USA,BOM,Mumbai,India,2025-01-27 05:15,2025-01-27 13:34,499,1 Stop,102401,209308,INR,To India
+UK8384,Vistara,UK,GOI,Goa,India,FRA,Frankfurt,Germany,2025-05-20 11:00,2025-05-20 18:16,436,2+ Stops,24843,45022,INR,From India
+EK6540,Emirates,EK,NRT,Tokyo,Japan,GOI,Goa,India,2025-08-18 03:45,2025-08-18 17:57,852,2+ Stops,84880,189853,INR,To India
+BA2226,British Airways,BA,MAA,Chennai,India,DXB,Dubai,UAE,2025-04-13 22:15,2025-04-14 08:09,594,Direct,65554,169490,INR,From India
+UK9910,Vistara,UK,BKK,Bangkok,Thailand,HYD,Hyderabad,India,2025-01-30 02:45,2025-01-30 14:23,698,Direct,107889,278002,INR,To India
+UK5489,Vistara,UK,DEL,New Delhi,India,NRT,Tokyo,Japan,2025-03-23 08:45,2025-03-23 11:48,183,2+ Stops,54503,113982,INR,From India
+QR7876,Qatar Airways,QR,MAA,Chennai,India,LHR,London,UK,2025-04-23 11:15,2025-04-23 14:16,181,1 Stop,63952,134638,INR,From India
+AI6554,Air India,AI,ICN,Seoul,South Korea,MAA,Chennai,India,2025-02-17 08:00,2025-02-17 13:27,327,Direct,72364,164225,INR,To India
+EK9874,Emirates,EK,HYD,Hyderabad,India,FRA,Frankfurt,Germany,2025-02-14 18:15,2025-02-15 08:28,853,1 Stop,113846,276330,INR,From India
+QR8681,Qatar Airways,QR,AMD,Ahmedabad,India,SFO,San Francisco,USA,2025-03-17 01:45,2025-03-17 16:42,897,2+ Stops,86262,164885,INR,From India
+EK1818,Emirates,EK,YYZ,Toronto,Canada,TRV,Thiruvananthapuram,India,2025-02-14 00:00,2025-02-14 05:16,316,1 Stop,103508,216183,INR,To India
+AI1248,Air India,AI,GOI,Goa,India,LHR,London,UK,2025-10-01 21:15,2025-10-02 08:36,681,2+ Stops,54575,98379,INR,From India
+SQ3880,Singapore Airlines,SQ,JFK,New York,USA,GOI,Goa,India,2025-05-11 02:30,2025-05-11 09:30,420,2+ Stops,115595,278023,INR,To India
+6E3348,IndiGo,6E,AMD,Ahmedabad,India,BKK,Bangkok,Thailand,2025-09-04 21:30,2025-09-05 01:17,227,Direct,100868,232625,INR,From India
+QR1730,Qatar Airways,QR,DOH,Doha,Qatar,CCU,Kolkata,India,2025-10-19 04:00,2025-10-19 15:13,673,2+ Stops,27950,61172,INR,To India
+QR1506,Qatar Airways,QR,DOH,Doha,Qatar,AMD,Ahmedabad,India,2025-08-27 14:45,2025-08-27 19:46,301,1 Stop,91968,180202,INR,To India
+6E3552,IndiGo,6E,NRT,Tokyo,Japan,HYD,Hyderabad,India,2025-09-18 14:30,2025-09-19 00:06,576,Direct,47503,120336,INR,To India
+QR8257,Qatar Airways,QR,SYD,Sydney,Australia,BLR,Bengaluru,India,2025-07-05 04:30,2025-07-05 09:25,295,1 Stop,112187,234712,INR,To India
+AI6918,Air India,AI,DEL,New Delhi,India,SFO,San Francisco,USA,2025-09-10 21:45,2025-09-11 07:40,595,1 Stop,59577,141897,INR,From India
+BA3307,British Airways,BA,CCU,Kolkata,India,JFK,New York,USA,2025-01-02 10:30,2025-01-02 20:17,587,2+ Stops,35734,91189,INR,From India
+BA7113,British Airways,BA,DOH,Doha,Qatar,HYD,Hyderabad,India,2025-02-04 12:45,2025-02-05 01:48,783,1 Stop,30013,62684,INR,To India
+AI5270,Air India,AI,JFK,New York,USA,HYD,Hyderabad,India,2025-05-28 20:15,2025-05-29 03:30,435,Direct,54829,117827,INR,To India
+LH6831,Lufthansa,LH,COK,Kochi,India,LHR,London,UK,2025-10-12 17:15,2025-10-12 21:37,262,1 Stop,26484,67448,INR,From India
+AI4978,Air India,AI,NRT,Tokyo,Japan,HYD,Hyderabad,India,2025-10-10 04:15,2025-10-10 15:18,663,1 Stop,74377,154327,INR,To India
+EK1331,Emirates,EK,COK,Kochi,India,FRA,Frankfurt,Germany,2025-06-05 15:45,2025-06-05 20:47,302,Direct,41932,97054,INR,From India
+SQ1586,Singapore Airlines,SQ,GOI,Goa,India,DXB,Dubai,UAE,2025-06-21 14:45,2025-06-21 20:07,322,Direct,91799,179368,INR,From India
+BA6863,British Airways,BA,GOI,Goa,India,JFK,New York,USA,2025-05-04 11:30,2025-05-05 00:13,763,1 Stop,46495,116693,INR,From India
+LH6000,Lufthansa,LH,GOI,Goa,India,DXB,Dubai,UAE,2025-05-20 10:00,2025-05-20 21:30,690,Direct,56374,127372,INR,From India
+EK457,Emirates,EK,DOH,Doha,Qatar,BOM,Mumbai,India,2025-07-17 12:45,2025-07-17 23:07,622,Direct,60896,150957,INR,To India
+SQ7455,Singapore Airlines,SQ,SYD,Sydney,Australia,COK,Kochi,India,2025-09-09 00:00,2025-09-09 09:40,580,Direct,89187,221573,INR,To India
+UK7592,Vistara,UK,SFO,San Francisco,USA,MAA,Chennai,India,2025-09-26 21:00,2025-09-27 11:57,897,Direct,104849,259732,INR,To India
+UK2196,Vistara,UK,YYZ,Toronto,Canada,DEL,New Delhi,India,2025-05-01 18:00,2025-05-02 08:00,840,2+ Stops,113719,232330,INR,To India
+LH3240,Lufthansa,LH,GOI,Goa,India,FRA,Frankfurt,Germany,2025-02-28 03:00,2025-02-28 11:07,487,1 Stop,88738,226710,INR,From India
+AI4070,Air India,AI,MAA,Chennai,India,YYZ,Toronto,Canada,2025-01-07 17:30,2025-01-08 04:21,651,1 Stop,56517,145087,INR,From India
+AI6981,Air India,AI,DXB,Dubai,UAE,GOI,Goa,India,2025-07-31 22:30,2025-08-01 02:26,236,Direct,22855,44688,INR,To India
+LH6990,Lufthansa,LH,MAA,Chennai,India,FRA,Frankfurt,Germany,2025-07-10 07:45,2025-07-10 11:19,214,1 Stop,111202,230237,INR,From India
+QR3277,Qatar Airways,QR,MAA,Chennai,India,LHR,London,UK,2025-09-17 02:15,2025-09-17 13:42,687,Direct,46268,94820,INR,From India
+QR8047,Qatar Airways,QR,MAA,Chennai,India,DOH,Doha,Qatar,2025-02-26 19:45,2025-02-27 09:09,804,1 Stop,44551,112142,INR,From India
+LH1085,Lufthansa,LH,SFO,San Francisco,USA,TRV,Thiruvananthapuram,India,2025-01-29 06:00,2025-01-29 19:10,790,Direct,38600,82307,INR,To India
+BA8698,British Airways,BA,AMD,Ahmedabad,India,SYD,Sydney,Australia,2025-02-28 02:15,2025-02-28 10:52,517,2+ Stops,44993,87664,INR,From India
+LH4684,Lufthansa,LH,DEL,New Delhi,India,DOH,Doha,Qatar,2025-07-12 10:45,2025-07-12 16:38,353,Direct,34281,61784,INR,From India
+EK7857,Emirates,EK,COK,Kochi,India,JFK,New York,USA,2025-07-15 11:30,2025-07-15 21:52,622,Direct,31502,57944,INR,From India
+EK6731,Emirates,EK,GOI,Goa,India,NRT,Tokyo,Japan,2025-06-16 11:45,2025-06-16 15:16,211,Direct,102793,218809,INR,From India
+6E4561,IndiGo,6E,DEL,New Delhi,India,NRT,Tokyo,Japan,2025-02-02 08:15,2025-02-02 12:19,244,1 Stop,99379,205839,INR,From India
+BA1170,British Airways,BA,SYD,Sydney,Australia,HYD,Hyderabad,India,2025-05-23 09:00,2025-05-23 22:09,789,Direct,103097,263638,INR,To India
+SQ3097,Singapore Airlines,SQ,NRT,Tokyo,Japan,BOM,Mumbai,India,2025-07-18 08:45,2025-07-18 20:10,685,Direct,37394,95073,INR,To India
+EK3332,Emirates,EK,BLR,Bengaluru,India,CDG,Paris,France,2025-06-18 10:45,2025-06-18 19:55,550,1 Stop,98081,182745,INR,From India
+6E1282,IndiGo,6E,BKK,Bangkok,Thailand,MAA,Chennai,India,2025-01-19 15:30,2025-01-19 21:14,344,1 Stop,75909,190287,INR,To India
+LH7651,Lufthansa,LH,JFK,New York,USA,MAA,Chennai,India,2025-09-14 22:45,2025-09-15 04:42,357,2+ Stops,50696,96644,INR,To India
+6E4365,IndiGo,6E,YYZ,Toronto,Canada,GOI,Goa,India,2025-06-01 09:30,2025-06-01 22:10,760,Direct,55083,115584,INR,To India
+EK6589,Emirates,EK,MAA,Chennai,India,SFO,San Francisco,USA,2025-05-02 04:30,2025-05-02 17:22,772,1 Stop,44674,92076,INR,From India
+EK3886,Emirates,EK,ICN,Seoul,South Korea,GOI,Goa,India,2025-02-22 20:45,2025-02-23 00:22,217,1 Stop,33412,60261,INR,To India
+EK1330,Emirates,EK,DEL,New Delhi,India,DOH,Doha,Qatar,2025-03-04 01:15,2025-03-04 14:29,794,1 Stop,96440,188571,INR,From India
+QR2416,Qatar Airways,QR,CDG,Paris,France,AMD,Ahmedabad,India,2025-01-05 03:30,2025-01-05 10:12,402,Direct,24909,52183,INR,To India
+EK5215,Emirates,EK,LHR,London,UK,HYD,Hyderabad,India,2025-01-07 10:45,2025-01-08 01:19,874,Direct,68733,133899,INR,To India
+SQ9113,Singapore Airlines,SQ,YYZ,Toronto,Canada,DEL,New Delhi,India,2025-10-09 15:00,2025-10-10 00:57,597,Direct,33289,81114,INR,To India
+QR9381,Qatar Airways,QR,BKK,Bangkok,Thailand,BLR,Bengaluru,India,2025-07-30 09:30,2025-07-30 19:37,607,1 Stop,26731,54795,INR,To India
+BA2665,British Airways,BA,COK,Kochi,India,LHR,London,UK,2025-04-12 12:45,2025-04-12 19:13,388,1 Stop,20770,44600,INR,From India
+BA6599,British Airways,BA,BKK,Bangkok,Thailand,BOM,Mumbai,India,2025-08-25 05:15,2025-08-25 08:30,195,Direct,26775,60009,INR,To India
+UK1882,Vistara,UK,GOI,Goa,India,SFO,San Francisco,USA,2025-06-29 09:15,2025-06-29 21:08,713,1 Stop,42516,108007,INR,From India
+UK6455,Vistara,UK,MAA,Chennai,India,DOH,Doha,Qatar,2025-01-24 15:30,2025-01-24 19:24,234,Direct,99645,253191,INR,From India
+LH8585,Lufthansa,LH,CDG,Paris,France,MAA,Chennai,India,2025-04-12 15:15,2025-04-13 03:53,758,Direct,48591,89085,INR,To India
+UK724,Vistara,UK,CCU,Kolkata,India,JFK,New York,USA,2025-05-08 23:15,2025-05-09 02:57,222,2+ Stops,93707,231829,INR,From India
+SQ4183,Singapore Airlines,SQ,BOM,Mumbai,India,BKK,Bangkok,Thailand,2025-10-10 20:30,2025-10-11 10:34,844,1 Stop,75059,153613,INR,From India
+SQ7420,Singapore Airlines,SQ,CCU,Kolkata,India,NRT,Tokyo,Japan,2025-04-03 00:00,2025-04-03 13:33,813,2+ Stops,84159,182811,INR,From India
+SQ1602,Singapore Airlines,SQ,BLR,Bengaluru,India,YYZ,Toronto,Canada,2025-07-25 03:00,2025-07-25 08:11,311,1 Stop,66999,143677,INR,From India
+UK8356,Vistara,UK,FRA,Frankfurt,Germany,DEL,New Delhi,India,2025-02-13 23:30,2025-02-14 11:13,703,1 Stop,30481,56189,INR,To India
+6E3722,IndiGo,6E,JFK,New York,USA,DEL,New Delhi,India,2025-04-11 04:45,2025-04-11 12:39,474,Direct,41641,97810,INR,To India
+QR7966,Qatar Airways,QR,TRV,Thiruvananthapuram,India,YYZ,Toronto,Canada,2025-03-24 10:30,2025-03-24 21:17,647,Direct,38818,77765,INR,From India
+EK4657,Emirates,EK,TRV,Thiruvananthapuram,India,ICN,Seoul,South Korea,2025-06-14 11:00,2025-06-14 17:23,383,2+ Stops,43867,93119,INR,From India
+QR7522,Qatar Airways,QR,COK,Kochi,India,SFO,San Francisco,USA,2025-03-01 16:00,2025-03-02 05:51,831,2+ Stops,67156,172787,INR,From India
+LH5520,Lufthansa,LH,ICN,Seoul,South Korea,HYD,Hyderabad,India,2025-07-11 08:45,2025-07-11 18:02,557,Direct,95675,183404,INR,To India
+AI9698,Air India,AI,MAA,Chennai,India,SFO,San Francisco,USA,2025-06-02 16:30,2025-06-03 00:47,497,2+ Stops,103786,267017,INR,From India
+AI8499,Air India,AI,DEL,New Delhi,India,SYD,Sydney,Australia,2025-04-25 04:30,2025-04-25 18:00,810,1 Stop,102001,218872,INR,From India
+EK1842,Emirates,EK,NRT,Tokyo,Japan,BLR,Bengaluru,India,2025-01-25 00:00,2025-01-25 03:02,182,2+ Stops,94333,196587,INR,To India
+LH7880,Lufthansa,LH,GOI,Goa,India,DXB,Dubai,UAE,2025-10-27 09:15,2025-10-27 15:44,389,Direct,68003,156348,INR,From India
+EK4519,Emirates,EK,YYZ,Toronto,Canada,DEL,New Delhi,India,2025-03-19 14:00,2025-03-19 18:05,245,1 Stop,103651,198569,INR,To India
+BA820,British Airways,BA,DEL,New Delhi,India,LHR,London,UK,2025-10-25 14:45,2025-10-25 21:59,434,Direct,41639,105046,INR,From India
+EK3331,Emirates,EK,SFO,San Francisco,USA,COK,Kochi,India,2025-03-24 01:00,2025-03-24 04:12,192,Direct,100299,224743,INR,To India
+LH7930,Lufthansa,LH,MAA,Chennai,India,ICN,Seoul,South Korea,2025-04-01 16:30,2025-04-01 20:35,245,2+ Stops,59356,136564,INR,From India
+SQ4383,Singapore Airlines,SQ,BKK,Bangkok,Thailand,COK,Kochi,India,2025-02-12 23:45,2025-02-13 05:44,359,Direct,49615,128864,INR,To India
+QR4943,Qatar Airways,QR,SIN,Singapore,Singapore,BOM,Mumbai,India,2025-01-28 08:45,2025-01-28 23:27,882,2+ Stops,88582,228321,INR,To India
+AI5455,Air India,AI,ICN,Seoul,South Korea,BOM,Mumbai,India,2025-03-29 08:15,2025-03-29 14:42,387,Direct,40864,97947,INR,To India
+EK534,Emirates,EK,CCU,Kolkata,India,CDG,Paris,France,2025-07-15 20:45,2025-07-16 07:48,663,1 Stop,89549,211165,INR,From India
+EK540,Emirates,EK,DOH,Doha,Qatar,TRV,Thiruvananthapuram,India,2025-07-21 19:00,2025-07-22 07:38,758,Direct,42484,81385,INR,To India
+BA798,British Airways,BA,SFO,San Francisco,USA,TRV,Thiruvananthapuram,India,2025-03-15 22:00,2025-03-16 01:31,211,2+ Stops,25459,48645,INR,To India
+BA3428,British Airways,BA,JFK,New York,USA,DEL,New Delhi,India,2025-04-14 17:00,2025-04-15 02:33,573,Direct,34039,67984,INR,To India
+6E3458,IndiGo,6E,YYZ,Toronto,Canada,DEL,New Delhi,India,2025-05-29 15:00,2025-05-29 20:15,315,1 Stop,32826,79884,INR,To India
+QR6129,Qatar Airways,QR,CCU,Kolkata,India,BKK,Bangkok,Thailand,2025-01-12 11:30,2025-01-12 19:19,469,1 Stop,26344,62504,INR,From India
+AI888,Air India,AI,HYD,Hyderabad,India,CDG,Paris,France,2025-08-01 00:45,2025-08-01 12:36,711,2+ Stops,32884,68314,INR,From India
+QR984,Qatar Airways,QR,CDG,Paris,France,BOM,Mumbai,India,2025-03-30 13:00,2025-03-31 00:56,716,Direct,46481,94387,INR,To India
+SQ2703,Singapore Airlines,SQ,AMD,Ahmedabad,India,JFK,New York,USA,2025-04-06 15:30,2025-04-07 03:17,707,1 Stop,54154,122518,INR,From India
+UK1813,Vistara,UK,NRT,Tokyo,Japan,MAA,Chennai,India,2025-02-27 20:00,2025-02-28 07:22,682,2+ Stops,111377,250487,INR,To India
+LH3477,Lufthansa,LH,CCU,Kolkata,India,JFK,New York,USA,2025-07-23 23:00,2025-07-24 09:12,612,1 Stop,104654,190484,INR,From India
+UK655,Vistara,UK,COK,Kochi,India,ICN,Seoul,South Korea,2025-07-15 20:15,2025-07-16 07:06,651,1 Stop,36630,81510,INR,From India
+SQ4314,Singapore Airlines,SQ,GOI,Goa,India,SFO,San Francisco,USA,2025-10-12 23:30,2025-10-13 05:23,353,2+ Stops,80706,173601,INR,From India
+SQ2632,Singapore Airlines,SQ,SIN,Singapore,Singapore,BLR,Bengaluru,India,2025-05-03 16:15,2025-05-03 23:48,453,2+ Stops,59519,143071,INR,To India
+BA4338,British Airways,BA,SYD,Sydney,Australia,MAA,Chennai,India,2025-09-26 11:15,2025-09-26 18:16,421,2+ Stops,63001,161574,INR,To India
+6E7225,IndiGo,6E,FRA,Frankfurt,Germany,BLR,Bengaluru,India,2025-04-12 12:15,2025-04-12 17:46,331,1 Stop,59597,142236,INR,To India
+6E7252,IndiGo,6E,FRA,Frankfurt,Germany,BOM,Mumbai,India,2025-05-25 06:45,2025-05-25 17:40,655,2+ Stops,24447,44251,INR,To India
+QR190,Qatar Airways,QR,FRA,Frankfurt,Germany,GOI,Goa,India,2025-08-27 00:15,2025-08-27 07:38,443,2+ Stops,99129,236977,INR,To India
+LH7536,Lufthansa,LH,SYD,Sydney,Australia,COK,Kochi,India,2025-04-29 21:15,2025-04-30 11:50,875,1 Stop,43790,101296,INR,To India
+6E7039,IndiGo,6E,HYD,Hyderabad,India,FRA,Frankfurt,Germany,2025-08-04 07:45,2025-08-04 21:29,824,1 Stop,40507,81015,INR,From India
+LH6468,Lufthansa,LH,DEL,New Delhi,India,CDG,Paris,France,2025-09-24 21:15,2025-09-25 11:25,850,1 Stop,62998,152615,INR,From India
+EK9513,Emirates,EK,DOH,Doha,Qatar,DEL,New Delhi,India,2025-03-25 22:15,2025-03-26 10:06,711,1 Stop,65640,123460,INR,To India
+AI3542,Air India,AI,ICN,Seoul,South Korea,AMD,Ahmedabad,India,2025-07-10 16:30,2025-07-11 02:30,600,2+ Stops,117269,300018,INR,To India
+6E1107,IndiGo,6E,ICN,Seoul,South Korea,COK,Kochi,India,2025-07-03 20:00,2025-07-04 03:18,438,Direct,55960,117822,INR,To India
+BA8735,British Airways,BA,BKK,Bangkok,Thailand,COK,Kochi,India,2025-10-26 08:00,2025-10-26 14:49,409,Direct,59779,143061,INR,To India
+UK3802,Vistara,UK,AMD,Ahmedabad,India,DXB,Dubai,UAE,2025-03-09 02:15,2025-03-09 13:15,660,Direct,104174,234354,INR,From India
+QR3875,Qatar Airways,QR,COK,Kochi,India,NRT,Tokyo,Japan,2025-10-09 20:15,2025-10-10 07:15,660,1 Stop,66497,161379,INR,From India
+UK5348,Vistara,UK,HYD,Hyderabad,India,BKK,Bangkok,Thailand,2025-09-05 00:30,2025-09-05 09:36,546,1 Stop,52108,121074,INR,From India
+6E9350,IndiGo,6E,COK,Kochi,India,CDG,Paris,France,2025-07-06 04:30,2025-07-06 14:04,574,1 Stop,27479,51336,INR,From India
+AI1763,Air India,AI,SIN,Singapore,Singapore,GOI,Goa,India,2025-01-07 06:00,2025-01-07 20:11,851,2+ Stops,58403,116807,INR,To India
+SQ1581,Singapore Airlines,SQ,SFO,San Francisco,USA,MAA,Chennai,India,2025-06-28 04:15,2025-06-28 14:07,592,2+ Stops,90060,174205,INR,To India
+EK4433,Emirates,EK,MAA,Chennai,India,NRT,Tokyo,Japan,2025-09-30 02:45,2025-09-30 17:12,867,1 Stop,35332,79286,INR,From India
+SQ4139,Singapore Airlines,SQ,NRT,Tokyo,Japan,BLR,Bengaluru,India,2025-10-14 01:45,2025-10-14 12:43,658,1 Stop,38929,91885,INR,To India
+AI4963,Air India,AI,CDG,Paris,France,GOI,Goa,India,2025-03-25 10:45,2025-03-26 01:37,892,1 Stop,93737,206041,INR,To India
+6E851,IndiGo,6E,COK,Kochi,India,BKK,Bangkok,Thailand,2025-04-04 20:30,2025-04-05 10:21,831,2+ Stops,104740,190922,INR,From India
+SQ2179,Singapore Airlines,SQ,BOM,Mumbai,India,ICN,Seoul,South Korea,2025-09-07 04:00,2025-09-07 10:38,398,1 Stop,114133,243385,INR,From India
+SQ4221,Singapore Airlines,SQ,SIN,Singapore,Singapore,CCU,Kolkata,India,2025-09-28 17:15,2025-09-29 01:05,470,2+ Stops,77041,159749,INR,To India
+BA5749,British Airways,BA,DOH,Doha,Qatar,HYD,Hyderabad,India,2025-09-11 12:30,2025-09-12 00:05,695,Direct,55611,138936,INR,To India
+EK1534,Emirates,EK,BOM,Mumbai,India,SIN,Singapore,Singapore,2025-06-13 22:30,2025-06-14 03:40,310,Direct,96867,249742,INR,From India
+AI7883,Air India,AI,GOI,Goa,India,BKK,Bangkok,Thailand,2025-07-25 09:00,2025-07-25 12:06,186,2+ Stops,26081,50908,INR,From India
+LH7601,Lufthansa,LH,ICN,Seoul,South Korea,GOI,Goa,India,2025-03-18 20:00,2025-03-19 02:37,397,2+ Stops,25173,58743,INR,To India
+UK2372,Vistara,UK,FRA,Frankfurt,Germany,BOM,Mumbai,India,2025-01-20 13:00,2025-01-21 03:11,851,1 Stop,21759,45587,INR,To India
+LH994,Lufthansa,LH,HYD,Hyderabad,India,SFO,San Francisco,USA,2025-01-19 10:00,2025-01-19 20:21,621,1 Stop,94230,217992,INR,From India
+LH6442,Lufthansa,LH,YYZ,Toronto,Canada,BOM,Mumbai,India,2025-10-23 22:45,2025-10-24 09:22,637,2+ Stops,28810,52183,INR,To India
+LH2586,Lufthansa,LH,YYZ,Toronto,Canada,AMD,Ahmedabad,India,2025-10-09 03:00,2025-10-09 16:59,839,2+ Stops,81891,161310,INR,To India
+AI4612,Air India,AI,LHR,London,UK,COK,Kochi,India,2025-03-05 02:15,2025-03-05 07:19,304,2+ Stops,36904,80371,INR,To India
+UK8260,Vistara,UK,SYD,Sydney,Australia,AMD,Ahmedabad,India,2025-01-27 11:15,2025-01-27 15:41,266,1 Stop,58422,134539,INR,To India
+AI1405,Air India,AI,DEL,New Delhi,India,SYD,Sydney,Australia,2025-01-07 01:00,2025-01-07 15:06,846,1 Stop,109999,269923,INR,From India
+UK7288,Vistara,UK,HYD,Hyderabad,India,SYD,Sydney,Australia,2025-09-08 19:00,2025-09-09 03:23,503,1 Stop,68177,174465,INR,From India
+6E7517,IndiGo,6E,YYZ,Toronto,Canada,BLR,Bengaluru,India,2025-07-06 20:15,2025-07-07 09:59,824,1 Stop,74783,163144,INR,To India
+AI9679,Air India,AI,HYD,Hyderabad,India,DOH,Doha,Qatar,2025-06-21 19:00,2025-06-22 00:34,334,1 Stop,98792,243630,INR,From India
+LH4491,Lufthansa,LH,BKK,Bangkok,Thailand,COK,Kochi,India,2025-05-01 14:30,2025-05-02 05:15,885,1 Stop,20220,41597,INR,To India
+AI8291,Air India,AI,YYZ,Toronto,Canada,TRV,Thiruvananthapuram,India,2025-05-29 04:15,2025-05-29 11:55,460,1 Stop,91807,215536,INR,To India
+SQ6579,Singapore Airlines,SQ,ICN,Seoul,South Korea,GOI,Goa,India,2025-07-16 06:15,2025-07-16 14:31,496,1 Stop,99547,183768,INR,To India
+AI3915,Air India,AI,CDG,Paris,France,HYD,Hyderabad,India,2025-07-18 14:00,2025-07-19 02:09,729,1 Stop,66544,160885,INR,To India
+SQ3060,Singapore Airlines,SQ,GOI,Goa,India,SIN,Singapore,Singapore,2025-09-18 18:15,2025-09-19 00:28,373,2+ Stops,47878,93546,INR,From India
+BA8181,British Airways,BA,CCU,Kolkata,India,CDG,Paris,France,2025-07-27 16:15,2025-07-27 23:27,432,1 Stop,25845,65597,INR,From India
+SQ8610,Singapore Airlines,SQ,FRA,Frankfurt,Germany,CCU,Kolkata,India,2025-02-12 04:30,2025-02-12 17:41,791,2+ Stops,23979,49778,INR,To India
+EK7421,Emirates,EK,LHR,London,UK,BOM,Mumbai,India,2025-10-18 15:15,2025-10-18 22:42,447,2+ Stops,56677,121331,INR,To India
+BA9232,British Airways,BA,LHR,London,UK,HYD,Hyderabad,India,2025-04-14 05:45,2025-04-14 10:10,265,1 Stop,23607,43455,INR,To India
+LH1571,Lufthansa,LH,AMD,Ahmedabad,India,JFK,New York,USA,2025-03-04 22:00,2025-03-05 05:23,443,2+ Stops,61774,139089,INR,From India
+UK5867,Vistara,UK,BLR,Bengaluru,India,NRT,Tokyo,Japan,2025-07-10 07:15,2025-07-10 13:11,356,Direct,25063,63995,INR,From India
+SQ3359,Singapore Airlines,SQ,DOH,Doha,Qatar,DEL,New Delhi,India,2025-01-30 03:15,2025-01-30 11:40,505,2+ Stops,118952,214663,INR,To India
+SQ6243,Singapore Airlines,SQ,TRV,Thiruvananthapuram,India,CDG,Paris,France,2025-02-24 15:30,2025-02-25 00:50,560,1 Stop,53686,113386,INR,From India
+EK690,Emirates,EK,BLR,Bengaluru,India,NRT,Tokyo,Japan,2025-03-16 21:00,2025-03-17 07:59,659,Direct,114008,288448,INR,From India
+BA7511,British Airways,BA,CDG,Paris,France,BOM,Mumbai,India,2025-03-14 14:00,2025-03-14 23:34,574,1 Stop,22848,52612,INR,To India
+6E7495,IndiGo,6E,MAA,Chennai,India,NRT,Tokyo,Japan,2025-07-08 04:30,2025-07-08 11:16,406,2+ Stops,116477,214944,INR,From India
+QR4958,Qatar Airways,QR,SFO,San Francisco,USA,AMD,Ahmedabad,India,2025-08-04 13:15,2025-08-04 18:54,339,1 Stop,23331,47055,INR,To India
+6E1031,IndiGo,6E,NRT,Tokyo,Japan,HYD,Hyderabad,India,2025-06-13 14:45,2025-06-13 19:41,296,2+ Stops,40102,103579,INR,To India
+QR4010,Qatar Airways,QR,NRT,Tokyo,Japan,GOI,Goa,India,2025-03-04 08:15,2025-03-04 17:28,553,Direct,76630,198687,INR,To India
+LH8419,Lufthansa,LH,DOH,Doha,Qatar,COK,Kochi,India,2025-03-26 01:30,2025-03-26 06:57,327,1 Stop,103861,188281,INR,To India
+QR9460,Qatar Airways,QR,LHR,London,UK,AMD,Ahmedabad,India,2025-04-07 11:45,2025-04-07 15:26,221,Direct,73600,145331,INR,To India
+EK4587,Emirates,EK,ICN,Seoul,South Korea,BLR,Bengaluru,India,2025-04-01 06:00,2025-04-01 10:29,269,Direct,99764,237905,INR,To India
+EK8612,Emirates,EK,CDG,Paris,France,BLR,Bengaluru,India,2025-10-27 09:15,2025-10-27 12:25,190,1 Stop,28610,67342,INR,To India
+BA7908,British Airways,BA,YYZ,Toronto,Canada,GOI,Goa,India,2025-06-22 09:45,2025-06-22 14:17,272,Direct,22024,46858,INR,To India
+BA5935,British Airways,BA,MAA,Chennai,India,SFO,San Francisco,USA,2025-01-20 05:30,2025-01-20 18:18,768,2+ Stops,97974,243608,INR,From India
+6E9542,IndiGo,6E,GOI,Goa,India,JFK,New York,USA,2025-07-03 22:15,2025-07-04 06:43,508,Direct,113216,282414,INR,From India
+SQ4090,Singapore Airlines,SQ,BOM,Mumbai,India,SYD,Sydney,Australia,2025-08-18 16:00,2025-08-19 04:03,723,Direct,90429,172493,INR,From India
+UK3296,Vistara,UK,SFO,San Francisco,USA,TRV,Thiruvananthapuram,India,2025-02-23 09:30,2025-02-23 21:58,748,1 Stop,23941,43466,INR,To India
+SQ3032,Singapore Airlines,SQ,FRA,Frankfurt,Germany,TRV,Thiruvananthapuram,India,2025-09-26 07:45,2025-09-26 12:30,285,Direct,65966,164626,INR,To India
+SQ2343,Singapore Airlines,SQ,BOM,Mumbai,India,NRT,Tokyo,Japan,2025-10-28 16:30,2025-10-28 21:22,292,2+ Stops,35995,68290,INR,From India
+SQ9881,Singapore Airlines,SQ,SFO,San Francisco,USA,MAA,Chennai,India,2025-07-24 05:00,2025-07-24 18:50,830,2+ Stops,70953,167101,INR,To India
+BA9347,British Airways,BA,LHR,London,UK,COK,Kochi,India,2025-06-24 12:15,2025-06-24 20:58,523,1 Stop,113785,244463,INR,To India
+BA289,British Airways,BA,GOI,Goa,India,LHR,London,UK,2025-09-23 04:30,2025-09-23 11:45,435,1 Stop,75330,175556,INR,From India
+6E2384,IndiGo,6E,SFO,San Francisco,USA,GOI,Goa,India,2025-06-17 13:15,2025-06-18 00:51,696,1 Stop,107705,195663,INR,To India
+AI8984,Air India,AI,AMD,Ahmedabad,India,FRA,Frankfurt,Germany,2025-01-22 01:30,2025-01-22 16:04,874,Direct,101719,205344,INR,From India
+AI2835,Air India,AI,JFK,New York,USA,HYD,Hyderabad,India,2025-08-12 07:00,2025-08-12 14:54,474,Direct,34816,71175,INR,To India
+QR4910,Qatar Airways,QR,ICN,Seoul,South Korea,TRV,Thiruvananthapuram,India,2025-02-14 14:15,2025-02-15 00:45,630,1 Stop,36242,80069,INR,To India
+6E6434,IndiGo,6E,HYD,Hyderabad,India,DXB,Dubai,UAE,2025-10-08 09:45,2025-10-08 23:09,804,Direct,111073,250596,INR,From India
+QR3193,Qatar Airways,QR,AMD,Ahmedabad,India,ICN,Seoul,South Korea,2025-09-03 15:30,2025-09-03 19:01,211,2+ Stops,51752,106967,INR,From India
+AI4522,Air India,AI,TRV,Thiruvananthapuram,India,BKK,Bangkok,Thailand,2025-07-01 05:15,2025-07-01 13:46,511,1 Stop,92961,191535,INR,From India
+AI1116,Air India,AI,LHR,London,UK,HYD,Hyderabad,India,2025-03-24 17:00,2025-03-25 06:20,800,2+ Stops,65612,141196,INR,To India
+6E2399,IndiGo,6E,AMD,Ahmedabad,India,SIN,Singapore,Singapore,2025-09-25 07:15,2025-09-25 17:21,606,2+ Stops,64173,149817,INR,From India
+QR2185,Qatar Airways,QR,CDG,Paris,France,TRV,Thiruvananthapuram,India,2025-09-24 03:45,2025-09-24 11:20,455,1 Stop,102662,242984,INR,To India
+6E1919,IndiGo,6E,BKK,Bangkok,Thailand,DEL,New Delhi,India,2025-09-13 12:15,2025-09-13 22:22,607,1 Stop,56609,141421,INR,To India
+BA5375,British Airways,BA,AMD,Ahmedabad,India,DOH,Doha,Qatar,2025-05-31 11:45,2025-05-31 23:43,718,Direct,92791,211223,INR,From India
+QR9628,Qatar Airways,QR,COK,Kochi,India,NRT,Tokyo,Japan,2025-04-06 17:30,2025-04-06 22:58,328,Direct,77100,174272,INR,From India
+EK9355,Emirates,EK,SIN,Singapore,Singapore,CCU,Kolkata,India,2025-06-17 06:45,2025-06-17 09:55,190,1 Stop,23352,42919,INR,To India
+QR7146,Qatar Airways,QR,GOI,Goa,India,YYZ,Toronto,Canada,2025-10-04 19:45,2025-10-05 07:34,709,1 Stop,87799,209110,INR,From India
+BA6234,British Airways,BA,CCU,Kolkata,India,LHR,London,UK,2025-08-21 00:00,2025-08-21 11:57,717,2+ Stops,50051,94054,INR,From India
+UK9724,Vistara,UK,GOI,Goa,India,CDG,Paris,France,2025-04-08 13:45,2025-04-08 23:36,591,1 Stop,77693,187540,INR,From India
+BA4931,British Airways,BA,SIN,Singapore,Singapore,BLR,Bengaluru,India,2025-07-08 02:30,2025-07-08 14:14,704,2+ Stops,43014,81228,INR,To India
+UK1085,Vistara,UK,GOI,Goa,India,BKK,Bangkok,Thailand,2025-09-27 09:15,2025-09-27 20:52,697,2+ Stops,44655,95106,INR,From India
+AI164,Air India,AI,CDG,Paris,France,CCU,Kolkata,India,2025-07-31 00:00,2025-07-31 08:14,494,1 Stop,113144,266177,INR,To India
+AI8807,Air India,AI,BOM,Mumbai,India,CDG,Paris,France,2025-01-17 06:15,2025-01-17 17:44,689,2+ Stops,92515,208493,INR,From India
+LH575,Lufthansa,LH,DXB,Dubai,UAE,TRV,Thiruvananthapuram,India,2025-03-05 04:15,2025-03-05 16:05,710,Direct,119548,263913,INR,To India
+SQ9583,Singapore Airlines,SQ,ICN,Seoul,South Korea,BLR,Bengaluru,India,2025-08-29 19:45,2025-08-29 23:48,243,1 Stop,105209,190427,INR,To India
+QR9639,Qatar Airways,QR,SIN,Singapore,Singapore,MAA,Chennai,India,2025-03-29 01:30,2025-03-29 15:13,823,Direct,33035,82173,INR,To India
+LH819,Lufthansa,LH,MAA,Chennai,India,NRT,Tokyo,Japan,2025-01-12 01:15,2025-01-12 11:00,585,1 Stop,96370,232371,INR,From India
+EK7561,Emirates,EK,DXB,Dubai,UAE,TRV,Thiruvananthapuram,India,2025-04-26 01:15,2025-04-26 14:16,781,1 Stop,42745,87705,INR,To India
+SQ6874,Singapore Airlines,SQ,TRV,Thiruvananthapuram,India,DOH,Doha,Qatar,2025-02-05 07:45,2025-02-05 22:16,871,1 Stop,114170,258921,INR,From India
+EK4862,Emirates,EK,AMD,Ahmedabad,India,LHR,London,UK,2025-02-15 05:15,2025-02-15 14:21,546,1 Stop,69677,135817,INR,From India
+LH5854,Lufthansa,LH,BOM,Mumbai,India,SIN,Singapore,Singapore,2025-06-22 12:00,2025-06-22 17:06,306,2+ Stops,75348,185405,INR,From India
+SQ514,Singapore Airlines,SQ,DXB,Dubai,UAE,COK,Kochi,India,2025-05-27 11:15,2025-05-27 21:41,626,1 Stop,24576,49724,INR,To India
+UK7752,Vistara,UK,SYD,Sydney,Australia,MAA,Chennai,India,2025-02-18 06:30,2025-02-18 18:47,737,Direct,36750,82466,INR,To India
+EK3823,Emirates,EK,SIN,Singapore,Singapore,CCU,Kolkata,India,2025-07-28 12:15,2025-07-28 20:19,484,1 Stop,82384,181563,INR,To India
+SQ2156,Singapore Airlines,SQ,CDG,Paris,France,HYD,Hyderabad,India,2025-07-09 17:15,2025-07-10 03:08,593,Direct,99718,220192,INR,To India
+LH1509,Lufthansa,LH,DOH,Doha,Qatar,GOI,Goa,India,2025-01-16 21:15,2025-01-17 05:33,498,2+ Stops,21966,46391,INR,To India
+EK1179,Emirates,EK,SIN,Singapore,Singapore,MAA,Chennai,India,2025-02-26 02:30,2025-02-26 14:02,692,2+ Stops,119412,243309,INR,To India
+QR7709,Qatar Airways,QR,BOM,Mumbai,India,DXB,Dubai,UAE,2025-03-07 22:45,2025-03-08 06:34,469,2+ Stops,66648,141473,INR,From India
+AI7678,Air India,AI,SFO,San Francisco,USA,HYD,Hyderabad,India,2025-07-08 21:30,2025-07-09 07:32,602,Direct,23311,54250,INR,To India
+6E762,IndiGo,6E,CCU,Kolkata,India,FRA,Frankfurt,Germany,2025-04-05 09:00,2025-04-05 16:37,457,1 Stop,99811,238273,INR,From India
+LH5194,Lufthansa,LH,SFO,San Francisco,USA,TRV,Thiruvananthapuram,India,2025-04-13 09:15,2025-04-13 18:44,569,2+ Stops,116773,213856,INR,To India
+SQ115,Singapore Airlines,SQ,DXB,Dubai,UAE,TRV,Thiruvananthapuram,India,2025-09-25 08:45,2025-09-25 23:11,866,Direct,109696,247937,INR,To India
+AI5763,Air India,AI,DEL,New Delhi,India,CDG,Paris,France,2025-05-07 21:00,2025-05-08 00:38,218,2+ Stops,61753,121536,INR,From India
+LH5675,Lufthansa,LH,SYD,Sydney,Australia,COK,Kochi,India,2025-04-25 08:00,2025-04-25 16:57,537,2+ Stops,75571,162783,INR,To India
+EK9260,Emirates,EK,GOI,Goa,India,LHR,London,UK,2025-08-09 21:15,2025-08-10 08:36,681,1 Stop,119866,233910,INR,From India
+EK6844,Emirates,EK,SFO,San Francisco,USA,GOI,Goa,India,2025-10-07 08:15,2025-10-07 12:15,240,Direct,42026,87677,INR,To India
+UK8544,Vistara,UK,SFO,San Francisco,USA,HYD,Hyderabad,India,2025-09-08 21:45,2025-09-09 04:48,423,2+ Stops,112487,224228,INR,To India
+BA2032,British Airways,BA,BLR,Bengaluru,India,FRA,Frankfurt,Germany,2025-06-04 04:15,2025-06-04 17:16,781,2+ Stops,93828,186963,INR,From India
+UK6006,Vistara,UK,BLR,Bengaluru,India,FRA,Frankfurt,Germany,2025-08-26 12:15,2025-08-26 17:12,297,1 Stop,110456,224388,INR,From India
+QR1951,Qatar Airways,QR,LHR,London,UK,DEL,New Delhi,India,2025-06-06 06:00,2025-06-06 20:58,898,Direct,60490,130562,INR,To India
+BA8054,British Airways,BA,AMD,Ahmedabad,India,NRT,Tokyo,Japan,2025-05-30 05:00,2025-05-30 08:46,226,Direct,21417,46577,INR,From India
+6E5986,IndiGo,6E,TRV,Thiruvananthapuram,India,DOH,Doha,Qatar,2025-09-09 13:45,2025-09-09 19:59,374,Direct,91181,187600,INR,From India
+QR2477,Qatar Airways,QR,TRV,Thiruvananthapuram,India,SYD,Sydney,Australia,2025-05-07 02:15,2025-05-07 05:43,208,1 Stop,23315,56411,INR,From India
+UK5936,Vistara,UK,BLR,Bengaluru,India,FRA,Frankfurt,Germany,2025-02-23 23:30,2025-02-24 13:01,811,1 Stop,62817,132135,INR,From India
+BA6706,British Airways,BA,SFO,San Francisco,USA,CCU,Kolkata,India,2025-05-11 07:00,2025-05-11 10:42,222,Direct,34055,76742,INR,To India
+SQ2365,Singapore Airlines,SQ,BKK,Bangkok,Thailand,AMD,Ahmedabad,India,2025-03-23 09:00,2025-03-23 14:25,325,1 Stop,110175,218366,INR,To India
+SQ8476,Singapore Airlines,SQ,BOM,Mumbai,India,LHR,London,UK,2025-09-04 06:15,2025-09-04 15:36,561,1 Stop,20367,37182,INR,From India
+AI2988,Air India,AI,JFK,New York,USA,HYD,Hyderabad,India,2025-09-22 22:45,2025-09-23 07:31,526,2+ Stops,28220,60699,INR,To India
+AI8991,Air India,AI,DOH,Doha,Qatar,COK,Kochi,India,2025-08-16 18:30,2025-08-17 07:11,761,1 Stop,45613,99211,INR,To India
+UK4966,Vistara,UK,COK,Kochi,India,ICN,Seoul,South Korea,2025-07-26 19:00,2025-07-26 23:01,241,2+ Stops,114734,268610,INR,From India
+UK7429,Vistara,UK,CCU,Kolkata,India,NRT,Tokyo,Japan,2025-06-04 10:00,2025-06-04 16:13,373,2+ Stops,49161,115181,INR,From India
+BA7331,British Airways,BA,FRA,Frankfurt,Germany,BLR,Bengaluru,India,2025-10-13 18:45,2025-10-14 03:53,548,1 Stop,89465,178231,INR,To India
+UK3172,Vistara,UK,BOM,Mumbai,India,DXB,Dubai,UAE,2025-04-15 17:00,2025-04-15 23:46,406,2+ Stops,53225,123468,INR,From India
+SQ6785,Singapore Airlines,SQ,AMD,Ahmedabad,India,DXB,Dubai,UAE,2025-04-27 17:00,2025-04-28 04:45,705,2+ Stops,97130,218881,INR,From India
+6E3239,IndiGo,6E,SFO,San Francisco,USA,AMD,Ahmedabad,India,2025-09-22 03:45,2025-09-22 18:27,882,2+ Stops,71375,159554,INR,To India
+BA9837,British Airways,BA,BOM,Mumbai,India,SFO,San Francisco,USA,2025-01-31 12:15,2025-01-31 16:03,228,Direct,68804,126144,INR,From India
+UK5910,Vistara,UK,HYD,Hyderabad,India,JFK,New York,USA,2025-08-08 02:15,2025-08-08 14:51,756,Direct,35035,88778,INR,From India
+AI5948,Air India,AI,CCU,Kolkata,India,YYZ,Toronto,Canada,2025-05-12 03:15,2025-05-12 12:36,561,2+ Stops,87263,208541,INR,From India
+BA4072,British Airways,BA,DEL,New Delhi,India,CDG,Paris,France,2025-02-22 11:30,2025-02-23 00:47,797,1 Stop,34807,63603,INR,From India
+SQ1308,Singapore Airlines,SQ,MAA,Chennai,India,SYD,Sydney,Australia,2025-01-12 18:45,2025-01-12 23:41,296,1 Stop,22746,49823,INR,From India
+QR4502,Qatar Airways,QR,ICN,Seoul,South Korea,BLR,Bengaluru,India,2025-07-15 04:30,2025-07-15 16:41,731,1 Stop,110376,265912,INR,To India
+UK9929,Vistara,UK,SIN,Singapore,Singapore,DEL,New Delhi,India,2025-09-08 16:45,2025-09-08 20:17,212,1 Stop,24647,45835,INR,To India
+SQ5199,Singapore Airlines,SQ,BLR,Bengaluru,India,SYD,Sydney,Australia,2025-07-22 07:00,2025-07-22 16:09,549,Direct,63158,140375,INR,From India
+BA5596,British Airways,BA,SFO,San Francisco,USA,MAA,Chennai,India,2025-08-29 10:45,2025-08-29 20:22,577,2+ Stops,66357,136130,INR,To India
+AI2453,Air India,AI,CCU,Kolkata,India,DXB,Dubai,UAE,2025-05-09 14:00,2025-05-10 03:46,826,1 Stop,39114,93152,INR,From India
+QR1660,Qatar Airways,QR,HYD,Hyderabad,India,JFK,New York,USA,2025-07-03 18:15,2025-07-04 09:10,895,Direct,24471,61961,INR,From India
+6E5695,IndiGo,6E,TRV,Thiruvananthapuram,India,FRA,Frankfurt,Germany,2025-07-06 09:15,2025-07-06 14:39,324,2+ Stops,109303,203043,INR,From India
+EK5395,Emirates,EK,GOI,Goa,India,FRA,Frankfurt,Germany,2025-06-30 17:45,2025-07-01 02:27,522,1 Stop,27923,65992,INR,From India
+EK7524,Emirates,EK,MAA,Chennai,India,YYZ,Toronto,Canada,2025-06-29 04:15,2025-06-29 10:45,390,1 Stop,20947,52598,INR,From India
+QR4230,Qatar Airways,QR,COK,Kochi,India,CDG,Paris,France,2025-03-29 18:00,2025-03-29 23:27,327,2+ Stops,59516,141403,INR,From India
+6E5948,IndiGo,6E,BOM,Mumbai,India,DXB,Dubai,UAE,2025-10-28 05:30,2025-10-28 18:24,774,2+ Stops,66332,171797,INR,From India
+BA4491,British Airways,BA,BOM,Mumbai,India,NRT,Tokyo,Japan,2025-04-01 08:30,2025-04-01 20:49,739,Direct,23024,55414,INR,From India
+LH4060,Lufthansa,LH,LHR,London,UK,MAA,Chennai,India,2025-08-19 06:30,2025-08-19 18:03,693,2+ Stops,104946,197262,INR,To India
+AI8897,Air India,AI,CDG,Paris,France,BLR,Bengaluru,India,2025-02-11 02:30,2025-02-11 07:49,319,2+ Stops,20661,40300,INR,To India
+EK5634,Emirates,EK,LHR,London,UK,CCU,Kolkata,India,2025-06-15 10:00,2025-06-16 00:04,844,Direct,83743,177891,INR,To India
+AI7691,Air India,AI,YYZ,Toronto,Canada,COK,Kochi,India,2025-02-15 20:30,2025-02-16 07:56,686,Direct,98360,208488,INR,To India
+BA3548,British Airways,BA,CDG,Paris,France,CCU,Kolkata,India,2025-01-30 13:30,2025-01-30 19:10,340,Direct,32248,58526,INR,To India
+LH3868,Lufthansa,LH,SIN,Singapore,Singapore,CCU,Kolkata,India,2025-06-27 17:15,2025-06-28 07:28,853,2+ Stops,98848,223394,INR,To India
+AI8777,Air India,AI,AMD,Ahmedabad,India,YYZ,Toronto,Canada,2025-06-09 20:45,2025-06-10 09:17,752,1 Stop,56472,117974,INR,From India
+SQ1573,Singapore Airlines,SQ,LHR,London,UK,HYD,Hyderabad,India,2025-02-22 20:30,2025-02-23 02:04,334,Direct,102431,203072,INR,To India
+EK3007,Emirates,EK,LHR,London,UK,BOM,Mumbai,India,2025-10-13 05:30,2025-10-13 18:50,800,2+ Stops,67921,162336,INR,To India
+BA6473,British Airways,BA,LHR,London,UK,GOI,Goa,India,2025-05-06 14:45,2025-05-06 21:23,398,1 Stop,103378,261534,INR,To India
+AI5845,Air India,AI,YYZ,Toronto,Canada,CCU,Kolkata,India,2025-02-26 21:00,2025-02-27 01:07,247,Direct,104601,264737,INR,To India
+LH7207,Lufthansa,LH,BKK,Bangkok,Thailand,TRV,Thiruvananthapuram,India,2025-07-13 21:15,2025-07-14 00:46,211,Direct,53020,96316,INR,To India
+BA9431,British Airways,BA,DXB,Dubai,UAE,CCU,Kolkata,India,2025-08-07 20:30,2025-08-08 04:35,485,Direct,85352,168424,INR,To India
+UK4191,Vistara,UK,HYD,Hyderabad,India,YYZ,Toronto,Canada,2025-06-04 09:00,2025-06-04 17:39,519,Direct,20515,44895,INR,From India
+SQ7293,Singapore Airlines,SQ,TRV,Thiruvananthapuram,India,CDG,Paris,France,2025-04-20 18:00,2025-04-21 00:34,394,Direct,116404,243085,INR,From India
+AI5861,Air India,AI,BLR,Bengaluru,India,DOH,Doha,Qatar,2025-02-28 04:00,2025-02-28 09:16,316,Direct,59676,114616,INR,From India
+LH5599,Lufthansa,LH,FRA,Frankfurt,Germany,AMD,Ahmedabad,India,2025-02-17 13:30,2025-02-18 03:27,837,Direct,107208,254413,INR,To India
+AI426,Air India,AI,YYZ,Toronto,Canada,MAA,Chennai,India,2025-01-21 04:15,2025-01-21 17:03,768,Direct,76426,180268,INR,To India
+6E8954,IndiGo,6E,BOM,Mumbai,India,JFK,New York,USA,2025-09-08 04:45,2025-09-08 07:47,182,Direct,43459,86011,INR,From India
+SQ3003,Singapore Airlines,SQ,SIN,Singapore,Singapore,GOI,Goa,India,2025-02-10 11:15,2025-02-10 18:04,409,Direct,115865,215266,INR,To India
+AI4477,Air India,AI,HYD,Hyderabad,India,JFK,New York,USA,2025-04-12 16:00,2025-04-13 01:57,597,Direct,92957,238113,INR,From India
+SQ4500,Singapore Airlines,SQ,DEL,New Delhi,India,FRA,Frankfurt,Germany,2025-10-07 09:30,2025-10-08 00:16,886,1 Stop,73788,190807,INR,From India
+LH186,Lufthansa,LH,CCU,Kolkata,India,ICN,Seoul,South Korea,2025-07-17 04:45,2025-07-17 14:19,574,Direct,73735,180134,INR,From India
+LH911,Lufthansa,LH,TRV,Thiruvananthapuram,India,SYD,Sydney,Australia,2025-05-05 06:00,2025-05-05 10:28,268,1 Stop,101373,246049,INR,From India
+BA7810,British Airways,BA,AMD,Ahmedabad,India,ICN,Seoul,South Korea,2025-08-23 18:00,2025-08-24 05:04,664,2+ Stops,117806,273058,INR,From India
+LH8722,Lufthansa,LH,TRV,Thiruvananthapuram,India,ICN,Seoul,South Korea,2025-05-02 20:45,2025-05-03 05:48,543,1 Stop,113345,209834,INR,From India
+EK9450,Emirates,EK,BOM,Mumbai,India,FRA,Frankfurt,Germany,2025-05-17 08:45,2025-05-17 17:41,536,Direct,88425,200865,INR,From India
+BA2597,British Airways,BA,YYZ,Toronto,Canada,BOM,Mumbai,India,2025-09-27 06:15,2025-09-27 15:29,554,2+ Stops,51279,119938,INR,To India
+AI4220,Air India,AI,BLR,Bengaluru,India,FRA,Frankfurt,Germany,2025-06-15 12:30,2025-06-15 22:48,618,1 Stop,36126,76876,INR,From India
+QR7410,Qatar Airways,QR,SIN,Singapore,Singapore,CCU,Kolkata,India,2025-08-21 21:00,2025-08-22 04:41,461,2+ Stops,71845,146017,INR,To India
+SQ8108,Singapore Airlines,SQ,FRA,Frankfurt,Germany,AMD,Ahmedabad,India,2025-04-01 16:15,2025-04-01 19:21,186,2+ Stops,109152,207871,INR,To India
+BA4354,British Airways,BA,SIN,Singapore,Singapore,TRV,Thiruvananthapuram,India,2025-07-16 08:00,2025-07-16 20:29,749,Direct,46326,83416,INR,To India
+QR8183,Qatar Airways,QR,SYD,Sydney,Australia,HYD,Hyderabad,India,2025-06-16 08:15,2025-06-16 15:46,451,Direct,77418,145008,INR,To India
+QR4937,Qatar Airways,QR,BKK,Bangkok,Thailand,BLR,Bengaluru,India,2025-07-11 01:45,2025-07-11 11:09,564,1 Stop,68126,124902,INR,To India
+QR3239,Qatar Airways,QR,TRV,Thiruvananthapuram,India,YYZ,Toronto,Canada,2025-07-01 07:45,2025-07-01 20:37,772,2+ Stops,36970,93898,INR,From India
+EK6894,Emirates,EK,BOM,Mumbai,India,FRA,Frankfurt,Germany,2025-06-19 02:00,2025-06-19 12:36,636,1 Stop,69729,147449,INR,From India
+SQ1166,Singapore Airlines,SQ,CDG,Paris,France,BOM,Mumbai,India,2025-08-26 22:45,2025-08-27 08:49,604,1 Stop,82076,159308,INR,To India
+AI4916,Air India,AI,AMD,Ahmedabad,India,SFO,San Francisco,USA,2025-04-30 23:15,2025-05-01 09:06,591,2+ Stops,90997,166749,INR,From India
+SQ1766,Singapore Airlines,SQ,COK,Kochi,India,YYZ,Toronto,Canada,2025-03-03 02:15,2025-03-03 06:33,258,1 Stop,94845,232748,INR,From India
+SQ9117,Singapore Airlines,SQ,CDG,Paris,France,MAA,Chennai,India,2025-01-30 21:15,2025-01-31 05:58,523,2+ Stops,83280,207400,INR,To India
+LH198,Lufthansa,LH,TRV,Thiruvananthapuram,India,SFO,San Francisco,USA,2025-01-27 20:15,2025-01-28 04:43,508,Direct,63822,124593,INR,From India
+6E8471,IndiGo,6E,GOI,Goa,India,DOH,Doha,Qatar,2025-06-11 12:30,2025-06-12 02:49,859,1 Stop,59161,132790,INR,From India
+EK3499,Emirates,EK,DOH,Doha,Qatar,HYD,Hyderabad,India,2025-07-15 13:30,2025-07-15 21:42,492,2+ Stops,46477,88557,INR,To India
+SQ9211,Singapore Airlines,SQ,AMD,Ahmedabad,India,FRA,Frankfurt,Germany,2025-10-27 04:30,2025-10-27 13:19,529,2+ Stops,46249,100135,INR,From India
+6E7294,IndiGo,6E,LHR,London,UK,CCU,Kolkata,India,2025-07-30 18:30,2025-07-30 22:06,216,1 Stop,55855,110355,INR,To India
+SQ7206,Singapore Airlines,SQ,YYZ,Toronto,Canada,MAA,Chennai,India,2025-07-28 23:45,2025-07-29 06:13,388,2+ Stops,46635,86096,INR,To India
+6E8262,IndiGo,6E,SFO,San Francisco,USA,DEL,New Delhi,India,2025-09-13 05:00,2025-09-13 17:34,754,Direct,116626,284632,INR,To India
+UK3403,Vistara,UK,MAA,Chennai,India,ICN,Seoul,South Korea,2025-03-17 22:15,2025-03-18 10:03,708,Direct,33220,72171,INR,From India
+QR2285,Qatar Airways,QR,DXB,Dubai,UAE,COK,Kochi,India,2025-08-16 21:45,2025-08-17 03:23,338,Direct,27427,69639,INR,To India
+EK3615,Emirates,EK,DOH,Doha,Qatar,AMD,Ahmedabad,India,2025-10-27 10:15,2025-10-27 18:31,496,Direct,53821,110845,INR,To India
+BA1633,British Airways,BA,LHR,London,UK,COK,Kochi,India,2025-07-15 04:30,2025-07-15 11:18,408,Direct,105829,236694,INR,To India
+UK2100,Vistara,UK,BLR,Bengaluru,India,SYD,Sydney,Australia,2025-08-10 10:45,2025-08-10 15:42,297,2+ Stops,25087,61784,INR,From India
+6E1623,IndiGo,6E,ICN,Seoul,South Korea,GOI,Goa,India,2025-05-30 15:30,2025-05-30 18:48,198,Direct,118352,287023,INR,To India
+6E5012,IndiGo,6E,HYD,Hyderabad,India,DOH,Doha,Qatar,2025-04-15 04:45,2025-04-15 12:22,457,Direct,49776,112644,INR,From India
+EK7466,Emirates,EK,SIN,Singapore,Singapore,DEL,New Delhi,India,2025-03-20 21:30,2025-03-21 01:21,231,1 Stop,42541,87911,INR,To India
+BA1667,British Airways,BA,SYD,Sydney,Australia,CCU,Kolkata,India,2025-04-03 03:30,2025-04-03 07:41,251,2+ Stops,114854,258115,INR,To India
+LH6866,Lufthansa,LH,CDG,Paris,France,BLR,Bengaluru,India,2025-08-26 01:00,2025-08-26 04:40,220,2+ Stops,87287,197564,INR,To India
+BA1575,British Airways,BA,CDG,Paris,France,COK,Kochi,India,2025-02-10 11:15,2025-02-10 20:23,548,1 Stop,42242,98432,INR,To India
+UK4531,Vistara,UK,DOH,Doha,Qatar,AMD,Ahmedabad,India,2025-05-15 03:00,2025-05-15 10:04,424,2+ Stops,35344,67947,INR,To India
+EK3339,Emirates,EK,NRT,Tokyo,Japan,CCU,Kolkata,India,2025-03-26 18:00,2025-03-27 05:38,698,1 Stop,53584,112179,INR,To India
+UK979,Vistara,UK,GOI,Goa,India,DXB,Dubai,UAE,2025-05-04 23:15,2025-05-05 03:52,277,1 Stop,21980,41423,INR,From India
+UK1895,Vistara,UK,JFK,New York,USA,MAA,Chennai,India,2025-03-21 08:00,2025-03-21 18:14,614,1 Stop,71546,164512,INR,To India
+EK1706,Emirates,EK,FRA,Frankfurt,Germany,BOM,Mumbai,India,2025-05-01 07:00,2025-05-01 14:11,431,Direct,29575,67411,INR,To India
+UK276,Vistara,UK,YYZ,Toronto,Canada,TRV,Thiruvananthapuram,India,2025-06-06 10:00,2025-06-06 20:52,652,1 Stop,97576,247518,INR,To India
+6E3438,IndiGo,6E,COK,Kochi,India,LHR,London,UK,2025-05-07 04:15,2025-05-07 09:49,334,Direct,65130,157363,INR,From India
+6E1231,IndiGo,6E,SYD,Sydney,Australia,CCU,Kolkata,India,2025-01-03 15:00,2025-01-04 02:29,689,2+ Stops,88885,215404,INR,To India
+AI9648,Air India,AI,FRA,Frankfurt,Germany,MAA,Chennai,India,2025-07-08 13:00,2025-07-09 03:06,846,Direct,114036,293880,INR,To India
+QR6421,Qatar Airways,QR,AMD,Ahmedabad,India,SFO,San Francisco,USA,2025-06-06 01:45,2025-06-06 16:21,876,2+ Stops,97382,188120,INR,From India
+6E9301,IndiGo,6E,TRV,Thiruvananthapuram,India,ICN,Seoul,South Korea,2025-02-05 08:15,2025-02-05 15:20,425,Direct,45954,104320,INR,From India
+AI5713,Air India,AI,TRV,Thiruvananthapuram,India,FRA,Frankfurt,Germany,2025-07-21 21:45,2025-07-22 11:26,821,1 Stop,109503,264901,INR,From India
+BA1912,British Airways,BA,BOM,Mumbai,India,DXB,Dubai,UAE,2025-08-08 09:00,2025-08-08 17:07,487,1 Stop,84101,192007,INR,From India
+QR6553,Qatar Airways,QR,COK,Kochi,India,CDG,Paris,France,2025-08-24 04:30,2025-08-24 16:48,738,1 Stop,48004,89598,INR,From India
+6E4060,IndiGo,6E,SIN,Singapore,Singapore,HYD,Hyderabad,India,2025-05-20 05:45,2025-05-20 15:42,597,Direct,106638,237860,INR,To India
+UK5859,Vistara,UK,BKK,Bangkok,Thailand,DEL,New Delhi,India,2025-07-20 08:30,2025-07-20 14:04,334,2+ Stops,67497,130534,INR,To India
+BA105,British Airways,BA,HYD,Hyderabad,India,NRT,Tokyo,Japan,2025-09-18 19:15,2025-09-19 01:01,346,Direct,71240,158277,INR,From India
+QR8519,Qatar Airways,QR,NRT,Tokyo,Japan,MAA,Chennai,India,2025-07-01 21:00,2025-07-02 09:25,745,2+ Stops,116281,289516,INR,To India
+QR6028,Qatar Airways,QR,BLR,Bengaluru,India,YYZ,Toronto,Canada,2025-08-03 02:30,2025-08-03 13:04,634,1 Stop,54910,140914,INR,From India
+AI2050,Air India,AI,GOI,Goa,India,YYZ,Toronto,Canada,2025-09-14 15:30,2025-09-15 06:18,888,2+ Stops,22358,41263,INR,From India
+UK4547,Vistara,UK,AMD,Ahmedabad,India,DOH,Doha,Qatar,2025-08-24 01:30,2025-08-24 12:44,674,Direct,37955,68533,INR,From India
+AI9017,Air India,AI,CDG,Paris,France,TRV,Thiruvananthapuram,India,2025-07-21 05:30,2025-07-21 19:12,822,Direct,119936,239079,INR,To India
+6E9523,IndiGo,6E,GOI,Goa,India,BKK,Bangkok,Thailand,2025-07-15 15:30,2025-07-16 06:17,887,1 Stop,56369,116084,INR,From India
+UK2896,Vistara,UK,SIN,Singapore,Singapore,GOI,Goa,India,2025-04-14 16:00,2025-04-14 21:46,346,2+ Stops,60370,144325,INR,To India
+QR7878,Qatar Airways,QR,DEL,New Delhi,India,CDG,Paris,France,2025-07-17 11:15,2025-07-17 18:53,458,Direct,60554,152171,INR,From India
+6E7842,IndiGo,6E,AMD,Ahmedabad,India,BKK,Bangkok,Thailand,2025-05-15 11:45,2025-05-15 20:12,507,1 Stop,70530,171713,INR,From India
+SQ8876,Singapore Airlines,SQ,CDG,Paris,France,MAA,Chennai,India,2025-09-15 13:15,2025-09-15 21:37,502,1 Stop,25760,49501,INR,To India
+LH2084,Lufthansa,LH,BOM,Mumbai,India,DOH,Doha,Qatar,2025-07-06 22:45,2025-07-07 10:47,722,1 Stop,57797,143401,INR,From India
+QR9087,Qatar Airways,QR,DEL,New Delhi,India,LHR,London,UK,2025-07-02 19:30,2025-07-03 03:01,451,Direct,51899,130199,INR,From India
+UK5699,Vistara,UK,BOM,Mumbai,India,DOH,Doha,Qatar,2025-04-02 23:00,2025-04-03 08:53,593,1 Stop,71707,177352,INR,From India
+BA4830,British Airways,BA,AMD,Ahmedabad,India,YYZ,Toronto,Canada,2025-06-30 05:15,2025-06-30 17:19,724,Direct,116424,258106,INR,From India
+6E7186,IndiGo,6E,FRA,Frankfurt,Germany,CCU,Kolkata,India,2025-08-01 02:00,2025-08-01 14:47,767,1 Stop,107531,213818,INR,To India
+QR2147,Qatar Airways,QR,SYD,Sydney,Australia,TRV,Thiruvananthapuram,India,2025-03-10 04:15,2025-03-10 18:42,867,1 Stop,118843,236612,INR,To India
+UK8440,Vistara,UK,DOH,Doha,Qatar,COK,Kochi,India,2025-07-17 19:30,2025-07-17 23:38,248,1 Stop,99082,226291,INR,To India
+6E1282,IndiGo,6E,DOH,Doha,Qatar,MAA,Chennai,India,2025-07-05 21:00,2025-07-06 06:08,548,Direct,23056,54401,INR,To India
+SQ9770,Singapore Airlines,SQ,MAA,Chennai,India,LHR,London,UK,2025-03-14 14:30,2025-03-15 02:05,695,2+ Stops,27746,71635,INR,From India
+SQ5523,Singapore Airlines,SQ,ICN,Seoul,South Korea,DEL,New Delhi,India,2025-02-27 15:15,2025-02-27 23:16,481,2+ Stops,102503,261281,INR,To India
+EK8368,Emirates,EK,ICN,Seoul,South Korea,MAA,Chennai,India,2025-05-26 18:00,2025-05-27 00:48,408,1 Stop,42680,77792,INR,To India
+QR9746,Qatar Airways,QR,CCU,Kolkata,India,JFK,New York,USA,2025-02-16 18:00,2025-02-17 03:49,589,1 Stop,71158,157235,INR,From India
+BA2291,British Airways,BA,YYZ,Toronto,Canada,DEL,New Delhi,India,2025-10-01 10:30,2025-10-01 14:43,253,1 Stop,104118,227216,INR,To India
+EK3281,Emirates,EK,TRV,Thiruvananthapuram,India,NRT,Tokyo,Japan,2025-06-25 19:15,2025-06-26 00:09,294,Direct,72805,140692,INR,From India
+EK4953,Emirates,EK,YYZ,Toronto,Canada,AMD,Ahmedabad,India,2025-04-12 08:15,2025-04-12 20:48,753,2+ Stops,119030,281027,INR,To India
+AI8910,Air India,AI,SYD,Sydney,Australia,TRV,Thiruvananthapuram,India,2025-02-03 11:15,2025-02-03 21:22,607,1 Stop,21705,53575,INR,To India
+BA5920,British Airways,BA,BLR,Bengaluru,India,CDG,Paris,France,2025-07-02 09:00,2025-07-02 12:45,225,1 Stop,116910,226821,INR,From India
+6E1455,IndiGo,6E,YYZ,Toronto,Canada,AMD,Ahmedabad,India,2025-06-26 03:15,2025-06-26 12:27,552,1 Stop,81769,178977,INR,To India
+6E4227,IndiGo,6E,AMD,Ahmedabad,India,SFO,San Francisco,USA,2025-09-29 18:30,2025-09-30 06:10,700,2+ Stops,70974,139636,INR,From India
+QR310,Qatar Airways,QR,SYD,Sydney,Australia,MAA,Chennai,India,2025-09-24 13:45,2025-09-24 19:29,344,Direct,77236,147293,INR,To India
+LH9485,Lufthansa,LH,ICN,Seoul,South Korea,TRV,Thiruvananthapuram,India,2025-01-16 00:00,2025-01-16 10:54,654,2+ Stops,25668,50390,INR,To India
+SQ5909,Singapore Airlines,SQ,SIN,Singapore,Singapore,CCU,Kolkata,India,2025-09-07 20:15,2025-09-07 23:22,187,1 Stop,51904,101916,INR,To India
+UK7302,Vistara,UK,CDG,Paris,France,BOM,Mumbai,India,2025-04-14 14:45,2025-04-15 03:30,765,Direct,96747,245387,INR,To India
+LH2039,Lufthansa,LH,SFO,San Francisco,USA,AMD,Ahmedabad,India,2025-05-04 22:45,2025-05-05 13:33,888,1 Stop,81828,186953,INR,To India
+EK727,Emirates,EK,BOM,Mumbai,India,SYD,Sydney,Australia,2025-04-29 00:45,2025-04-29 13:24,759,Direct,117678,289377,INR,From India
+AI3697,Air India,AI,YYZ,Toronto,Canada,MAA,Chennai,India,2025-01-21 14:00,2025-01-21 23:51,591,2+ Stops,51516,131516,INR,To India
+LH1800,Lufthansa,LH,FRA,Frankfurt,Germany,GOI,Goa,India,2025-05-16 01:15,2025-05-16 12:14,659,2+ Stops,22388,48874,INR,To India
+UK137,Vistara,UK,SFO,San Francisco,USA,BLR,Bengaluru,India,2025-09-21 10:00,2025-09-21 21:42,702,Direct,70019,177363,INR,To India
+6E4867,IndiGo,6E,FRA,Frankfurt,Germany,GOI,Goa,India,2025-09-16 17:00,2025-09-16 20:55,235,1 Stop,106697,238614,INR,To India
+EK3493,Emirates,EK,DEL,New Delhi,India,ICN,Seoul,South Korea,2025-01-14 05:45,2025-01-14 12:18,393,2+ Stops,36010,85217,INR,From India
+6E4014,IndiGo,6E,BOM,Mumbai,India,CDG,Paris,France,2025-10-08 16:30,2025-10-09 07:03,873,Direct,32324,60454,INR,From India
+QR5586,Qatar Airways,QR,DOH,Doha,Qatar,CCU,Kolkata,India,2025-06-09 09:15,2025-06-09 20:40,685,Direct,99485,224934,INR,To India
+AI6774,Air India,AI,JFK,New York,USA,BOM,Mumbai,India,2025-03-01 21:15,2025-03-02 09:07,712,2+ Stops,70511,152620,INR,To India
+AI4906,Air India,AI,LHR,London,UK,BOM,Mumbai,India,2025-01-17 21:15,2025-01-18 07:36,621,1 Stop,27184,52841,INR,To India
+QR2769,Qatar Airways,QR,BLR,Bengaluru,India,DOH,Doha,Qatar,2025-06-29 00:30,2025-06-29 10:01,571,2+ Stops,32414,62549,INR,From India
+BA3881,British Airways,BA,TRV,Thiruvananthapuram,India,YYZ,Toronto,Canada,2025-05-22 07:00,2025-05-22 17:02,602,2+ Stops,90495,164405,INR,From India
+EK5239,Emirates,EK,CCU,Kolkata,India,LHR,London,UK,2025-06-26 02:15,2025-06-26 07:02,287,1 Stop,24637,60615,INR,From India
+6E8921,IndiGo,6E,CCU,Kolkata,India,JFK,New York,USA,2025-08-24 05:15,2025-08-24 17:18,723,Direct,26999,62636,INR,From India
+6E2038,IndiGo,6E,GOI,Goa,India,SYD,Sydney,Australia,2025-04-20 06:30,2025-04-20 09:43,193,Direct,113624,228174,INR,From India
+UK1603,Vistara,UK,TRV,Thiruvananthapuram,India,FRA,Frankfurt,Germany,2025-05-27 12:15,2025-05-27 21:04,529,2+ Stops,53702,137932,INR,From India
+UK1147,Vistara,UK,CDG,Paris,France,HYD,Hyderabad,India,2025-02-06 19:00,2025-02-07 09:51,891,2+ Stops,71266,145605,INR,To India
+6E8460,IndiGo,6E,LHR,London,UK,GOI,Goa,India,2025-07-06 02:15,2025-07-06 14:45,750,2+ Stops,34793,82736,INR,To India
+6E7389,IndiGo,6E,AMD,Ahmedabad,India,SFO,San Francisco,USA,2025-05-12 09:45,2025-05-12 19:43,598,2+ Stops,111327,261798,INR,From India
+BA5846,British Airways,BA,SIN,Singapore,Singapore,AMD,Ahmedabad,India,2025-04-17 00:45,2025-04-17 07:36,411,2+ Stops,33969,84379,INR,To India
+AI5211,Air India,AI,HYD,Hyderabad,India,CDG,Paris,France,2025-04-09 02:00,2025-04-09 07:41,341,2+ Stops,106408,247858,INR,From India
+UK9432,Vistara,UK,BLR,Bengaluru,India,LHR,London,UK,2025-09-05 03:00,2025-09-05 12:32,572,2+ Stops,53284,123713,INR,From India
+QR2988,Qatar Airways,QR,JFK,New York,USA,DEL,New Delhi,India,2025-01-09 08:15,2025-01-09 17:18,543,Direct,67662,151139,INR,To India
+BA6338,British Airways,BA,HYD,Hyderabad,India,SIN,Singapore,Singapore,2025-03-28 16:00,2025-03-28 23:14,434,Direct,41734,84645,INR,From India
+LH6283,Lufthansa,LH,DXB,Dubai,UAE,MAA,Chennai,India,2025-07-08 07:45,2025-07-08 15:14,449,1 Stop,20988,38627,INR,To India
+SQ8163,Singapore Airlines,SQ,LHR,London,UK,HYD,Hyderabad,India,2025-08-14 15:00,2025-08-14 19:52,292,Direct,80286,180180,INR,To India
+SQ1212,Singapore Airlines,SQ,BOM,Mumbai,India,NRT,Tokyo,Japan,2025-03-31 07:45,2025-03-31 18:15,630,1 Stop,27957,52968,INR,From India
+EK3636,Emirates,EK,AMD,Ahmedabad,India,NRT,Tokyo,Japan,2025-06-24 17:00,2025-06-24 21:13,253,2+ Stops,86756,171596,INR,From India
+LH5281,Lufthansa,LH,BOM,Mumbai,India,LHR,London,UK,2025-09-27 01:15,2025-09-27 13:09,714,Direct,42367,93562,INR,From India
+QR1704,Qatar Airways,QR,NRT,Tokyo,Japan,BOM,Mumbai,India,2025-08-29 14:15,2025-08-29 18:31,256,Direct,79377,182947,INR,To India
+6E8532,IndiGo,6E,CCU,Kolkata,India,JFK,New York,USA,2025-09-02 15:30,2025-09-02 21:34,364,Direct,86785,156968,INR,From India
+EK5375,Emirates,EK,DEL,New Delhi,India,ICN,Seoul,South Korea,2025-09-14 21:15,2025-09-15 11:21,846,2+ Stops,67774,129856,INR,From India
+UK688,Vistara,UK,FRA,Frankfurt,Germany,CCU,Kolkata,India,2025-04-28 00:45,2025-04-28 05:08,263,1 Stop,78901,155716,INR,To India
+QR2806,Qatar Airways,QR,BLR,Bengaluru,India,DXB,Dubai,UAE,2025-06-11 18:15,2025-06-11 22:22,247,Direct,72689,132295,INR,From India
+6E3645,IndiGo,6E,AMD,Ahmedabad,India,DXB,Dubai,UAE,2025-09-03 11:45,2025-09-04 02:13,868,Direct,47822,109845,INR,From India
+SQ6867,Singapore Airlines,SQ,MAA,Chennai,India,DOH,Doha,Qatar,2025-05-20 07:30,2025-05-20 11:02,212,2+ Stops,73343,142432,INR,From India
+UK7883,Vistara,UK,SIN,Singapore,Singapore,TRV,Thiruvananthapuram,India,2025-05-04 00:15,2025-05-04 13:37,802,2+ Stops,53796,122941,INR,To India
+EK8655,Emirates,EK,BLR,Bengaluru,India,DOH,Doha,Qatar,2025-10-16 03:30,2025-10-16 13:36,606,Direct,39549,99991,INR,From India
+EK4248,Emirates,EK,DEL,New Delhi,India,SFO,San Francisco,USA,2025-08-06 05:00,2025-08-06 17:59,779,2+ Stops,79299,192856,INR,From India
+QR4845,Qatar Airways,QR,SYD,Sydney,Australia,BLR,Bengaluru,India,2025-07-29 03:00,2025-07-29 13:26,626,Direct,33645,86601,INR,To India
+LH8501,Lufthansa,LH,BLR,Bengaluru,India,SFO,San Francisco,USA,2025-02-08 16:45,2025-02-09 00:52,487,2+ Stops,106918,248341,INR,From India
+SQ1345,Singapore Airlines,SQ,DXB,Dubai,UAE,AMD,Ahmedabad,India,2025-09-30 18:30,2025-10-01 06:24,714,2+ Stops,93178,182083,INR,To India
+UK4317,Vistara,UK,TRV,Thiruvananthapuram,India,BKK,Bangkok,Thailand,2025-05-12 20:15,2025-05-13 06:16,601,2+ Stops,68007,174440,INR,From India
+SQ3053,Singapore Airlines,SQ,CDG,Paris,France,DEL,New Delhi,India,2025-04-20 21:30,2025-04-21 00:39,189,1 Stop,78313,170744,INR,To India
+6E3909,IndiGo,6E,MAA,Chennai,India,BKK,Bangkok,Thailand,2025-04-18 17:45,2025-04-19 03:35,590,1 Stop,37554,94638,INR,From India
+SQ1952,Singapore Airlines,SQ,COK,Kochi,India,FRA,Frankfurt,Germany,2025-07-07 04:15,2025-07-07 18:10,835,Direct,48173,120583,INR,From India
+LH5754,Lufthansa,LH,CDG,Paris,France,COK,Kochi,India,2025-02-10 15:45,2025-02-11 00:25,520,2+ Stops,95623,213654,INR,To India
+SQ4887,Singapore Airlines,SQ,CCU,Kolkata,India,SFO,San Francisco,USA,2025-01-11 21:15,2025-01-12 06:58,583,2+ Stops,68458,129639,INR,From India
+EK9746,Emirates,EK,SYD,Sydney,Australia,MAA,Chennai,India,2025-07-10 09:30,2025-07-10 15:17,347,Direct,28484,64969,INR,To India
+LH1505,Lufthansa,LH,CDG,Paris,France,DEL,New Delhi,India,2025-10-16 08:00,2025-10-16 12:11,251,2+ Stops,20622,50929,INR,To India
+EK1549,Emirates,EK,SFO,San Francisco,USA,DEL,New Delhi,India,2025-04-01 08:15,2025-04-01 11:34,199,Direct,23138,43762,INR,To India
+6E4335,IndiGo,6E,SIN,Singapore,Singapore,AMD,Ahmedabad,India,2025-09-26 11:30,2025-09-26 19:28,478,1 Stop,74707,179148,INR,To India
+UK4408,Vistara,UK,DOH,Doha,Qatar,BOM,Mumbai,India,2025-05-17 02:00,2025-05-17 15:39,819,Direct,26858,63312,INR,To India
+SQ4935,Singapore Airlines,SQ,CCU,Kolkata,India,ICN,Seoul,South Korea,2025-03-15 06:00,2025-03-15 11:37,337,2+ Stops,110784,236884,INR,From India
+6E7508,IndiGo,6E,DOH,Doha,Qatar,MAA,Chennai,India,2025-08-31 03:00,2025-08-31 16:00,780,1 Stop,39955,78033,INR,To India
+SQ3635,Singapore Airlines,SQ,JFK,New York,USA,TRV,Thiruvananthapuram,India,2025-10-18 13:15,2025-10-18 16:28,193,Direct,45260,115271,INR,To India
+QR485,Qatar Airways,QR,MAA,Chennai,India,YYZ,Toronto,Canada,2025-09-15 13:30,2025-09-15 17:28,238,Direct,24050,47691,INR,From India
+SQ2250,Singapore Airlines,SQ,MAA,Chennai,India,FRA,Frankfurt,Germany,2025-04-10 05:15,2025-04-10 13:33,498,Direct,106837,269106,INR,From India
+BA5269,British Airways,BA,NRT,Tokyo,Japan,MAA,Chennai,India,2025-06-09 12:30,2025-06-10 00:25,715,Direct,114527,234219,INR,To India
+EK2059,Emirates,EK,DEL,New Delhi,India,SIN,Singapore,Singapore,2025-03-20 05:15,2025-03-20 16:07,652,2+ Stops,23961,46919,INR,From India
+QR1192,Qatar Airways,QR,AMD,Ahmedabad,India,ICN,Seoul,South Korea,2025-02-09 03:00,2025-02-09 16:38,818,1 Stop,70728,152053,INR,From India
+SQ5255,Singapore Airlines,SQ,SIN,Singapore,Singapore,AMD,Ahmedabad,India,2025-08-04 22:30,2025-08-05 10:37,727,2+ Stops,78568,190433,INR,To India
+SQ9234,Singapore Airlines,SQ,YYZ,Toronto,Canada,BOM,Mumbai,India,2025-02-15 20:30,2025-02-16 01:46,316,Direct,24899,61912,INR,To India
+AI1504,Air India,AI,FRA,Frankfurt,Germany,AMD,Ahmedabad,India,2025-06-04 21:00,2025-06-05 11:16,856,Direct,64669,139030,INR,To India
+AI5277,Air India,AI,BOM,Mumbai,India,SYD,Sydney,Australia,2025-01-18 09:15,2025-01-18 21:17,722,Direct,33965,80161,INR,From India
+UK7605,Vistara,UK,BLR,Bengaluru,India,DXB,Dubai,UAE,2025-07-19 13:30,2025-07-19 22:41,551,2+ Stops,36157,90858,INR,From India
+LH6542,Lufthansa,LH,DOH,Doha,Qatar,BOM,Mumbai,India,2025-09-01 07:15,2025-09-01 20:33,798,2+ Stops,57841,139223,INR,To India
+EK7787,Emirates,EK,SYD,Sydney,Australia,BLR,Bengaluru,India,2025-09-10 03:30,2025-09-10 10:43,433,2+ Stops,23625,47347,INR,To India
+BA1023,British Airways,BA,SIN,Singapore,Singapore,TRV,Thiruvananthapuram,India,2025-03-31 23:30,2025-04-01 14:09,879,Direct,44579,103767,INR,To India
+AI5306,Air India,AI,SIN,Singapore,Singapore,TRV,Thiruvananthapuram,India,2025-05-12 19:00,2025-05-12 22:38,218,1 Stop,62868,124625,INR,To India
+BA6826,British Airways,BA,HYD,Hyderabad,India,SIN,Singapore,Singapore,2025-07-22 12:30,2025-07-22 17:22,292,2+ Stops,49772,90090,INR,From India
+UK7259,Vistara,UK,SYD,Sydney,Australia,DEL,New Delhi,India,2025-03-20 09:30,2025-03-20 21:06,696,1 Stop,105974,218383,INR,To India
+BA8989,British Airways,BA,ICN,Seoul,South Korea,MAA,Chennai,India,2025-01-30 11:15,2025-01-30 19:42,507,2+ Stops,38230,95029,INR,To India
+BA1744,British Airways,BA,NRT,Tokyo,Japan,GOI,Goa,India,2025-08-30 14:15,2025-08-30 23:03,528,Direct,67304,134572,INR,To India
+AI960,Air India,AI,DEL,New Delhi,India,YYZ,Toronto,Canada,2025-04-28 11:00,2025-04-29 00:29,809,Direct,28868,63460,INR,From India
+SQ5204,Singapore Airlines,SQ,COK,Kochi,India,DOH,Doha,Qatar,2025-07-14 09:45,2025-07-14 18:11,506,2+ Stops,65214,155665,INR,From India
+6E3514,IndiGo,6E,TRV,Thiruvananthapuram,India,JFK,New York,USA,2025-09-06 14:45,2025-09-06 17:57,192,1 Stop,107233,212500,INR,From India
+AI1612,Air India,AI,BOM,Mumbai,India,FRA,Frankfurt,Germany,2025-08-26 18:45,2025-08-26 22:09,204,Direct,114041,217224,INR,From India
+BA7201,British Airways,BA,GOI,Goa,India,YYZ,Toronto,Canada,2025-02-22 07:00,2025-02-22 13:44,404,Direct,68067,170609,INR,From India
+EK8149,Emirates,EK,BOM,Mumbai,India,BKK,Bangkok,Thailand,2025-06-18 09:30,2025-06-18 21:17,707,2+ Stops,115971,298972,INR,From India
+LH1948,Lufthansa,LH,CDG,Paris,France,BLR,Bengaluru,India,2025-10-16 05:15,2025-10-16 08:32,197,2+ Stops,105100,235540,INR,To India
+EK9274,Emirates,EK,DEL,New Delhi,India,LHR,London,UK,2025-09-17 00:15,2025-09-17 11:58,703,Direct,80608,205236,INR,From India
+SQ4622,Singapore Airlines,SQ,FRA,Frankfurt,Germany,BLR,Bengaluru,India,2025-01-17 13:15,2025-01-18 02:31,796,Direct,110121,221047,INR,To India
+SQ3983,Singapore Airlines,SQ,MAA,Chennai,India,ICN,Seoul,South Korea,2025-01-29 02:00,2025-01-29 10:48,528,2+ Stops,113965,220219,INR,From India
+UK1899,Vistara,UK,MAA,Chennai,India,ICN,Seoul,South Korea,2025-04-30 19:15,2025-05-01 01:41,386,2+ Stops,96744,229982,INR,From India
+EK1514,Emirates,EK,TRV,Thiruvananthapuram,India,SYD,Sydney,Australia,2025-05-21 13:00,2025-05-22 00:20,680,Direct,20227,43570,INR,From India
+SQ4116,Singapore Airlines,SQ,BLR,Bengaluru,India,SIN,Singapore,Singapore,2025-03-30 20:15,2025-03-31 08:31,736,Direct,64046,136200,INR,From India
+BA1492,British Airways,BA,BKK,Bangkok,Thailand,BLR,Bengaluru,India,2025-08-13 09:30,2025-08-13 15:15,345,Direct,103230,203859,INR,To India
+6E9800,IndiGo,6E,SIN,Singapore,Singapore,TRV,Thiruvananthapuram,India,2025-09-17 09:15,2025-09-17 19:22,607,1 Stop,82876,204864,INR,To India
+EK5863,Emirates,EK,HYD,Hyderabad,India,NRT,Tokyo,Japan,2025-08-31 18:15,2025-09-01 05:47,692,2+ Stops,42176,83775,INR,From India
+6E6521,IndiGo,6E,BOM,Mumbai,India,BKK,Bangkok,Thailand,2025-07-02 23:45,2025-07-03 08:28,523,2+ Stops,66136,156343,INR,From India
+AI6680,Air India,AI,CDG,Paris,France,AMD,Ahmedabad,India,2025-01-23 23:45,2025-01-24 08:47,542,1 Stop,86703,199760,INR,To India
+AI9766,Air India,AI,BLR,Bengaluru,India,ICN,Seoul,South Korea,2025-03-17 20:30,2025-03-18 11:04,874,2+ Stops,72269,175816,INR,From India
+UK2327,Vistara,UK,YYZ,Toronto,Canada,CCU,Kolkata,India,2025-10-10 17:45,2025-10-11 07:51,846,Direct,43909,89070,INR,To India
+SQ5426,Singapore Airlines,SQ,AMD,Ahmedabad,India,NRT,Tokyo,Japan,2025-05-22 11:00,2025-05-22 19:58,538,2+ Stops,91957,204657,INR,From India
+QR1200,Qatar Airways,QR,BOM,Mumbai,India,SIN,Singapore,Singapore,2025-07-19 19:30,2025-07-19 22:47,197,1 Stop,68560,167287,INR,From India
+QR1074,Qatar Airways,QR,SIN,Singapore,Singapore,HYD,Hyderabad,India,2025-09-12 05:45,2025-09-12 09:07,202,2+ Stops,29925,58488,INR,To India
+EK1854,Emirates,EK,DOH,Doha,Qatar,BLR,Bengaluru,India,2025-04-24 01:45,2025-04-24 09:15,450,Direct,35990,85898,INR,To India
+EK3040,Emirates,EK,BKK,Bangkok,Thailand,BLR,Bengaluru,India,2025-01-22 23:45,2025-01-23 09:20,575,2+ Stops,75341,141229,INR,To India
+6E2860,IndiGo,6E,LHR,London,UK,HYD,Hyderabad,India,2025-01-30 05:00,2025-01-30 08:39,219,Direct,22856,47134,INR,To India
+UK7218,Vistara,UK,BLR,Bengaluru,India,JFK,New York,USA,2025-04-13 19:30,2025-04-14 09:58,868,1 Stop,45956,95979,INR,From India
+SQ2812,Singapore Airlines,SQ,COK,Kochi,India,DOH,Doha,Qatar,2025-05-01 15:00,2025-05-02 05:29,869,Direct,112519,283565,INR,From India
+AI9532,Air India,AI,FRA,Frankfurt,Germany,CCU,Kolkata,India,2025-08-18 16:00,2025-08-19 02:30,630,Direct,91739,223176,INR,To India
+BA8238,British Airways,BA,AMD,Ahmedabad,India,LHR,London,UK,2025-07-23 16:15,2025-07-23 20:04,229,Direct,93507,206952,INR,From India
+AI3197,Air India,AI,BLR,Bengaluru,India,SYD,Sydney,Australia,2025-09-15 22:00,2025-09-16 07:10,550,2+ Stops,74277,175624,INR,From India
+SQ3556,Singapore Airlines,SQ,COK,Kochi,India,SIN,Singapore,Singapore,2025-10-25 19:15,2025-10-26 03:38,503,2+ Stops,69361,135440,INR,From India
+BA9046,British Airways,BA,SYD,Sydney,Australia,TRV,Thiruvananthapuram,India,2025-06-13 20:30,2025-06-14 09:55,805,1 Stop,64147,123596,INR,To India
+AI9709,Air India,AI,BOM,Mumbai,India,NRT,Tokyo,Japan,2025-03-19 13:00,2025-03-20 01:47,767,2+ Stops,74308,187684,INR,From India
+UK7338,Vistara,UK,DEL,New Delhi,India,JFK,New York,USA,2025-02-23 12:30,2025-02-23 17:26,296,2+ Stops,99448,248322,INR,From India
+SQ1165,Singapore Airlines,SQ,BOM,Mumbai,India,SYD,Sydney,Australia,2025-07-09 03:00,2025-07-09 14:25,685,2+ Stops,114608,233737,INR,From India
+BA4648,British Airways,BA,HYD,Hyderabad,India,YYZ,Toronto,Canada,2025-04-17 16:45,2025-04-18 05:30,765,1 Stop,110787,271072,INR,From India
+SQ8962,Singapore Airlines,SQ,COK,Kochi,India,FRA,Frankfurt,Germany,2025-03-03 01:15,2025-03-03 15:50,875,2+ Stops,58688,108151,INR,From India
+LH1440,Lufthansa,LH,FRA,Frankfurt,Germany,CCU,Kolkata,India,2025-05-09 08:00,2025-05-09 18:35,635,Direct,82640,150442,INR,To India
+SQ2338,Singapore Airlines,SQ,CDG,Paris,France,AMD,Ahmedabad,India,2025-02-12 23:30,2025-02-13 08:21,531,2+ Stops,99791,194417,INR,To India
+QR3767,Qatar Airways,QR,ICN,Seoul,South Korea,BLR,Bengaluru,India,2025-06-23 05:15,2025-06-23 12:03,408,1 Stop,82114,204139,INR,To India
+UK7367,Vistara,UK,DEL,New Delhi,India,DXB,Dubai,UAE,2025-06-05 02:45,2025-06-05 14:50,725,Direct,101872,253036,INR,From India
+BA8783,British Airways,BA,NRT,Tokyo,Japan,COK,Kochi,India,2025-02-01 23:45,2025-02-02 06:42,417,Direct,105535,229080,INR,To India
+6E7793,IndiGo,6E,BLR,Bengaluru,India,ICN,Seoul,South Korea,2025-10-12 10:45,2025-10-12 16:36,351,1 Stop,37969,95647,INR,From India
+6E6124,IndiGo,6E,TRV,Thiruvananthapuram,India,SIN,Singapore,Singapore,2025-10-12 15:30,2025-10-12 21:16,346,1 Stop,64932,162905,INR,From India
+QR7608,Qatar Airways,QR,NRT,Tokyo,Japan,BLR,Bengaluru,India,2025-06-20 12:15,2025-06-20 20:36,501,Direct,23757,48803,INR,To India
+BA2965,British Airways,BA,AMD,Ahmedabad,India,FRA,Frankfurt,Germany,2025-10-17 21:30,2025-10-18 08:42,672,1 Stop,103102,201897,INR,From India
+QR3534,Qatar Airways,QR,DXB,Dubai,UAE,TRV,Thiruvananthapuram,India,2025-06-01 22:15,2025-06-02 11:15,780,2+ Stops,28438,60754,INR,To India
+6E3264,IndiGo,6E,ICN,Seoul,South Korea,MAA,Chennai,India,2025-05-03 21:00,2025-05-04 11:40,880,2+ Stops,57577,146322,INR,To India
+LH6911,Lufthansa,LH,LHR,London,UK,HYD,Hyderabad,India,2025-02-15 08:30,2025-02-15 21:12,762,1 Stop,110850,200314,INR,To India
+EK8546,Emirates,EK,CDG,Paris,France,DEL,New Delhi,India,2025-04-03 07:00,2025-04-03 13:35,395,1 Stop,35941,72383,INR,To India
+AI8527,Air India,AI,COK,Kochi,India,SYD,Sydney,Australia,2025-02-05 19:45,2025-02-06 00:38,293,Direct,117812,296168,INR,From India
+AI2739,Air India,AI,CCU,Kolkata,India,FRA,Frankfurt,Germany,2025-01-15 01:45,2025-01-15 15:23,818,1 Stop,89644,208220,INR,From India
+BA1908,British Airways,BA,GOI,Goa,India,SFO,San Francisco,USA,2025-07-10 08:15,2025-07-10 14:01,346,2+ Stops,40731,78257,INR,From India
+6E1051,IndiGo,6E,DOH,Doha,Qatar,BLR,Bengaluru,India,2025-10-15 15:45,2025-10-16 02:39,654,Direct,91249,219000,INR,To India
+AI7134,Air India,AI,BLR,Bengaluru,India,DXB,Dubai,UAE,2025-05-05 11:15,2025-05-05 15:49,274,1 Stop,82580,187554,INR,From India
+AI3347,Air India,AI,DEL,New Delhi,India,DXB,Dubai,UAE,2025-08-21 16:15,2025-08-21 19:53,218,Direct,99172,251906,INR,From India
+BA8491,British Airways,BA,BOM,Mumbai,India,YYZ,Toronto,Canada,2025-02-16 10:00,2025-02-16 20:13,613,1 Stop,118894,243354,INR,From India
+QR9718,Qatar Airways,QR,SFO,San Francisco,USA,BLR,Bengaluru,India,2025-08-11 10:00,2025-08-11 21:45,705,Direct,76209,193776,INR,To India
+UK3233,Vistara,UK,BOM,Mumbai,India,SYD,Sydney,Australia,2025-01-31 09:00,2025-01-31 17:43,523,2+ Stops,26261,49422,INR,From India
+EK158,Emirates,EK,BLR,Bengaluru,India,DXB,Dubai,UAE,2025-08-11 08:45,2025-08-11 13:18,273,2+ Stops,51478,129831,INR,From India
+EK5509,Emirates,EK,JFK,New York,USA,COK,Kochi,India,2025-07-29 02:30,2025-07-29 11:43,553,Direct,63905,127716,INR,To India
+LH4411,Lufthansa,LH,BKK,Bangkok,Thailand,COK,Kochi,India,2025-02-06 04:00,2025-02-06 08:12,252,2+ Stops,27451,61336,INR,To India
+SQ7438,Singapore Airlines,SQ,ICN,Seoul,South Korea,COK,Kochi,India,2025-05-11 06:00,2025-05-11 20:25,865,1 Stop,84960,191174,INR,To India
+UK512,Vistara,UK,NRT,Tokyo,Japan,TRV,Thiruvananthapuram,India,2025-03-15 02:45,2025-03-15 13:12,627,2+ Stops,36653,85327,INR,To India
+AI4495,Air India,AI,SYD,Sydney,Australia,TRV,Thiruvananthapuram,India,2025-02-09 03:30,2025-02-09 10:35,425,1 Stop,27046,53464,INR,To India
+QR9011,Qatar Airways,QR,BKK,Bangkok,Thailand,CCU,Kolkata,India,2025-03-25 14:45,2025-03-25 20:48,363,2+ Stops,20471,39009,INR,To India
+UK3720,Vistara,UK,MAA,Chennai,India,FRA,Frankfurt,Germany,2025-05-15 22:00,2025-05-16 02:57,297,Direct,69884,130932,INR,From India
+6E9370,IndiGo,6E,SIN,Singapore,Singapore,DEL,New Delhi,India,2025-06-07 18:30,2025-06-08 07:02,752,2+ Stops,97100,209113,INR,To India
+EK9260,Emirates,EK,ICN,Seoul,South Korea,HYD,Hyderabad,India,2025-09-06 23:30,2025-09-07 04:39,309,2+ Stops,68981,143741,INR,To India
+UK814,Vistara,UK,DOH,Doha,Qatar,TRV,Thiruvananthapuram,India,2025-09-16 00:45,2025-09-16 11:05,620,2+ Stops,107052,243889,INR,To India
+SQ8469,Singapore Airlines,SQ,HYD,Hyderabad,India,JFK,New York,USA,2025-07-12 16:45,2025-07-12 23:59,434,2+ Stops,112323,285354,INR,From India
+QR3588,Qatar Airways,QR,GOI,Goa,India,DOH,Doha,Qatar,2025-07-26 22:00,2025-07-27 05:22,442,2+ Stops,83252,171211,INR,From India
+QR3930,Qatar Airways,QR,CCU,Kolkata,India,SYD,Sydney,Australia,2025-08-22 11:00,2025-08-22 20:09,549,1 Stop,116123,269791,INR,From India
+AI7267,Air India,AI,CCU,Kolkata,India,SYD,Sydney,Australia,2025-05-21 17:00,2025-05-22 01:49,529,2+ Stops,67266,143122,INR,From India
+BA4521,British Airways,BA,MAA,Chennai,India,SIN,Singapore,Singapore,2025-08-31 03:15,2025-08-31 14:34,679,1 Stop,33381,69946,INR,From India
+LH3104,Lufthansa,LH,SIN,Singapore,Singapore,BLR,Bengaluru,India,2025-08-14 09:45,2025-08-14 15:24,339,2+ Stops,61162,117622,INR,To India
+AI3250,Air India,AI,DOH,Doha,Qatar,CCU,Kolkata,India,2025-05-07 10:00,2025-05-07 15:57,357,Direct,27064,57965,INR,To India
+6E6521,IndiGo,6E,GOI,Goa,India,JFK,New York,USA,2025-05-21 14:45,2025-05-22 03:54,789,1 Stop,53459,138428,INR,From India
+AI3187,Air India,AI,YYZ,Toronto,Canada,COK,Kochi,India,2025-07-11 03:30,2025-07-11 12:10,520,Direct,36612,85806,INR,To India
+EK9515,Emirates,EK,FRA,Frankfurt,Germany,TRV,Thiruvananthapuram,India,2025-06-01 03:15,2025-06-01 10:21,426,1 Stop,50584,110122,INR,To India
+BA3586,British Airways,BA,CDG,Paris,France,DEL,New Delhi,India,2025-09-23 20:00,2025-09-24 07:42,702,1 Stop,80321,152439,INR,To India
+AI7020,Air India,AI,COK,Kochi,India,SIN,Singapore,Singapore,2025-04-28 03:30,2025-04-28 13:19,589,Direct,51506,119653,INR,From India
+LH7950,Lufthansa,LH,TRV,Thiruvananthapuram,India,DXB,Dubai,UAE,2025-01-21 16:30,2025-01-22 00:05,455,1 Stop,81523,197361,INR,From India
+LH6444,Lufthansa,LH,FRA,Frankfurt,Germany,DEL,New Delhi,India,2025-08-26 07:15,2025-08-26 20:28,793,Direct,81539,182539,INR,To India
+SQ1631,Singapore Airlines,SQ,YYZ,Toronto,Canada,HYD,Hyderabad,India,2025-02-17 09:45,2025-02-17 16:22,397,Direct,110853,199725,INR,To India
+LH6136,Lufthansa,LH,LHR,London,UK,CCU,Kolkata,India,2025-07-31 16:45,2025-08-01 00:41,476,2+ Stops,112009,232785,INR,To India
+SQ6449,Singapore Airlines,SQ,ICN,Seoul,South Korea,BOM,Mumbai,India,2025-03-01 11:30,2025-03-01 23:44,734,1 Stop,47461,93801,INR,To India
+QR8816,Qatar Airways,QR,TRV,Thiruvananthapuram,India,CDG,Paris,France,2025-05-27 02:30,2025-05-27 07:27,297,2+ Stops,67977,158060,INR,From India
+6E160,IndiGo,6E,BLR,Bengaluru,India,SIN,Singapore,Singapore,2025-06-24 05:45,2025-06-24 09:08,203,Direct,67297,133100,INR,From India
+BA6243,British Airways,BA,NRT,Tokyo,Japan,GOI,Goa,India,2025-07-28 08:15,2025-07-28 14:11,356,2+ Stops,112339,243304,INR,To India
+EK7838,Emirates,EK,BKK,Bangkok,Thailand,DEL,New Delhi,India,2025-06-15 21:45,2025-06-16 12:16,871,Direct,25528,56100,INR,To India
+UK8448,Vistara,UK,FRA,Frankfurt,Germany,BOM,Mumbai,India,2025-04-07 08:15,2025-04-07 23:13,898,1 Stop,100353,242485,INR,To India
+UK3395,Vistara,UK,GOI,Goa,India,ICN,Seoul,South Korea,2025-09-06 23:00,2025-09-07 04:17,317,2+ Stops,55878,114378,INR,From India
+BA2789,British Airways,BA,SYD,Sydney,Australia,AMD,Ahmedabad,India,2025-10-19 04:30,2025-10-19 15:55,685,Direct,78782,176461,INR,To India
+AI8631,Air India,AI,CDG,Paris,France,BOM,Mumbai,India,2025-09-21 23:15,2025-09-22 06:48,453,Direct,29202,56703,INR,To India
+SQ3426,Singapore Airlines,SQ,DXB,Dubai,UAE,TRV,Thiruvananthapuram,India,2025-02-15 22:45,2025-02-16 10:50,725,1 Stop,51281,127686,INR,To India
+UK2079,Vistara,UK,TRV,Thiruvananthapuram,India,LHR,London,UK,2025-06-23 11:00,2025-06-23 15:13,253,Direct,22944,52755,INR,From India
+QR4702,Qatar Airways,QR,FRA,Frankfurt,Germany,HYD,Hyderabad,India,2025-06-04 23:00,2025-06-05 05:29,389,2+ Stops,77696,177327,INR,To India
+QR9941,Qatar Airways,QR,SYD,Sydney,Australia,DEL,New Delhi,India,2025-04-28 09:00,2025-04-28 23:17,857,Direct,92373,202039,INR,To India
+LH8463,Lufthansa,LH,GOI,Goa,India,NRT,Tokyo,Japan,2025-08-23 06:15,2025-08-23 14:02,467,Direct,55487,132940,INR,From India
+AI5800,Air India,AI,BKK,Bangkok,Thailand,HYD,Hyderabad,India,2025-04-26 03:15,2025-04-26 13:45,630,2+ Stops,68262,148073,INR,To India
+BA6752,British Airways,BA,DEL,New Delhi,India,CDG,Paris,France,2025-07-26 06:15,2025-07-26 15:10,535,Direct,85043,202891,INR,From India
+SQ9456,Singapore Airlines,SQ,SFO,San Francisco,USA,COK,Kochi,India,2025-09-18 06:15,2025-09-18 20:24,849,Direct,114696,229275,INR,To India
+6E5272,IndiGo,6E,HYD,Hyderabad,India,SIN,Singapore,Singapore,2025-09-05 09:45,2025-09-05 22:52,787,1 Stop,95844,237059,INR,From India
+UK1666,Vistara,UK,DOH,Doha,Qatar,HYD,Hyderabad,India,2025-10-11 17:15,2025-10-12 08:12,897,2+ Stops,42272,85966,INR,To India
+LH2542,Lufthansa,LH,AMD,Ahmedabad,India,BKK,Bangkok,Thailand,2025-04-08 03:15,2025-04-08 13:16,601,1 Stop,42584,94010,INR,From India
+QR9707,Qatar Airways,QR,BKK,Bangkok,Thailand,COK,Kochi,India,2025-03-19 03:15,2025-03-19 16:06,771,2+ Stops,44897,86606,INR,To India
+SQ9438,Singapore Airlines,SQ,FRA,Frankfurt,Germany,AMD,Ahmedabad,India,2025-02-21 00:15,2025-02-21 10:49,634,Direct,25021,62843,INR,To India
+QR7963,Qatar Airways,QR,MAA,Chennai,India,YYZ,Toronto,Canada,2025-04-28 18:15,2025-04-29 08:18,843,Direct,65450,137269,INR,From India
+QR927,Qatar Airways,QR,SFO,San Francisco,USA,HYD,Hyderabad,India,2025-10-10 23:00,2025-10-11 03:01,241,Direct,95044,237260,INR,To India
+QR5017,Qatar Airways,QR,JFK,New York,USA,MAA,Chennai,India,2025-05-11 02:30,2025-05-11 13:51,681,1 Stop,43906,87824,INR,To India
+LH7509,Lufthansa,LH,DXB,Dubai,UAE,CCU,Kolkata,India,2025-03-01 07:00,2025-03-01 11:57,297,2+ Stops,63160,151568,INR,To India
+EK8840,Emirates,EK,DEL,New Delhi,India,DXB,Dubai,UAE,2025-06-30 01:30,2025-06-30 11:07,577,1 Stop,73968,171687,INR,From India
+6E8797,IndiGo,6E,BKK,Bangkok,Thailand,HYD,Hyderabad,India,2025-09-21 23:45,2025-09-22 14:18,873,1 Stop,77289,175283,INR,To India
+LH9517,Lufthansa,LH,BLR,Bengaluru,India,BKK,Bangkok,Thailand,2025-04-20 21:00,2025-04-21 09:33,753,Direct,48273,104708,INR,From India
+BA2685,British Airways,BA,FRA,Frankfurt,Germany,BOM,Mumbai,India,2025-08-10 00:00,2025-08-10 07:25,445,Direct,102187,223850,INR,To India
+LH458,Lufthansa,LH,BLR,Bengaluru,India,DOH,Doha,Qatar,2025-04-16 04:45,2025-04-16 18:57,852,1 Stop,20336,47306,INR,From India
+EK805,Emirates,EK,CCU,Kolkata,India,ICN,Seoul,South Korea,2025-06-23 02:15,2025-06-23 06:04,229,1 Stop,107863,200969,INR,From India
+UK6140,Vistara,UK,GOI,Goa,India,SYD,Sydney,Australia,2025-03-02 02:00,2025-03-02 10:06,486,2+ Stops,23297,56457,INR,From India
+LH6376,Lufthansa,LH,BKK,Bangkok,Thailand,TRV,Thiruvananthapuram,India,2025-03-05 03:45,2025-03-05 11:52,487,Direct,83846,215802,INR,To India
+EK4667,Emirates,EK,MAA,Chennai,India,BKK,Bangkok,Thailand,2025-06-15 15:45,2025-06-16 01:27,582,Direct,88037,211663,INR,From India
+EK9984,Emirates,EK,DOH,Doha,Qatar,AMD,Ahmedabad,India,2025-03-21 14:45,2025-03-22 04:09,804,2+ Stops,56198,117404,INR,To India
+QR7380,Qatar Airways,QR,SFO,San Francisco,USA,COK,Kochi,India,2025-05-03 03:00,2025-05-03 13:06,606,2+ Stops,30712,56113,INR,To India
+6E416,IndiGo,6E,TRV,Thiruvananthapuram,India,NRT,Tokyo,Japan,2025-02-23 03:45,2025-02-23 11:53,488,1 Stop,86338,204853,INR,From India
+SQ1435,Singapore Airlines,SQ,BLR,Bengaluru,India,YYZ,Toronto,Canada,2025-02-16 00:00,2025-02-16 05:34,334,Direct,86029,170162,INR,From India
+6E5224,IndiGo,6E,ICN,Seoul,South Korea,TRV,Thiruvananthapuram,India,2025-03-13 09:45,2025-03-13 20:16,631,Direct,53014,120277,INR,To India
+LH9473,Lufthansa,LH,FRA,Frankfurt,Germany,GOI,Goa,India,2025-06-07 19:00,2025-06-07 23:54,294,2+ Stops,33164,71047,INR,To India
+QR7577,Qatar Airways,QR,SYD,Sydney,Australia,TRV,Thiruvananthapuram,India,2025-09-13 09:15,2025-09-13 22:03,768,2+ Stops,77290,140444,INR,To India
+QR6141,Qatar Airways,QR,HYD,Hyderabad,India,ICN,Seoul,South Korea,2025-09-19 02:00,2025-09-19 13:48,708,Direct,84979,176104,INR,From India
+QR9902,Qatar Airways,QR,GOI,Goa,India,ICN,Seoul,South Korea,2025-06-08 11:15,2025-06-08 21:17,602,Direct,87248,176157,INR,From India
+EK2974,Emirates,EK,AMD,Ahmedabad,India,DOH,Doha,Qatar,2025-03-12 17:15,2025-03-13 05:46,751,1 Stop,21995,40990,INR,From India
+LH3121,Lufthansa,LH,TRV,Thiruvananthapuram,India,DXB,Dubai,UAE,2025-08-26 05:00,2025-08-26 13:07,487,1 Stop,106594,260180,INR,From India
+LH9303,Lufthansa,LH,DEL,New Delhi,India,DXB,Dubai,UAE,2025-07-21 21:45,2025-07-22 04:05,380,2+ Stops,69099,161225,INR,From India
+LH5631,Lufthansa,LH,COK,Kochi,India,FRA,Frankfurt,Germany,2025-09-22 12:15,2025-09-22 21:54,579,2+ Stops,38463,98922,INR,From India
+EK7623,Emirates,EK,DEL,New Delhi,India,JFK,New York,USA,2025-02-09 22:15,2025-02-10 07:23,548,1 Stop,55083,138461,INR,From India
+BA9405,British Airways,BA,HYD,Hyderabad,India,CDG,Paris,France,2025-04-06 17:15,2025-04-06 23:09,354,2+ Stops,31611,60836,INR,From India
+6E5491,IndiGo,6E,SIN,Singapore,Singapore,AMD,Ahmedabad,India,2025-09-27 04:15,2025-09-27 16:39,744,1 Stop,49313,127395,INR,To India
+EK7318,Emirates,EK,BOM,Mumbai,India,DOH,Doha,Qatar,2025-07-23 00:45,2025-07-23 07:30,405,2+ Stops,69794,151667,INR,From India
+EK6973,Emirates,EK,DEL,New Delhi,India,JFK,New York,USA,2025-07-27 08:15,2025-07-27 11:39,204,2+ Stops,97797,183822,INR,From India
+QR2141,Qatar Airways,QR,NRT,Tokyo,Japan,MAA,Chennai,India,2025-04-21 01:30,2025-04-21 14:17,767,2+ Stops,24175,60663,INR,To India
+SQ5764,Singapore Airlines,SQ,YYZ,Toronto,Canada,TRV,Thiruvananthapuram,India,2025-10-10 04:45,2025-10-10 10:23,338,1 Stop,90751,196954,INR,To India
+BA8307,British Airways,BA,JFK,New York,USA,MAA,Chennai,India,2025-08-12 06:30,2025-08-12 19:10,760,1 Stop,109507,225682,INR,To India
+QR7665,Qatar Airways,QR,SIN,Singapore,Singapore,DEL,New Delhi,India,2025-05-15 21:30,2025-05-16 07:50,620,1 Stop,88660,191182,INR,To India
+UK5577,Vistara,UK,BOM,Mumbai,India,SYD,Sydney,Australia,2025-03-01 07:15,2025-03-01 13:49,394,Direct,37791,74345,INR,From India
+AI605,Air India,AI,AMD,Ahmedabad,India,NRT,Tokyo,Japan,2025-03-31 01:15,2025-03-31 11:51,636,Direct,29962,55543,INR,From India
+6E5660,IndiGo,6E,COK,Kochi,India,ICN,Seoul,South Korea,2025-08-01 07:15,2025-08-01 11:06,231,1 Stop,96845,206154,INR,From India
+AI7164,Air India,AI,COK,Kochi,India,BKK,Bangkok,Thailand,2025-09-17 00:30,2025-09-17 04:08,218,Direct,99536,241903,INR,From India
+AI6221,Air India,AI,LHR,London,UK,CCU,Kolkata,India,2025-02-19 01:45,2025-02-19 13:06,681,Direct,111450,244569,INR,To India
+AI8286,Air India,AI,TRV,Thiruvananthapuram,India,SIN,Singapore,Singapore,2025-07-17 20:30,2025-07-18 06:29,599,2+ Stops,101357,260182,INR,From India
+6E8367,IndiGo,6E,BOM,Mumbai,India,NRT,Tokyo,Japan,2025-07-28 21:00,2025-07-29 08:29,689,2+ Stops,115879,248652,INR,From India
+SQ145,Singapore Airlines,SQ,SYD,Sydney,Australia,BOM,Mumbai,India,2025-06-06 01:45,2025-06-06 16:05,860,1 Stop,98148,198381,INR,To India
+SQ960,Singapore Airlines,SQ,CDG,Paris,France,CCU,Kolkata,India,2025-07-14 03:30,2025-07-14 17:13,823,1 Stop,119777,273411,INR,To India
+LH9607,Lufthansa,LH,GOI,Goa,India,DXB,Dubai,UAE,2025-10-18 21:00,2025-10-19 07:20,620,Direct,80289,201220,INR,From India
+AI1077,Air India,AI,HYD,Hyderabad,India,FRA,Frankfurt,Germany,2025-05-30 21:00,2025-05-31 02:31,331,Direct,61993,146784,INR,From India
+QR8763,Qatar Airways,QR,YYZ,Toronto,Canada,BLR,Bengaluru,India,2025-05-03 23:45,2025-05-04 06:36,411,2+ Stops,117732,278296,INR,To India
+UK2615,Vistara,UK,TRV,Thiruvananthapuram,India,CDG,Paris,France,2025-02-22 07:45,2025-02-22 19:33,708,1 Stop,70553,180714,INR,From India
+QR2773,Qatar Airways,QR,YYZ,Toronto,Canada,GOI,Goa,India,2025-07-10 00:30,2025-07-10 11:54,684,Direct,26870,68494,INR,To India
+6E5074,IndiGo,6E,GOI,Goa,India,FRA,Frankfurt,Germany,2025-06-18 10:00,2025-06-18 15:39,339,2+ Stops,69773,133059,INR,From India
+SQ2620,Singapore Airlines,SQ,JFK,New York,USA,TRV,Thiruvananthapuram,India,2025-09-18 04:45,2025-09-18 09:48,303,1 Stop,48412,121506,INR,To India
+QR5470,Qatar Airways,QR,LHR,London,UK,DEL,New Delhi,India,2025-02-20 05:45,2025-02-20 19:33,828,Direct,88375,217933,INR,To India
+LH3105,Lufthansa,LH,SYD,Sydney,Australia,CCU,Kolkata,India,2025-03-17 21:45,2025-03-18 05:27,462,Direct,52983,121006,INR,To India
+AI4717,Air India,AI,BLR,Bengaluru,India,DXB,Dubai,UAE,2025-03-05 06:30,2025-03-05 09:36,186,2+ Stops,60152,123818,INR,From India
+SQ1302,Singapore Airlines,SQ,GOI,Goa,India,SFO,San Francisco,USA,2025-02-25 02:30,2025-02-25 12:21,591,Direct,43574,84075,INR,From India
+UK609,Vistara,UK,JFK,New York,USA,COK,Kochi,India,2025-05-08 14:00,2025-05-08 23:59,599,1 Stop,102034,220359,INR,To India
+LH1197,Lufthansa,LH,MAA,Chennai,India,DXB,Dubai,UAE,2025-06-28 14:30,2025-06-29 05:26,896,1 Stop,36674,91733,INR,From India
+6E7974,IndiGo,6E,HYD,Hyderabad,India,DOH,Doha,Qatar,2025-04-21 13:30,2025-04-22 00:05,635,1 Stop,57016,111186,INR,From India
+6E6572,IndiGo,6E,TRV,Thiruvananthapuram,India,JFK,New York,USA,2025-08-20 02:45,2025-08-20 13:02,617,Direct,53607,117699,INR,From India
+UK5719,Vistara,UK,SYD,Sydney,Australia,GOI,Goa,India,2025-09-20 13:15,2025-09-20 16:21,186,1 Stop,83070,208022,INR,To India
+6E4814,IndiGo,6E,FRA,Frankfurt,Germany,GOI,Goa,India,2025-07-21 21:15,2025-07-22 05:30,495,1 Stop,73763,163161,INR,To India
+SQ6872,Singapore Airlines,SQ,AMD,Ahmedabad,India,DOH,Doha,Qatar,2025-03-14 05:30,2025-03-14 19:25,835,2+ Stops,85572,213758,INR,From India
+SQ3320,Singapore Airlines,SQ,ICN,Seoul,South Korea,HYD,Hyderabad,India,2025-07-12 06:45,2025-07-12 10:05,200,2+ Stops,81400,211352,INR,To India
+EK7544,Emirates,EK,FRA,Frankfurt,Germany,BOM,Mumbai,India,2025-06-09 12:15,2025-06-09 22:19,604,2+ Stops,68705,155355,INR,To India
+6E7427,IndiGo,6E,CCU,Kolkata,India,BKK,Bangkok,Thailand,2025-04-27 02:30,2025-04-27 14:21,711,1 Stop,35055,79454,INR,From India
+UK8186,Vistara,UK,TRV,Thiruvananthapuram,India,BKK,Bangkok,Thailand,2025-05-04 20:45,2025-05-05 05:22,517,2+ Stops,52772,111265,INR,From India
+EK3630,Emirates,EK,DEL,New Delhi,India,NRT,Tokyo,Japan,2025-01-29 05:00,2025-01-29 13:54,534,Direct,59062,143283,INR,From India
+LH1613,Lufthansa,LH,HYD,Hyderabad,India,NRT,Tokyo,Japan,2025-10-01 02:00,2025-10-01 06:07,247,1 Stop,42650,99546,INR,From India
+QR3776,Qatar Airways,QR,SYD,Sydney,Australia,GOI,Goa,India,2025-07-06 02:15,2025-07-06 14:41,746,Direct,62559,145353,INR,To India
+BA7402,British Airways,BA,NRT,Tokyo,Japan,BOM,Mumbai,India,2025-01-19 23:45,2025-01-20 13:25,820,Direct,115272,233234,INR,To India
+UK6534,Vistara,UK,BLR,Bengaluru,India,NRT,Tokyo,Japan,2025-03-24 14:30,2025-03-24 19:47,317,2+ Stops,98097,232669,INR,From India
+BA6389,British Airways,BA,DOH,Doha,Qatar,MAA,Chennai,India,2025-05-22 17:15,2025-05-23 07:09,834,Direct,33128,74336,INR,To India
+SQ3711,Singapore Airlines,SQ,DEL,New Delhi,India,LHR,London,UK,2025-08-10 20:30,2025-08-11 04:38,488,1 Stop,85424,169638,INR,From India
+SQ587,Singapore Airlines,SQ,ICN,Seoul,South Korea,CCU,Kolkata,India,2025-10-22 11:45,2025-10-22 16:09,264,2+ Stops,21305,48154,INR,To India
+EK3673,Emirates,EK,CCU,Kolkata,India,NRT,Tokyo,Japan,2025-08-12 20:15,2025-08-13 07:36,681,1 Stop,24796,53947,INR,From India
+QR3475,Qatar Airways,QR,DEL,New Delhi,India,SYD,Sydney,Australia,2025-05-31 21:15,2025-06-01 11:06,831,1 Stop,119361,257173,INR,From India
+EK3264,Emirates,EK,TRV,Thiruvananthapuram,India,SFO,San Francisco,USA,2025-06-10 12:30,2025-06-10 15:52,202,2+ Stops,32573,66365,INR,From India
+QR8537,Qatar Airways,QR,BKK,Bangkok,Thailand,BLR,Bengaluru,India,2025-03-02 11:15,2025-03-02 15:53,278,1 Stop,59766,119614,INR,To India
+BA3351,British Airways,BA,AMD,Ahmedabad,India,DOH,Doha,Qatar,2025-05-12 21:00,2025-05-13 03:47,407,1 Stop,63267,125492,INR,From India
+QR6116,Qatar Airways,QR,CCU,Kolkata,India,LHR,London,UK,2025-05-26 00:30,2025-05-26 05:50,320,1 Stop,47801,100011,INR,From India
+LH8575,Lufthansa,LH,SFO,San Francisco,USA,GOI,Goa,India,2025-05-10 02:45,2025-05-10 14:15,690,2+ Stops,59980,125530,INR,To India
+QR4101,Qatar Airways,QR,BKK,Bangkok,Thailand,CCU,Kolkata,India,2025-10-16 05:45,2025-10-16 17:15,690,1 Stop,63198,159875,INR,To India
+EK8196,Emirates,EK,DXB,Dubai,UAE,MAA,Chennai,India,2025-01-19 06:15,2025-01-19 11:28,313,1 Stop,90202,211485,INR,To India
+AI3174,Air India,AI,CCU,Kolkata,India,FRA,Frankfurt,Germany,2025-04-10 21:15,2025-04-11 07:30,615,Direct,87855,227194,INR,From India
+QR2958,Qatar Airways,QR,DEL,New Delhi,India,JFK,New York,USA,2025-06-29 03:45,2025-06-29 09:17,332,2+ Stops,87256,193934,INR,From India
+UK7804,Vistara,UK,CDG,Paris,France,GOI,Goa,India,2025-07-13 04:30,2025-07-13 11:12,402,Direct,96370,232437,INR,To India
+LH9042,Lufthansa,LH,CCU,Kolkata,India,YYZ,Toronto,Canada,2025-04-18 11:00,2025-04-18 22:23,683,2+ Stops,84007,164673,INR,From India
+EK5300,Emirates,EK,YYZ,Toronto,Canada,AMD,Ahmedabad,India,2025-02-22 10:15,2025-02-22 14:59,284,1 Stop,44962,109115,INR,To India
+AI5714,Air India,AI,JFK,New York,USA,COK,Kochi,India,2025-06-03 20:45,2025-06-04 07:38,653,1 Stop,81810,164940,INR,To India
+UK1140,Vistara,UK,NRT,Tokyo,Japan,MAA,Chennai,India,2025-02-11 06:30,2025-02-11 21:03,873,2+ Stops,96232,205942,INR,To India
+AI4247,Air India,AI,SYD,Sydney,Australia,GOI,Goa,India,2025-03-07 00:45,2025-03-07 11:14,629,1 Stop,97989,228170,INR,To India
+QR3538,Qatar Airways,QR,CDG,Paris,France,COK,Kochi,India,2025-09-29 01:30,2025-09-29 06:49,319,Direct,80464,208872,INR,To India
+QR1034,Qatar Airways,QR,FRA,Frankfurt,Germany,DEL,New Delhi,India,2025-03-10 15:45,2025-03-11 00:55,550,2+ Stops,20429,43877,INR,To India
+AI8492,Air India,AI,CDG,Paris,France,AMD,Ahmedabad,India,2025-07-28 22:15,2025-07-29 09:39,684,1 Stop,84388,163709,INR,To India
+QR6062,Qatar Airways,QR,BKK,Bangkok,Thailand,GOI,Goa,India,2025-05-18 02:15,2025-05-18 07:13,298,2+ Stops,80263,204023,INR,To India
+UK5231,Vistara,UK,ICN,Seoul,South Korea,GOI,Goa,India,2025-09-24 06:15,2025-09-24 09:31,196,Direct,32095,66205,INR,To India
+UK3556,Vistara,UK,BKK,Bangkok,Thailand,DEL,New Delhi,India,2025-01-19 02:45,2025-01-19 14:00,675,1 Stop,106025,250006,INR,To India
+SQ5574,Singapore Airlines,SQ,MAA,Chennai,India,SFO,San Francisco,USA,2025-08-30 05:00,2025-08-30 13:52,532,Direct,92821,228285,INR,From India
+6E4506,IndiGo,6E,JFK,New York,USA,AMD,Ahmedabad,India,2025-06-22 20:15,2025-06-23 10:55,880,2+ Stops,104971,192944,INR,To India
+LH1196,Lufthansa,LH,CDG,Paris,France,AMD,Ahmedabad,India,2025-10-22 01:15,2025-10-22 09:52,517,1 Stop,75818,174580,INR,To India
+BA1580,British Airways,BA,ICN,Seoul,South Korea,GOI,Goa,India,2025-09-23 12:15,2025-09-23 22:32,617,1 Stop,54240,113749,INR,To India
+6E704,IndiGo,6E,SYD,Sydney,Australia,CCU,Kolkata,India,2025-07-23 15:45,2025-07-23 21:44,359,Direct,97569,184984,INR,To India
+QR4049,Qatar Airways,QR,LHR,London,UK,BLR,Bengaluru,India,2025-08-28 21:30,2025-08-29 01:29,239,1 Stop,50827,125500,INR,To India
+LH7624,Lufthansa,LH,AMD,Ahmedabad,India,NRT,Tokyo,Japan,2025-03-02 07:15,2025-03-02 16:29,554,Direct,34990,72765,INR,From India
+EK2235,Emirates,EK,SYD,Sydney,Australia,COK,Kochi,India,2025-02-06 23:45,2025-02-07 14:06,861,Direct,96017,209200,INR,To India
+EK3661,Emirates,EK,BKK,Bangkok,Thailand,COK,Kochi,India,2025-09-16 22:00,2025-09-17 11:01,781,2+ Stops,50007,107595,INR,To India
+UK4202,Vistara,UK,BOM,Mumbai,India,NRT,Tokyo,Japan,2025-09-24 10:00,2025-09-24 18:35,515,1 Stop,99437,180492,INR,From India
+AI5115,Air India,AI,SIN,Singapore,Singapore,GOI,Goa,India,2025-08-19 03:30,2025-08-19 16:03,753,2+ Stops,46906,90852,INR,To India
+QR4392,Qatar Airways,QR,DOH,Doha,Qatar,GOI,Goa,India,2025-10-28 21:30,2025-10-29 08:07,637,2+ Stops,115127,221598,INR,To India
+UK6573,Vistara,UK,MAA,Chennai,India,CDG,Paris,France,2025-04-10 14:15,2025-04-10 20:53,398,1 Stop,115050,237669,INR,From India
+UK8707,Vistara,UK,AMD,Ahmedabad,India,BKK,Bangkok,Thailand,2025-07-07 01:45,2025-07-07 15:45,840,1 Stop,52852,102588,INR,From India
+UK2350,Vistara,UK,DOH,Doha,Qatar,COK,Kochi,India,2025-03-08 11:45,2025-03-08 23:30,705,Direct,89030,202792,INR,To India
+AI4963,Air India,AI,GOI,Goa,India,DOH,Doha,Qatar,2025-08-11 05:00,2025-08-11 12:26,446,2+ Stops,31983,62983,INR,From India
+EK9370,Emirates,EK,CCU,Kolkata,India,CDG,Paris,France,2025-05-31 08:30,2025-05-31 23:03,873,2+ Stops,111345,270659,INR,From India
+AI9696,Air India,AI,LHR,London,UK,TRV,Thiruvananthapuram,India,2025-03-27 18:30,2025-03-28 06:30,720,1 Stop,30241,74321,INR,To India
+BA5939,British Airways,BA,NRT,Tokyo,Japan,MAA,Chennai,India,2025-08-22 01:30,2025-08-22 08:52,442,2+ Stops,35371,74919,INR,To India
+EK810,Emirates,EK,BOM,Mumbai,India,SYD,Sydney,Australia,2025-06-16 09:30,2025-06-16 17:09,459,Direct,99964,186872,INR,From India
+UK8556,Vistara,UK,CCU,Kolkata,India,CDG,Paris,France,2025-08-13 10:30,2025-08-13 17:43,433,2+ Stops,101967,196968,INR,From India
+6E7904,IndiGo,6E,BLR,Bengaluru,India,CDG,Paris,France,2025-10-12 05:00,2025-10-12 12:07,427,Direct,68207,150808,INR,From India
+UK2444,Vistara,UK,TRV,Thiruvananthapuram,India,NRT,Tokyo,Japan,2025-01-23 11:00,2025-01-23 14:18,198,Direct,105228,216179,INR,From India
+QR6793,Qatar Airways,QR,SFO,San Francisco,USA,BLR,Bengaluru,India,2025-06-01 22:00,2025-06-02 09:38,698,2+ Stops,109970,211838,INR,To India
+QR3055,Qatar Airways,QR,FRA,Frankfurt,Germany,GOI,Goa,India,2025-06-14 05:15,2025-06-14 15:54,639,Direct,41588,89674,INR,To India
+BA7585,British Airways,BA,COK,Kochi,India,SFO,San Francisco,USA,2025-10-11 07:45,2025-10-11 17:03,558,2+ Stops,31513,70066,INR,From India
+6E6776,IndiGo,6E,ICN,Seoul,South Korea,GOI,Goa,India,2025-10-19 08:00,2025-10-19 13:35,335,Direct,63033,129698,INR,To India
+LH2147,Lufthansa,LH,SFO,San Francisco,USA,BOM,Mumbai,India,2025-05-15 10:00,2025-05-15 15:28,328,1 Stop,118077,284478,INR,To India
+UK8509,Vistara,UK,CCU,Kolkata,India,FRA,Frankfurt,Germany,2025-08-23 14:00,2025-08-23 22:47,527,Direct,59857,123122,INR,From India
+LH1252,Lufthansa,LH,DEL,New Delhi,India,SIN,Singapore,Singapore,2025-07-03 17:30,2025-07-04 04:10,640,1 Stop,55881,106753,INR,From India
+LH9230,Lufthansa,LH,FRA,Frankfurt,Germany,MAA,Chennai,India,2025-01-22 01:30,2025-01-22 13:57,747,2+ Stops,90715,176392,INR,To India
+6E119,IndiGo,6E,DXB,Dubai,UAE,BLR,Bengaluru,India,2025-03-14 21:45,2025-03-15 11:41,836,Direct,101681,248647,INR,To India
+EK9539,Emirates,EK,LHR,London,UK,MAA,Chennai,India,2025-03-21 12:15,2025-03-21 17:55,340,1 Stop,89137,221632,INR,To India
+EK2169,Emirates,EK,HYD,Hyderabad,India,LHR,London,UK,2025-06-12 09:45,2025-06-12 13:20,215,2+ Stops,67690,145461,INR,From India
+BA5632,British Airways,BA,BLR,Bengaluru,India,CDG,Paris,France,2025-01-05 22:45,2025-01-06 11:10,745,1 Stop,92124,176790,INR,From India
+AI6657,Air India,AI,CCU,Kolkata,India,CDG,Paris,France,2025-09-11 01:00,2025-09-11 12:00,660,1 Stop,30006,56134,INR,From India
+SQ8937,Singapore Airlines,SQ,FRA,Frankfurt,Germany,HYD,Hyderabad,India,2025-02-11 14:45,2025-02-12 03:38,773,1 Stop,60423,134395,INR,To India
+6E3517,IndiGo,6E,MAA,Chennai,India,BKK,Bangkok,Thailand,2025-08-01 03:30,2025-08-01 08:39,309,Direct,91074,194718,INR,From India
+BA6957,British Airways,BA,DXB,Dubai,UAE,MAA,Chennai,India,2025-01-13 12:30,2025-01-13 20:23,473,1 Stop,27405,49662,INR,To India
+QR4785,Qatar Airways,QR,TRV,Thiruvananthapuram,India,SYD,Sydney,Australia,2025-10-22 22:15,2025-10-23 09:17,662,1 Stop,79548,172706,INR,From India
+BA6149,British Airways,BA,NRT,Tokyo,Japan,BOM,Mumbai,India,2025-04-07 20:00,2025-04-08 07:20,680,2+ Stops,43034,85413,INR,To India
+BA5494,British Airways,BA,LHR,London,UK,CCU,Kolkata,India,2025-06-29 12:00,2025-06-29 20:46,526,1 Stop,63288,159919,INR,To India
+AI6215,Air India,AI,YYZ,Toronto,Canada,BLR,Bengaluru,India,2025-02-03 14:30,2025-02-03 21:15,405,Direct,85781,161534,INR,To India
+BA9285,British Airways,BA,GOI,Goa,India,DOH,Doha,Qatar,2025-05-11 17:00,2025-05-11 21:16,256,2+ Stops,89904,180799,INR,From India
+LH4938,Lufthansa,LH,BOM,Mumbai,India,CDG,Paris,France,2025-10-23 08:00,2025-10-23 16:54,534,1 Stop,74576,135699,INR,From India
+AI1271,Air India,AI,LHR,London,UK,CCU,Kolkata,India,2025-05-03 17:45,2025-05-03 22:22,277,2+ Stops,97896,248272,INR,To India
+UK8824,Vistara,UK,CCU,Kolkata,India,JFK,New York,USA,2025-02-10 23:45,2025-02-11 10:25,640,1 Stop,50947,131231,INR,From India
+QR9518,Qatar Airways,QR,AMD,Ahmedabad,India,FRA,Frankfurt,Germany,2025-07-30 19:15,2025-07-30 23:41,266,Direct,23225,51886,INR,From India
+UK1613,Vistara,UK,SIN,Singapore,Singapore,AMD,Ahmedabad,India,2025-07-30 13:30,2025-07-30 23:49,619,2+ Stops,45236,81530,INR,To India
+SQ5342,Singapore Airlines,SQ,DOH,Doha,Qatar,BLR,Bengaluru,India,2025-04-01 22:00,2025-04-02 01:27,207,Direct,98499,243981,INR,To India
+EK3860,Emirates,EK,DOH,Doha,Qatar,COK,Kochi,India,2025-05-05 18:00,2025-05-06 04:41,641,Direct,47439,120761,INR,To India
+SQ2759,Singapore Airlines,SQ,JFK,New York,USA,MAA,Chennai,India,2025-10-28 03:30,2025-10-28 13:55,625,1 Stop,61400,159389,INR,To India
+LH9293,Lufthansa,LH,BLR,Bengaluru,India,SIN,Singapore,Singapore,2025-08-19 05:00,2025-08-19 19:35,875,1 Stop,102205,191878,INR,From India
+EK7843,Emirates,EK,SYD,Sydney,Australia,BOM,Mumbai,India,2025-07-10 04:00,2025-07-10 17:26,806,1 Stop,108620,261404,INR,To India
+LH9929,Lufthansa,LH,BLR,Bengaluru,India,CDG,Paris,France,2025-09-13 05:45,2025-09-13 13:39,474,2+ Stops,92066,172733,INR,From India
+EK8203,Emirates,EK,SIN,Singapore,Singapore,CCU,Kolkata,India,2025-05-03 07:45,2025-05-03 22:31,886,1 Stop,71315,157096,INR,To India
+BA7674,British Airways,BA,DXB,Dubai,UAE,MAA,Chennai,India,2025-06-20 02:00,2025-06-20 10:13,493,2+ Stops,35445,77312,INR,To India
+6E2170,IndiGo,6E,DEL,New Delhi,India,BKK,Bangkok,Thailand,2025-10-25 01:45,2025-10-25 07:57,372,Direct,23543,60914,INR,From India
+EK165,Emirates,EK,COK,Kochi,India,SIN,Singapore,Singapore,2025-07-04 20:15,2025-07-05 08:29,734,Direct,54472,106846,INR,From India
+AI6999,Air India,AI,GOI,Goa,India,LHR,London,UK,2025-06-04 00:00,2025-06-04 03:25,205,2+ Stops,71190,183612,INR,From India
+SQ7708,Singapore Airlines,SQ,CCU,Kolkata,India,LHR,London,UK,2025-03-15 18:00,2025-03-15 23:41,341,1 Stop,108216,256621,INR,From India
+AI1289,Air India,AI,GOI,Goa,India,NRT,Tokyo,Japan,2025-05-29 10:30,2025-05-29 13:48,198,1 Stop,28861,69748,INR,From India
+6E8805,IndiGo,6E,BKK,Bangkok,Thailand,GOI,Goa,India,2025-09-04 02:00,2025-09-04 09:35,455,2+ Stops,21752,45930,INR,To India
+6E9405,IndiGo,6E,DXB,Dubai,UAE,COK,Kochi,India,2025-06-17 19:00,2025-06-18 09:44,884,2+ Stops,88031,187682,INR,To India
+AI5695,Air India,AI,YYZ,Toronto,Canada,GOI,Goa,India,2025-02-13 05:15,2025-02-13 12:06,411,1 Stop,42836,88228,INR,To India
+UK3417,Vistara,UK,BKK,Bangkok,Thailand,CCU,Kolkata,India,2025-09-15 15:15,2025-09-16 06:13,898,1 Stop,59851,132635,INR,To India
+SQ3862,Singapore Airlines,SQ,MAA,Chennai,India,SYD,Sydney,Australia,2025-04-30 09:00,2025-04-30 17:46,526,1 Stop,116626,246108,INR,From India
+6E1534,IndiGo,6E,BOM,Mumbai,India,JFK,New York,USA,2025-02-25 09:00,2025-02-25 20:17,677,2+ Stops,26387,65733,INR,From India
+UK2534,Vistara,UK,LHR,London,UK,MAA,Chennai,India,2025-09-29 07:45,2025-09-29 17:29,584,2+ Stops,51337,103453,INR,To India
+SQ3826,Singapore Airlines,SQ,AMD,Ahmedabad,India,SFO,San Francisco,USA,2025-05-17 16:45,2025-05-17 20:45,240,1 Stop,59616,117703,INR,From India
+BA2246,British Airways,BA,TRV,Thiruvananthapuram,India,FRA,Frankfurt,Germany,2025-01-02 23:15,2025-01-03 03:30,255,Direct,34663,89917,INR,From India
+AI4359,Air India,AI,SFO,San Francisco,USA,AMD,Ahmedabad,India,2025-10-06 08:30,2025-10-06 18:01,571,2+ Stops,46897,102560,INR,To India
+LH5156,Lufthansa,LH,SFO,San Francisco,USA,CCU,Kolkata,India,2025-05-16 11:30,2025-05-16 20:01,511,2+ Stops,39259,71267,INR,To India
+EK8032,Emirates,EK,DEL,New Delhi,India,FRA,Frankfurt,Germany,2025-02-12 15:45,2025-02-13 05:57,852,Direct,46912,115690,INR,From India
+6E9968,IndiGo,6E,NRT,Tokyo,Japan,GOI,Goa,India,2025-01-04 10:15,2025-01-04 23:48,813,2+ Stops,90938,212687,INR,To India
+AI5773,Air India,AI,GOI,Goa,India,JFK,New York,USA,2025-04-12 18:30,2025-04-12 22:47,257,Direct,35141,68084,INR,From India
+QR3928,Qatar Airways,QR,BKK,Bangkok,Thailand,TRV,Thiruvananthapuram,India,2025-04-13 08:45,2025-04-13 21:32,767,1 Stop,35201,82324,INR,To India
+LH2427,Lufthansa,LH,COK,Kochi,India,JFK,New York,USA,2025-09-30 05:15,2025-09-30 10:34,319,2+ Stops,56430,108348,INR,From India
+UK5838,Vistara,UK,ICN,Seoul,South Korea,AMD,Ahmedabad,India,2025-04-17 07:15,2025-04-17 12:45,330,2+ Stops,71212,132568,INR,To India
+6E9949,IndiGo,6E,BOM,Mumbai,India,DXB,Dubai,UAE,2025-09-30 00:00,2025-09-30 14:30,870,Direct,32314,73018,INR,From India
+LH8951,Lufthansa,LH,DXB,Dubai,UAE,CCU,Kolkata,India,2025-09-30 10:30,2025-09-30 20:15,585,2+ Stops,94087,201209,INR,To India
+AI3888,Air India,AI,SYD,Sydney,Australia,GOI,Goa,India,2025-06-04 06:15,2025-06-04 12:03,348,1 Stop,94514,200239,INR,To India
+6E7261,IndiGo,6E,MAA,Chennai,India,SYD,Sydney,Australia,2025-09-09 13:45,2025-09-09 21:19,454,2+ Stops,115005,234759,INR,From India
+AI2783,Air India,AI,AMD,Ahmedabad,India,SYD,Sydney,Australia,2025-08-18 15:30,2025-08-19 03:02,692,2+ Stops,23392,54335,INR,From India
+SQ5803,Singapore Airlines,SQ,HYD,Hyderabad,India,JFK,New York,USA,2025-09-06 02:00,2025-09-06 07:55,355,1 Stop,77585,167209,INR,From India
+LH6107,Lufthansa,LH,GOI,Goa,India,SIN,Singapore,Singapore,2025-03-11 14:00,2025-03-12 03:41,821,1 Stop,93322,174403,INR,From India
+BA185,British Airways,BA,YYZ,Toronto,Canada,CCU,Kolkata,India,2025-06-15 23:45,2025-06-16 11:10,685,Direct,99287,241938,INR,To India
+EK9530,Emirates,EK,SIN,Singapore,Singapore,MAA,Chennai,India,2025-07-25 10:45,2025-07-25 15:58,313,2+ Stops,93954,202130,INR,To India
+EK9350,Emirates,EK,CDG,Paris,France,TRV,Thiruvananthapuram,India,2025-06-22 22:00,2025-06-23 03:26,326,Direct,90038,234086,INR,To India
+SQ3910,Singapore Airlines,SQ,CCU,Kolkata,India,BKK,Bangkok,Thailand,2025-05-27 12:30,2025-05-27 18:56,386,Direct,56123,124211,INR,From India
+SQ8382,Singapore Airlines,SQ,HYD,Hyderabad,India,SFO,San Francisco,USA,2025-10-09 03:15,2025-10-09 14:15,660,2+ Stops,29850,77384,INR,From India
+6E7930,IndiGo,6E,BOM,Mumbai,India,JFK,New York,USA,2025-07-03 15:15,2025-07-04 02:17,662,1 Stop,30282,76101,INR,From India
+UK2571,Vistara,UK,BLR,Bengaluru,India,NRT,Tokyo,Japan,2025-01-27 05:15,2025-01-27 18:02,767,Direct,85188,212162,INR,From India
+AI4757,Air India,AI,HYD,Hyderabad,India,NRT,Tokyo,Japan,2025-02-26 12:30,2025-02-26 19:30,420,Direct,86711,214921,INR,From India
+QR7640,Qatar Airways,QR,TRV,Thiruvananthapuram,India,LHR,London,UK,2025-03-27 07:15,2025-03-27 20:45,810,Direct,87131,220583,INR,From India
+EK7699,Emirates,EK,DEL,New Delhi,India,SFO,San Francisco,USA,2025-10-04 11:30,2025-10-04 19:22,472,Direct,26758,67909,INR,From India
+SQ3648,Singapore Airlines,SQ,DOH,Doha,Qatar,COK,Kochi,India,2025-03-22 08:00,2025-03-22 13:21,321,1 Stop,52332,115388,INR,To India
+SQ6703,Singapore Airlines,SQ,SIN,Singapore,Singapore,BOM,Mumbai,India,2025-06-16 16:45,2025-06-16 22:50,365,Direct,44384,85331,INR,To India
+6E5400,IndiGo,6E,BOM,Mumbai,India,JFK,New York,USA,2025-08-06 05:15,2025-08-06 10:02,287,Direct,49827,99068,INR,From India
+BA1705,British Airways,BA,ICN,Seoul,South Korea,COK,Kochi,India,2025-02-21 22:00,2025-02-22 09:48,708,1 Stop,36388,81200,INR,To India
+BA4415,British Airways,BA,CCU,Kolkata,India,JFK,New York,USA,2025-02-15 03:45,2025-02-15 08:33,288,2+ Stops,64227,118300,INR,From India
+6E2224,IndiGo,6E,SIN,Singapore,Singapore,CCU,Kolkata,India,2025-09-01 07:45,2025-09-01 12:46,301,Direct,48096,94879,INR,To India
+AI1924,Air India,AI,YYZ,Toronto,Canada,TRV,Thiruvananthapuram,India,2025-01-07 02:15,2025-01-07 09:43,448,Direct,95208,191498,INR,To India
+AI8574,Air India,AI,MAA,Chennai,India,ICN,Seoul,South Korea,2025-04-04 19:15,2025-04-05 08:43,808,Direct,75224,181802,INR,From India
+UK6304,Vistara,UK,DXB,Dubai,UAE,BOM,Mumbai,India,2025-01-27 02:00,2025-01-27 09:55,475,2+ Stops,52882,126162,INR,To India
+AI6137,Air India,AI,CCU,Kolkata,India,NRT,Tokyo,Japan,2025-10-26 07:00,2025-10-26 19:39,759,2+ Stops,79155,196649,INR,From India
+LH305,Lufthansa,LH,AMD,Ahmedabad,India,CDG,Paris,France,2025-08-06 05:00,2025-08-06 17:56,776,2+ Stops,62115,140762,INR,From India
+QR1974,Qatar Airways,QR,ICN,Seoul,South Korea,DEL,New Delhi,India,2025-06-11 17:45,2025-06-12 04:43,658,1 Stop,102543,192181,INR,To India
+EK5032,Emirates,EK,LHR,London,UK,GOI,Goa,India,2025-07-18 15:15,2025-07-19 00:19,544,2+ Stops,63184,126552,INR,To India
+6E4983,IndiGo,6E,MAA,Chennai,India,DOH,Doha,Qatar,2025-01-14 00:30,2025-01-14 09:15,525,Direct,100877,217202,INR,From India
+6E615,IndiGo,6E,CCU,Kolkata,India,DXB,Dubai,UAE,2025-08-25 18:00,2025-08-25 22:59,299,1 Stop,48456,107228,INR,From India
+LH8090,Lufthansa,LH,AMD,Ahmedabad,India,ICN,Seoul,South Korea,2025-08-30 00:30,2025-08-30 08:18,468,1 Stop,24150,52439,INR,From India
+EK4192,Emirates,EK,SIN,Singapore,Singapore,CCU,Kolkata,India,2025-02-15 19:00,2025-02-16 06:41,701,Direct,91740,200043,INR,To India
+BA686,British Airways,BA,LHR,London,UK,COK,Kochi,India,2025-07-16 19:00,2025-07-17 09:08,848,1 Stop,101329,222957,INR,To India
+UK2795,Vistara,UK,GOI,Goa,India,LHR,London,UK,2025-01-24 11:00,2025-01-25 01:34,874,Direct,31681,70837,INR,From India
+LH222,Lufthansa,LH,NRT,Tokyo,Japan,HYD,Hyderabad,India,2025-06-25 21:15,2025-06-26 03:21,366,Direct,96062,227058,INR,To India
+SQ2545,Singapore Airlines,SQ,YYZ,Toronto,Canada,GOI,Goa,India,2025-02-24 19:30,2025-02-25 01:36,366,1 Stop,118712,245206,INR,To India
+6E5362,IndiGo,6E,SFO,San Francisco,USA,MAA,Chennai,India,2025-02-09 18:45,2025-02-10 03:53,548,2+ Stops,84489,218877,INR,To India
+UK3737,Vistara,UK,SYD,Sydney,Australia,GOI,Goa,India,2025-09-11 17:30,2025-09-12 00:51,441,1 Stop,106805,217810,INR,To India
+EK1192,Emirates,EK,COK,Kochi,India,DOH,Doha,Qatar,2025-03-25 05:30,2025-03-25 16:45,675,1 Stop,67631,157336,INR,From India
+QR5354,Qatar Airways,QR,DEL,New Delhi,India,DOH,Doha,Qatar,2025-02-25 02:00,2025-02-25 13:17,677,Direct,39524,98636,INR,From India
+EK5177,Emirates,EK,AMD,Ahmedabad,India,YYZ,Toronto,Canada,2025-09-26 18:15,2025-09-26 22:30,255,1 Stop,111160,241967,INR,From India
+SQ5859,Singapore Airlines,SQ,ICN,Seoul,South Korea,TRV,Thiruvananthapuram,India,2025-09-11 04:45,2025-09-11 17:10,745,1 Stop,105981,192655,INR,To India
+6E1965,IndiGo,6E,ICN,Seoul,South Korea,HYD,Hyderabad,India,2025-07-10 05:45,2025-07-10 12:52,427,2+ Stops,57090,122797,INR,To India
+QR6024,Qatar Airways,QR,SYD,Sydney,Australia,TRV,Thiruvananthapuram,India,2025-06-01 17:15,2025-06-02 00:35,440,2+ Stops,21502,45768,INR,To India
+QR2496,Qatar Airways,QR,FRA,Frankfurt,Germany,TRV,Thiruvananthapuram,India,2025-09-09 13:45,2025-09-09 17:56,251,2+ Stops,26939,56202,INR,To India
+QR5666,Qatar Airways,QR,FRA,Frankfurt,Germany,AMD,Ahmedabad,India,2025-04-26 21:00,2025-04-27 05:49,529,1 Stop,22966,58562,INR,To India
+BA4625,British Airways,BA,JFK,New York,USA,BOM,Mumbai,India,2025-05-30 02:00,2025-05-30 12:54,654,Direct,119933,239163,INR,To India
+EK6078,Emirates,EK,FRA,Frankfurt,Germany,BOM,Mumbai,India,2025-07-20 13:30,2025-07-21 02:53,803,2+ Stops,68459,152083,INR,To India
+6E331,IndiGo,6E,MAA,Chennai,India,LHR,London,UK,2025-09-11 02:15,2025-09-11 11:27,552,Direct,85586,186422,INR,From India
+UK7750,Vistara,UK,SIN,Singapore,Singapore,DEL,New Delhi,India,2025-03-09 11:15,2025-03-09 20:17,542,2+ Stops,113939,222216,INR,To India
+BA1068,British Airways,BA,JFK,New York,USA,CCU,Kolkata,India,2025-09-05 23:15,2025-09-06 07:12,477,Direct,83098,215648,INR,To India
+6E8831,IndiGo,6E,SIN,Singapore,Singapore,AMD,Ahmedabad,India,2025-10-25 05:30,2025-10-25 15:07,577,Direct,67889,168631,INR,To India
+QR8401,Qatar Airways,QR,GOI,Goa,India,NRT,Tokyo,Japan,2025-09-28 22:45,2025-09-29 04:09,324,Direct,46980,90062,INR,From India
+AI4365,Air India,AI,COK,Kochi,India,LHR,London,UK,2025-07-29 04:00,2025-07-29 18:05,845,2+ Stops,92076,176495,INR,From India
+SQ4699,Singapore Airlines,SQ,BOM,Mumbai,India,YYZ,Toronto,Canada,2025-08-12 22:45,2025-08-13 07:19,514,Direct,72740,177574,INR,From India
+BA6069,British Airways,BA,YYZ,Toronto,Canada,BLR,Bengaluru,India,2025-04-11 23:30,2025-04-12 03:10,220,Direct,65475,153295,INR,To India
+BA5510,British Airways,BA,COK,Kochi,India,DXB,Dubai,UAE,2025-10-03 17:00,2025-10-04 00:47,467,1 Stop,107771,236394,INR,From India
+BA5823,British Airways,BA,CDG,Paris,France,AMD,Ahmedabad,India,2025-08-09 13:00,2025-08-09 21:02,482,Direct,34710,75854,INR,To India
+EK9576,Emirates,EK,DXB,Dubai,UAE,CCU,Kolkata,India,2025-05-07 05:45,2025-05-07 11:12,327,1 Stop,111834,262329,INR,To India
+SQ6218,Singapore Airlines,SQ,FRA,Frankfurt,Germany,BOM,Mumbai,India,2025-08-09 19:45,2025-08-10 00:18,273,Direct,67779,147791,INR,To India
+6E2206,IndiGo,6E,BKK,Bangkok,Thailand,BOM,Mumbai,India,2025-07-12 09:30,2025-07-12 21:15,705,Direct,53073,96416,INR,To India
+UK4507,Vistara,UK,NRT,Tokyo,Japan,CCU,Kolkata,India,2025-08-11 00:15,2025-08-11 06:31,376,2+ Stops,69120,172732,INR,To India
+LH7122,Lufthansa,LH,COK,Kochi,India,SFO,San Francisco,USA,2025-10-26 04:45,2025-10-26 12:26,461,2+ Stops,46527,88285,INR,From India
+QR5435,Qatar Airways,QR,TRV,Thiruvananthapuram,India,FRA,Frankfurt,Germany,2025-01-23 02:15,2025-01-23 16:18,843,Direct,40437,90737,INR,From India
+EK2366,Emirates,EK,NRT,Tokyo,Japan,BLR,Bengaluru,India,2025-07-13 05:30,2025-07-13 11:48,378,Direct,26366,52355,INR,To India
+BA711,British Airways,BA,NRT,Tokyo,Japan,GOI,Goa,India,2025-02-28 16:45,2025-03-01 01:12,507,1 Stop,71270,168405,INR,To India
+BA9981,British Airways,BA,SYD,Sydney,Australia,COK,Kochi,India,2025-01-24 09:15,2025-01-24 23:28,853,Direct,119882,252080,INR,To India
+UK3747,Vistara,UK,LHR,London,UK,GOI,Goa,India,2025-03-26 18:00,2025-03-27 03:38,578,2+ Stops,22862,56389,INR,To India
+LH788,Lufthansa,LH,FRA,Frankfurt,Germany,GOI,Goa,India,2025-09-26 05:00,2025-09-26 14:59,599,Direct,84069,209814,INR,To India
+6E2945,IndiGo,6E,BOM,Mumbai,India,DXB,Dubai,UAE,2025-07-28 02:45,2025-07-28 09:29,404,1 Stop,25581,60405,INR,From India
+LH8299,Lufthansa,LH,TRV,Thiruvananthapuram,India,JFK,New York,USA,2025-10-23 09:45,2025-10-24 00:24,879,2+ Stops,25732,54495,INR,From India
+AI9666,Air India,AI,NRT,Tokyo,Japan,HYD,Hyderabad,India,2025-03-03 04:30,2025-03-03 16:33,723,1 Stop,22030,51618,INR,To India
+LH1694,Lufthansa,LH,HYD,Hyderabad,India,YYZ,Toronto,Canada,2025-10-05 19:15,2025-10-05 22:47,212,2+ Stops,21755,43348,INR,From India
+EK521,Emirates,EK,LHR,London,UK,BOM,Mumbai,India,2025-02-18 04:30,2025-02-18 19:03,873,2+ Stops,73790,179438,INR,To India
+LH7355,Lufthansa,LH,GOI,Goa,India,JFK,New York,USA,2025-08-26 05:45,2025-08-26 11:53,368,2+ Stops,110440,261681,INR,From India
+BA9942,British Airways,BA,NRT,Tokyo,Japan,GOI,Goa,India,2025-07-11 03:00,2025-07-11 14:59,719,Direct,90679,217932,INR,To India
+EK8524,Emirates,EK,AMD,Ahmedabad,India,YYZ,Toronto,Canada,2025-09-04 04:45,2025-09-04 10:56,371,2+ Stops,47114,97452,INR,From India
+QR8013,Qatar Airways,QR,BKK,Bangkok,Thailand,AMD,Ahmedabad,India,2025-09-13 12:00,2025-09-13 22:09,609,1 Stop,72321,143115,INR,To India
+SQ2819,Singapore Airlines,SQ,CCU,Kolkata,India,FRA,Frankfurt,Germany,2025-01-08 06:30,2025-01-08 14:24,474,Direct,91535,185920,INR,From India
+BA8473,British Airways,BA,DXB,Dubai,UAE,BOM,Mumbai,India,2025-03-21 02:15,2025-03-21 05:57,222,1 Stop,107245,216344,INR,To India
+SQ9912,Singapore Airlines,SQ,DXB,Dubai,UAE,HYD,Hyderabad,India,2025-10-15 07:00,2025-10-15 11:55,295,Direct,106629,236286,INR,To India
+UK2568,Vistara,UK,HYD,Hyderabad,India,ICN,Seoul,South Korea,2025-09-29 05:45,2025-09-29 11:54,369,Direct,31167,73647,INR,From India
+SQ6246,Singapore Airlines,SQ,DEL,New Delhi,India,DOH,Doha,Qatar,2025-09-20 17:00,2025-09-21 05:00,720,1 Stop,56394,104597,INR,From India
+UK6108,Vistara,UK,BOM,Mumbai,India,ICN,Seoul,South Korea,2025-03-29 15:15,2025-03-29 18:26,191,2+ Stops,61032,145462,INR,From India
+6E215,IndiGo,6E,DXB,Dubai,UAE,BLR,Bengaluru,India,2025-01-19 22:00,2025-01-20 03:45,345,2+ Stops,45370,108966,INR,To India
+BA1926,British Airways,BA,SIN,Singapore,Singapore,MAA,Chennai,India,2025-02-14 16:45,2025-02-14 21:57,312,1 Stop,65361,140845,INR,To India
+6E3706,IndiGo,6E,NRT,Tokyo,Japan,BLR,Bengaluru,India,2025-05-02 18:15,2025-05-03 00:09,354,2+ Stops,48438,99626,INR,To India
+AI4789,Air India,AI,CDG,Paris,France,CCU,Kolkata,India,2025-06-17 02:30,2025-06-17 15:16,766,2+ Stops,67454,126135,INR,To India
+LH361,Lufthansa,LH,MAA,Chennai,India,SYD,Sydney,Australia,2025-10-28 08:15,2025-10-28 15:05,410,Direct,59411,145695,INR,From India
+AI8459,Air India,AI,BOM,Mumbai,India,SIN,Singapore,Singapore,2025-09-03 16:45,2025-09-04 05:16,751,Direct,118198,285925,INR,From India
+QR6056,Qatar Airways,QR,TRV,Thiruvananthapuram,India,SYD,Sydney,Australia,2025-09-08 06:15,2025-09-08 13:12,417,2+ Stops,81108,204056,INR,From India
+AI8425,Air India,AI,DOH,Doha,Qatar,HYD,Hyderabad,India,2025-02-28 22:45,2025-03-01 09:46,661,2+ Stops,107911,259977,INR,To India
+SQ1252,Singapore Airlines,SQ,BOM,Mumbai,India,SFO,San Francisco,USA,2025-03-09 09:30,2025-03-09 14:23,293,1 Stop,72315,181188,INR,From India
+EK6657,Emirates,EK,YYZ,Toronto,Canada,DEL,New Delhi,India,2025-08-28 12:30,2025-08-29 01:17,767,2+ Stops,41952,100178,INR,To India
+EK1367,Emirates,EK,GOI,Goa,India,ICN,Seoul,South Korea,2025-05-15 15:15,2025-05-16 00:02,527,2+ Stops,111408,225118,INR,From India
+SQ4776,Singapore Airlines,SQ,LHR,London,UK,GOI,Goa,India,2025-06-02 13:15,2025-06-02 22:13,538,1 Stop,81272,150269,INR,To India
+QR7478,Qatar Airways,QR,BLR,Bengaluru,India,LHR,London,UK,2025-07-31 04:30,2025-07-31 16:17,707,2+ Stops,76995,161488,INR,From India
+6E4191,IndiGo,6E,DEL,New Delhi,India,JFK,New York,USA,2025-01-04 23:30,2025-01-05 09:33,603,2+ Stops,33856,63055,INR,From India
+6E5427,IndiGo,6E,ICN,Seoul,South Korea,CCU,Kolkata,India,2025-01-23 02:15,2025-01-23 17:02,887,2+ Stops,64551,127961,INR,To India
+UK2010,Vistara,UK,TRV,Thiruvananthapuram,India,SFO,San Francisco,USA,2025-02-18 07:45,2025-02-18 12:06,261,1 Stop,21890,49154,INR,From India
+UK8880,Vistara,UK,SYD,Sydney,Australia,HYD,Hyderabad,India,2025-06-27 23:30,2025-06-28 11:45,735,1 Stop,95459,247588,INR,To India
+LH9750,Lufthansa,LH,HYD,Hyderabad,India,DOH,Doha,Qatar,2025-06-12 20:00,2025-06-13 02:06,366,2+ Stops,110033,285232,INR,From India
+BA9480,British Airways,BA,CDG,Paris,France,HYD,Hyderabad,India,2025-07-03 21:00,2025-07-04 01:48,288,2+ Stops,82703,207104,INR,To India
+UK3121,Vistara,UK,CCU,Kolkata,India,NRT,Tokyo,Japan,2025-10-04 18:45,2025-10-05 02:33,468,2+ Stops,57045,115223,INR,From India
+EK4817,Emirates,EK,LHR,London,UK,GOI,Goa,India,2025-03-07 22:30,2025-03-08 01:46,196,1 Stop,90221,233016,INR,To India
+EK2632,Emirates,EK,BOM,Mumbai,India,DXB,Dubai,UAE,2025-09-16 00:30,2025-09-16 11:34,664,Direct,93972,220397,INR,From India
+6E5012,IndiGo,6E,BOM,Mumbai,India,SFO,San Francisco,USA,2025-02-23 19:00,2025-02-24 08:11,791,Direct,84552,209252,INR,From India
+AI9684,Air India,AI,BOM,Mumbai,India,NRT,Tokyo,Japan,2025-03-04 11:15,2025-03-04 16:24,309,Direct,118847,280754,INR,From India
+QR2923,Qatar Airways,QR,BLR,Bengaluru,India,YYZ,Toronto,Canada,2025-09-07 07:45,2025-09-07 18:53,668,Direct,47782,100781,INR,From India
+EK3600,Emirates,EK,TRV,Thiruvananthapuram,India,YYZ,Toronto,Canada,2025-09-11 23:30,2025-09-12 07:14,464,1 Stop,48428,107172,INR,From India
+UK7591,Vistara,UK,ICN,Seoul,South Korea,COK,Kochi,India,2025-04-19 16:00,2025-04-20 02:51,651,Direct,86768,222576,INR,To India
+LH3624,Lufthansa,LH,FRA,Frankfurt,Germany,DEL,New Delhi,India,2025-03-04 23:30,2025-03-05 09:30,600,1 Stop,61102,123978,INR,To India
+QR6249,Qatar Airways,QR,AMD,Ahmedabad,India,DXB,Dubai,UAE,2025-07-11 17:30,2025-07-11 23:13,343,2+ Stops,102469,208418,INR,From India
+UK6887,Vistara,UK,SYD,Sydney,Australia,CCU,Kolkata,India,2025-09-01 19:45,2025-09-02 06:14,629,1 Stop,65909,137734,INR,To India
+UK7901,Vistara,UK,BLR,Bengaluru,India,SIN,Singapore,Singapore,2025-01-05 01:15,2025-01-05 09:39,504,1 Stop,64597,163528,INR,From India
+EK3531,Emirates,EK,DXB,Dubai,UAE,COK,Kochi,India,2025-06-13 21:00,2025-06-14 05:35,515,2+ Stops,56240,102305,INR,To India
+LH4741,Lufthansa,LH,HYD,Hyderabad,India,DXB,Dubai,UAE,2025-03-17 00:00,2025-03-17 12:21,741,1 Stop,50101,92249,INR,From India
+6E743,IndiGo,6E,CDG,Paris,France,TRV,Thiruvananthapuram,India,2025-04-28 23:15,2025-04-29 05:19,364,2+ Stops,52719,105069,INR,To India
+UK2402,Vistara,UK,DXB,Dubai,UAE,MAA,Chennai,India,2025-01-21 02:30,2025-01-21 08:06,336,Direct,28785,55484,INR,To India
+QR1721,Qatar Airways,QR,TRV,Thiruvananthapuram,India,YYZ,Toronto,Canada,2025-02-21 00:30,2025-02-21 09:14,524,2+ Stops,118149,216649,INR,From India
+EK2159,Emirates,EK,SYD,Sydney,Australia,GOI,Goa,India,2025-07-13 08:15,2025-07-13 23:14,899,2+ Stops,112164,212151,INR,To India
+QR6028,Qatar Airways,QR,NRT,Tokyo,Japan,TRV,Thiruvananthapuram,India,2025-03-24 17:00,2025-03-24 23:22,382,2+ Stops,53261,97697,INR,To India
+BA8126,British Airways,BA,DEL,New Delhi,India,SFO,San Francisco,USA,2025-09-24 04:45,2025-09-24 18:50,845,Direct,117434,259827,INR,From India
+LH3631,Lufthansa,LH,NRT,Tokyo,Japan,GOI,Goa,India,2025-04-18 10:45,2025-04-18 14:15,210,2+ Stops,48989,121813,INR,To India
+UK8253,Vistara,UK,MAA,Chennai,India,ICN,Seoul,South Korea,2025-02-14 16:15,2025-02-14 20:55,280,2+ Stops,70756,152972,INR,From India
+AI9150,Air India,AI,JFK,New York,USA,CCU,Kolkata,India,2025-10-21 05:45,2025-10-21 13:56,491,2+ Stops,106931,204962,INR,To India
+UK8076,Vistara,UK,CDG,Paris,France,BLR,Bengaluru,India,2025-04-09 02:30,2025-04-09 16:52,862,1 Stop,98509,197392,INR,To India
+AI1458,Air India,AI,BOM,Mumbai,India,DOH,Doha,Qatar,2025-01-08 20:30,2025-01-09 08:36,726,Direct,29712,60184,INR,From India
+EK9250,Emirates,EK,SIN,Singapore,Singapore,GOI,Goa,India,2025-03-17 05:15,2025-03-17 15:23,608,Direct,38723,91605,INR,To India
+AI3159,Air India,AI,COK,Kochi,India,SYD,Sydney,Australia,2025-02-11 13:00,2025-02-11 16:23,203,Direct,35162,67009,INR,From India
+BA3270,British Airways,BA,TRV,Thiruvananthapuram,India,ICN,Seoul,South Korea,2025-09-27 07:00,2025-09-27 18:52,712,1 Stop,34479,67348,INR,From India
+SQ9139,Singapore Airlines,SQ,CDG,Paris,France,BOM,Mumbai,India,2025-07-11 01:15,2025-07-11 05:35,260,Direct,29791,67671,INR,To India
+BA7254,British Airways,BA,BOM,Mumbai,India,DXB,Dubai,UAE,2025-05-11 22:00,2025-05-12 11:18,798,1 Stop,81375,163177,INR,From India
+LH9529,Lufthansa,LH,DEL,New Delhi,India,CDG,Paris,France,2025-02-17 13:15,2025-02-17 18:03,288,1 Stop,72317,177515,INR,From India
+AI2968,Air India,AI,DEL,New Delhi,India,BKK,Bangkok,Thailand,2025-04-14 07:15,2025-04-14 10:31,196,1 Stop,94335,184333,INR,From India
+6E567,IndiGo,6E,BOM,Mumbai,India,LHR,London,UK,2025-02-21 11:00,2025-02-22 00:19,799,Direct,78703,194672,INR,From India
+BA8689,British Airways,BA,YYZ,Toronto,Canada,CCU,Kolkata,India,2025-03-19 00:00,2025-03-19 03:12,192,2+ Stops,88564,187503,INR,To India
+BA7313,British Airways,BA,BLR,Bengaluru,India,CDG,Paris,France,2025-04-22 08:15,2025-04-22 16:56,521,1 Stop,118760,277687,INR,From India
+EK8027,Emirates,EK,TRV,Thiruvananthapuram,India,JFK,New York,USA,2025-02-09 18:30,2025-02-10 00:27,357,2+ Stops,82629,172673,INR,From India
+AI5655,Air India,AI,AMD,Ahmedabad,India,DXB,Dubai,UAE,2025-10-17 09:15,2025-10-17 12:58,223,1 Stop,72586,167627,INR,From India
+BA8053,British Airways,BA,GOI,Goa,India,SFO,San Francisco,USA,2025-08-04 16:15,2025-08-05 04:13,718,1 Stop,93872,195910,INR,From India
+AI1587,Air India,AI,TRV,Thiruvananthapuram,India,SIN,Singapore,Singapore,2025-10-10 06:15,2025-10-10 19:17,782,Direct,80177,186985,INR,From India
+BA5420,British Airways,BA,BLR,Bengaluru,India,BKK,Bangkok,Thailand,2025-02-01 19:30,2025-02-02 02:23,413,Direct,97467,192398,INR,From India
+LH3254,Lufthansa,LH,YYZ,Toronto,Canada,AMD,Ahmedabad,India,2025-06-21 00:30,2025-06-21 10:26,596,1 Stop,88594,194161,INR,To India
+BA312,British Airways,BA,YYZ,Toronto,Canada,MAA,Chennai,India,2025-09-10 11:45,2025-09-10 16:45,300,2+ Stops,74862,148213,INR,To India
+LH8604,Lufthansa,LH,BOM,Mumbai,India,NRT,Tokyo,Japan,2025-10-13 15:00,2025-10-13 19:47,287,2+ Stops,111330,267467,INR,From India
+LH4466,Lufthansa,LH,LHR,London,UK,TRV,Thiruvananthapuram,India,2025-04-10 08:45,2025-04-10 18:00,555,1 Stop,43139,82435,INR,To India
+AI9470,Air India,AI,TRV,Thiruvananthapuram,India,SIN,Singapore,Singapore,2025-05-03 02:30,2025-05-03 17:05,875,Direct,62784,118144,INR,From India
+EK9521,Emirates,EK,BKK,Bangkok,Thailand,AMD,Ahmedabad,India,2025-04-04 03:45,2025-04-04 10:53,428,2+ Stops,74977,179051,INR,To India
+UK3486,Vistara,UK,DOH,Doha,Qatar,BOM,Mumbai,India,2025-02-04 23:45,2025-02-05 03:10,205,2+ Stops,39923,103098,INR,To India
+SQ176,Singapore Airlines,SQ,MAA,Chennai,India,DOH,Doha,Qatar,2025-09-24 06:00,2025-09-24 14:22,502,Direct,107633,275245,INR,From India
+UK9596,Vistara,UK,BOM,Mumbai,India,SFO,San Francisco,USA,2025-08-10 00:00,2025-08-10 14:25,865,2+ Stops,53047,136190,INR,From India
+6E8489,IndiGo,6E,CCU,Kolkata,India,SIN,Singapore,Singapore,2025-05-22 10:00,2025-05-22 22:10,730,2+ Stops,112871,287448,INR,From India
+BA7788,British Airways,BA,CDG,Paris,France,DEL,New Delhi,India,2025-04-25 04:00,2025-04-25 16:39,759,Direct,117393,238533,INR,To India
+QR9106,Qatar Airways,QR,JFK,New York,USA,GOI,Goa,India,2025-08-20 08:30,2025-08-20 17:36,546,1 Stop,101039,236272,INR,To India
+LH3628,Lufthansa,LH,AMD,Ahmedabad,India,SYD,Sydney,Australia,2025-04-29 11:30,2025-04-29 15:33,243,Direct,70781,144280,INR,From India
+QR2398,Qatar Airways,QR,FRA,Frankfurt,Germany,BLR,Bengaluru,India,2025-03-22 10:45,2025-03-22 14:49,244,1 Stop,114246,270366,INR,To India
+LH9250,Lufthansa,LH,DOH,Doha,Qatar,COK,Kochi,India,2025-09-29 04:30,2025-09-29 09:14,284,2+ Stops,27880,67113,INR,To India
+AI2874,Air India,AI,NRT,Tokyo,Japan,COK,Kochi,India,2025-03-15 04:00,2025-03-15 11:15,435,Direct,92674,186907,INR,To India
+AI5572,Air India,AI,DEL,New Delhi,India,NRT,Tokyo,Japan,2025-09-07 19:00,2025-09-08 04:49,589,2+ Stops,105953,237665,INR,From India
+LH6503,Lufthansa,LH,FRA,Frankfurt,Germany,BLR,Bengaluru,India,2025-03-02 04:00,2025-03-02 12:27,507,Direct,55124,139829,INR,To India
+AI347,Air India,AI,SIN,Singapore,Singapore,DEL,New Delhi,India,2025-06-26 18:30,2025-06-27 04:00,570,1 Stop,59324,139133,INR,To India
+SQ7819,Singapore Airlines,SQ,FRA,Frankfurt,Germany,GOI,Goa,India,2025-07-16 08:30,2025-07-16 18:13,583,Direct,71448,163876,INR,To India
+6E1580,IndiGo,6E,MAA,Chennai,India,ICN,Seoul,South Korea,2025-03-20 13:00,2025-03-20 20:33,453,1 Stop,70538,162895,INR,From India
+BA2527,British Airways,BA,NRT,Tokyo,Japan,TRV,Thiruvananthapuram,India,2025-01-16 02:15,2025-01-16 16:59,884,Direct,64206,163969,INR,To India
+QR1470,Qatar Airways,QR,SFO,San Francisco,USA,AMD,Ahmedabad,India,2025-10-18 10:30,2025-10-18 22:20,710,1 Stop,38475,92345,INR,To India
+QR190,Qatar Airways,QR,GOI,Goa,India,YYZ,Toronto,Canada,2025-07-18 11:00,2025-07-18 17:55,415,1 Stop,84394,195801,INR,From India
+SQ5527,Singapore Airlines,SQ,CDG,Paris,France,AMD,Ahmedabad,India,2025-09-13 11:00,2025-09-13 17:55,415,Direct,80641,189810,INR,To India
+QR2681,Qatar Airways,QR,HYD,Hyderabad,India,BKK,Bangkok,Thailand,2025-09-02 09:00,2025-09-02 21:51,771,1 Stop,25954,54455,INR,From India
+LH1269,Lufthansa,LH,DXB,Dubai,UAE,CCU,Kolkata,India,2025-03-30 16:45,2025-03-31 00:35,470,2+ Stops,96618,226037,INR,To India
+LH7687,Lufthansa,LH,JFK,New York,USA,DEL,New Delhi,India,2025-06-09 15:15,2025-06-09 20:40,325,2+ Stops,76598,152063,INR,To India
+UK2820,Vistara,UK,SYD,Sydney,Australia,COK,Kochi,India,2025-08-31 19:15,2025-08-31 22:36,201,Direct,56867,108735,INR,To India
+QR1635,Qatar Airways,QR,SYD,Sydney,Australia,BOM,Mumbai,India,2025-01-13 03:30,2025-01-13 11:59,509,2+ Stops,61538,110909,INR,To India
+BA7105,British Airways,BA,CCU,Kolkata,India,CDG,Paris,France,2025-04-25 12:30,2025-04-25 19:16,406,2+ Stops,46083,119685,INR,From India
+UK5998,Vistara,UK,AMD,Ahmedabad,India,DOH,Doha,Qatar,2025-08-30 07:00,2025-08-30 16:50,590,1 Stop,54491,116483,INR,From India
+UK709,Vistara,UK,BKK,Bangkok,Thailand,GOI,Goa,India,2025-01-05 10:30,2025-01-05 19:33,543,1 Stop,20045,38575,INR,To India
+BA9399,British Airways,BA,HYD,Hyderabad,India,LHR,London,UK,2025-01-06 21:30,2025-01-07 08:49,679,2+ Stops,31969,61521,INR,From India
+LH7940,Lufthansa,LH,GOI,Goa,India,SFO,San Francisco,USA,2025-09-12 10:45,2025-09-12 23:28,763,1 Stop,83510,195702,INR,From India
+LH9447,Lufthansa,LH,FRA,Frankfurt,Germany,COK,Kochi,India,2025-01-04 22:00,2025-01-05 07:30,570,Direct,66046,164270,INR,To India
+EK2032,Emirates,EK,GOI,Goa,India,JFK,New York,USA,2025-07-06 23:45,2025-07-07 03:30,225,Direct,118699,256259,INR,From India
+SQ8071,Singapore Airlines,SQ,CDG,Paris,France,MAA,Chennai,India,2025-08-26 16:30,2025-08-27 03:51,681,2+ Stops,79968,171379,INR,To India
+AI6155,Air India,AI,DXB,Dubai,UAE,BLR,Bengaluru,India,2025-07-16 19:30,2025-07-17 03:37,487,1 Stop,98483,230678,INR,To India
+AI6423,Air India,AI,DXB,Dubai,UAE,HYD,Hyderabad,India,2025-06-09 00:00,2025-06-09 14:01,841,1 Stop,49267,121413,INR,To India
+EK3452,Emirates,EK,COK,Kochi,India,NRT,Tokyo,Japan,2025-07-06 13:30,2025-07-06 22:45,555,2+ Stops,64839,124687,INR,From India
+QR8787,Qatar Airways,QR,JFK,New York,USA,BLR,Bengaluru,India,2025-03-12 12:45,2025-03-12 19:29,404,2+ Stops,52859,100404,INR,To India
+BA4401,British Airways,BA,BLR,Bengaluru,India,LHR,London,UK,2025-10-23 08:15,2025-10-23 12:04,229,2+ Stops,91012,167616,INR,From India
+LH9089,Lufthansa,LH,MAA,Chennai,India,SYD,Sydney,Australia,2025-04-12 01:00,2025-04-12 13:24,744,2+ Stops,111377,252162,INR,From India
+LH257,Lufthansa,LH,DEL,New Delhi,India,ICN,Seoul,South Korea,2025-10-22 13:30,2025-10-22 20:32,422,2+ Stops,73520,167413,INR,From India
+UK1846,Vistara,UK,CDG,Paris,France,COK,Kochi,India,2025-09-04 06:30,2025-09-04 12:49,379,1 Stop,52938,99806,INR,To India
+UK5896,Vistara,UK,CCU,Kolkata,India,ICN,Seoul,South Korea,2025-08-21 09:00,2025-08-21 18:21,561,2+ Stops,29856,69027,INR,From India
+LH5597,Lufthansa,LH,LHR,London,UK,HYD,Hyderabad,India,2025-10-25 15:00,2025-10-25 20:17,317,Direct,26298,54072,INR,To India
+6E666,IndiGo,6E,BLR,Bengaluru,India,SYD,Sydney,Australia,2025-03-25 12:45,2025-03-25 16:42,237,2+ Stops,31498,78617,INR,From India
+SQ5750,Singapore Airlines,SQ,TRV,Thiruvananthapuram,India,SIN,Singapore,Singapore,2025-07-24 09:45,2025-07-24 22:21,756,1 Stop,109032,242926,INR,From India
+EK1895,Emirates,EK,COK,Kochi,India,BKK,Bangkok,Thailand,2025-02-13 11:15,2025-02-14 01:19,844,2+ Stops,82589,163236,INR,From India
+SQ5479,Singapore Airlines,SQ,CDG,Paris,France,BOM,Mumbai,India,2025-04-08 07:15,2025-04-08 18:29,674,1 Stop,50222,112908,INR,To India
+EK5038,Emirates,EK,AMD,Ahmedabad,India,SYD,Sydney,Australia,2025-08-25 20:45,2025-08-26 01:18,273,2+ Stops,71687,159300,INR,From India
+EK9893,Emirates,EK,TRV,Thiruvananthapuram,India,LHR,London,UK,2025-09-22 12:45,2025-09-22 20:14,449,2+ Stops,85021,170103,INR,From India
+BA7799,British Airways,BA,NRT,Tokyo,Japan,MAA,Chennai,India,2025-02-10 17:00,2025-02-10 22:00,300,1 Stop,98131,184412,INR,To India
+BA4243,British Airways,BA,BOM,Mumbai,India,CDG,Paris,France,2025-04-17 17:00,2025-04-18 03:41,641,1 Stop,112436,211525,INR,From India
+AI9217,Air India,AI,FRA,Frankfurt,Germany,GOI,Goa,India,2025-04-29 06:45,2025-04-29 12:27,342,2+ Stops,31833,79071,INR,To India
+AI563,Air India,AI,CDG,Paris,France,MAA,Chennai,India,2025-02-09 10:15,2025-02-10 00:57,882,Direct,103383,217723,INR,To India
+BA4253,British Airways,BA,ICN,Seoul,South Korea,BLR,Bengaluru,India,2025-08-23 10:45,2025-08-23 22:23,698,1 Stop,21602,53745,INR,To India
+UK5403,Vistara,UK,LHR,London,UK,DEL,New Delhi,India,2025-07-26 05:45,2025-07-26 11:32,347,2+ Stops,35115,83855,INR,To India
+SQ8117,Singapore Airlines,SQ,SFO,San Francisco,USA,BOM,Mumbai,India,2025-03-18 19:00,2025-03-19 03:38,518,Direct,77202,141011,INR,To India
+6E2874,IndiGo,6E,DEL,New Delhi,India,DOH,Doha,Qatar,2025-01-18 08:15,2025-01-18 20:01,706,1 Stop,38424,98017,INR,From India
+EK2446,Emirates,EK,FRA,Frankfurt,Germany,CCU,Kolkata,India,2025-02-14 13:00,2025-02-14 22:14,554,1 Stop,57173,116218,INR,To India
+QR7131,Qatar Airways,QR,TRV,Thiruvananthapuram,India,LHR,London,UK,2025-02-09 21:15,2025-02-10 10:24,789,Direct,27055,54842,INR,From India
+6E6609,IndiGo,6E,GOI,Goa,India,DOH,Doha,Qatar,2025-07-13 17:00,2025-07-14 03:38,638,Direct,105864,267640,INR,From India
+6E7117,IndiGo,6E,BKK,Bangkok,Thailand,BOM,Mumbai,India,2025-06-07 17:00,2025-06-08 01:22,502,Direct,69972,149196,INR,To India
+BA2633,British Airways,BA,CDG,Paris,France,COK,Kochi,India,2025-06-17 01:00,2025-06-17 15:20,860,2+ Stops,59312,139378,INR,To India
+6E8061,IndiGo,6E,BLR,Bengaluru,India,ICN,Seoul,South Korea,2025-06-12 05:00,2025-06-12 13:13,493,2+ Stops,101264,204873,INR,From India
+SQ3714,Singapore Airlines,SQ,DEL,New Delhi,India,DOH,Doha,Qatar,2025-10-20 09:15,2025-10-20 21:32,737,Direct,91508,227859,INR,From India
+BA8383,British Airways,BA,BOM,Mumbai,India,SFO,San Francisco,USA,2025-03-24 12:00,2025-03-24 21:48,588,2+ Stops,117988,219678,INR,From India
+AI1926,Air India,AI,JFK,New York,USA,TRV,Thiruvananthapuram,India,2025-03-02 22:30,2025-03-03 04:51,381,Direct,118875,285632,INR,To India
+LH1361,Lufthansa,LH,NRT,Tokyo,Japan,HYD,Hyderabad,India,2025-02-13 16:30,2025-02-14 02:28,598,Direct,112266,213683,INR,To India
+SQ1855,Singapore Airlines,SQ,BLR,Bengaluru,India,ICN,Seoul,South Korea,2025-10-07 03:30,2025-10-07 07:10,220,Direct,47924,102998,INR,From India
+LH5574,Lufthansa,LH,YYZ,Toronto,Canada,MAA,Chennai,India,2025-04-06 19:45,2025-04-07 05:30,585,1 Stop,101023,236787,INR,To India
+LH958,Lufthansa,LH,NRT,Tokyo,Japan,TRV,Thiruvananthapuram,India,2025-01-03 03:45,2025-01-03 11:43,478,1 Stop,72794,157324,INR,To India
+BA8636,British Airways,BA,YYZ,Toronto,Canada,COK,Kochi,India,2025-04-12 10:15,2025-04-12 14:33,258,2+ Stops,53998,110927,INR,To India
+AI989,Air India,AI,SYD,Sydney,Australia,CCU,Kolkata,India,2025-03-11 22:45,2025-03-12 03:58,313,2+ Stops,71344,179742,INR,To India
+UK6142,Vistara,UK,BKK,Bangkok,Thailand,HYD,Hyderabad,India,2025-10-13 16:30,2025-10-13 21:31,301,1 Stop,21763,45015,INR,To India
+6E514,IndiGo,6E,CCU,Kolkata,India,SYD,Sydney,Australia,2025-04-04 14:30,2025-04-04 20:28,358,1 Stop,39039,81166,INR,From India
+6E2591,IndiGo,6E,BOM,Mumbai,India,ICN,Seoul,South Korea,2025-08-08 10:45,2025-08-08 23:37,772,2+ Stops,113646,246794,INR,From India
+EK6171,Emirates,EK,LHR,London,UK,TRV,Thiruvananthapuram,India,2025-03-19 08:30,2025-03-19 23:00,870,1 Stop,96329,180034,INR,To India
+QR2476,Qatar Airways,QR,CCU,Kolkata,India,CDG,Paris,France,2025-08-03 04:15,2025-08-03 10:56,401,Direct,75376,167082,INR,From India
+AI9042,Air India,AI,LHR,London,UK,HYD,Hyderabad,India,2025-10-20 19:45,2025-10-21 05:30,585,2+ Stops,104086,253776,INR,To India
+AI6285,Air India,AI,SIN,Singapore,Singapore,AMD,Ahmedabad,India,2025-03-24 17:30,2025-03-24 22:48,318,1 Stop,34150,77753,INR,To India
+EK8678,Emirates,EK,BOM,Mumbai,India,CDG,Paris,France,2025-07-25 11:45,2025-07-25 21:12,567,2+ Stops,56432,136486,INR,From India
+6E7385,IndiGo,6E,BOM,Mumbai,India,DOH,Doha,Qatar,2025-01-07 13:45,2025-01-08 03:16,811,1 Stop,73195,188127,INR,From India
+AI3782,Air India,AI,JFK,New York,USA,TRV,Thiruvananthapuram,India,2025-06-23 09:15,2025-06-23 14:42,327,Direct,28401,60319,INR,To India
+AI7757,Air India,AI,DXB,Dubai,UAE,COK,Kochi,India,2025-03-20 00:30,2025-03-20 07:09,399,1 Stop,118305,286190,INR,To India
+UK7132,Vistara,UK,CDG,Paris,France,COK,Kochi,India,2025-05-27 20:30,2025-05-28 06:58,628,1 Stop,86025,203854,INR,To India
+BA6070,British Airways,BA,SFO,San Francisco,USA,DEL,New Delhi,India,2025-10-20 01:15,2025-10-20 10:51,576,Direct,81472,183119,INR,To India
+QR5327,Qatar Airways,QR,JFK,New York,USA,BLR,Bengaluru,India,2025-05-01 03:15,2025-05-01 13:14,599,Direct,102039,200141,INR,To India
+BA4004,British Airways,BA,MAA,Chennai,India,JFK,New York,USA,2025-07-20 14:30,2025-07-21 03:08,758,1 Stop,110454,263059,INR,From India
+SQ1257,Singapore Airlines,SQ,SIN,Singapore,Singapore,COK,Kochi,India,2025-09-18 14:00,2025-09-19 03:54,834,1 Stop,116339,240050,INR,To India
+QR1171,Qatar Airways,QR,BLR,Bengaluru,India,BKK,Bangkok,Thailand,2025-09-27 23:45,2025-09-28 10:56,671,1 Stop,76037,162038,INR,From India
+SQ6731,Singapore Airlines,SQ,FRA,Frankfurt,Germany,HYD,Hyderabad,India,2025-09-09 14:45,2025-09-09 18:16,211,1 Stop,49734,90473,INR,To India
+AI2553,Air India,AI,GOI,Goa,India,ICN,Seoul,South Korea,2025-06-07 12:45,2025-06-07 16:40,235,Direct,25212,62950,INR,From India
+SQ1422,Singapore Airlines,SQ,GOI,Goa,India,BKK,Bangkok,Thailand,2025-05-30 14:15,2025-05-31 00:46,631,Direct,107447,264740,INR,From India
+AI9507,Air India,AI,BOM,Mumbai,India,DXB,Dubai,UAE,2025-05-26 00:30,2025-05-26 11:52,682,Direct,65133,122509,INR,From India
+6E5962,IndiGo,6E,GOI,Goa,India,SIN,Singapore,Singapore,2025-08-17 12:00,2025-08-17 23:11,671,Direct,54995,102025,INR,From India
+LH6935,Lufthansa,LH,COK,Kochi,India,YYZ,Toronto,Canada,2025-02-23 01:15,2025-02-23 15:57,882,2+ Stops,113926,215341,INR,From India
+BA7360,British Airways,BA,HYD,Hyderabad,India,LHR,London,UK,2025-06-28 21:45,2025-06-29 07:25,580,1 Stop,68179,141494,INR,From India
+BA7132,British Airways,BA,ICN,Seoul,South Korea,AMD,Ahmedabad,India,2025-09-26 23:30,2025-09-27 14:00,870,2+ Stops,109135,253853,INR,To India

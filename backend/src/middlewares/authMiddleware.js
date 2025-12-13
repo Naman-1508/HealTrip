@@ -9,6 +9,7 @@ export const authenticate = async (req, res, next) => {
     try {
         // Get token from Authorization header
         const authHeader = req.headers.authorization;
+        console.log(`[DEBUG] Auth Middleware. Header present: ${!!authHeader}`);
 
         if (!authHeader || !authHeader.startsWith('Bearer ')) {
             return errorResponse(res, 401, 'No token provided. Please login.');
@@ -25,6 +26,7 @@ export const authenticate = async (req, res, next) => {
 
         // Attach user info to request
         req.userId = verification.userId;
+        req.sessionId = verification.sessionId;
         req.session = verification.session;
 
         next();

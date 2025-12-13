@@ -62,15 +62,15 @@ export default function TravelPlanner() {
             if(data && data.length > 0) {
                 // Map ML data to UI
                 const mappedFlights = data.map((f, i) => ({
-                    airline: f.Airline,
+                    airline: f.airline,
                     flightNumber: `HT-${100+i}`, // Synthesized
-                    origin: f.Origin, 
-                    destination: f.Destination,
+                    origin: f.origin, 
+                    destination: f.destination,
                     departureTime: new Date().setHours(8 + i, 0), // Mock times for demo
                     arrivalTime: new Date().setHours(8 + i + (f.duration_minutes/60), (f.duration_minutes%60)),
-                    price: f.Price,
+                    price: f.price,
                     duration: `${Math.floor(f.duration_minutes/60)}h ${f.duration_minutes%60}m`,
-                    stops: f.num_stops
+                    stops: f.stops
                 }));
                 setAllFlights(mappedFlights);
                 setFlights(mappedFlights);
@@ -189,6 +189,40 @@ export default function TravelPlanner() {
     }
   };
 
+  // 3. VISA SEARCH (Backend Port 8003)
+  const [visaSearch, setVisaSearch] = useState("");
+  const [visaResult, setVisaResult] = useState(null);
+  const [loadingVisa, setLoadingVisa] = useState(false);
+
+  const handleVisaCheck = async () => {
+      if (!visaSearch) {
+          toast.error("Please enter a country");
+          return;
+      }
+      setLoadingVisa(true);
+      try {
+          // POST request to Visa Service
+          const response = await fetch('http://localhost:8003/visa-requirements', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ country: visaSearch, visa_type: "Tourist" })
+          });
+
+          if (response.ok) {
+              const data = await response.json();
+              setVisaResult(data);
+              toast.success(`Visa info loaded for ${data.country}`);
+          } else {
+              toast.error("Visa info not available");
+          }
+      } catch (error) {
+          console.error("Visa API Error:", error);
+          toast.error("Could not connect to Visa Service");
+      } finally {
+          setLoadingVisa(false);
+      }
+  };
+
   // Apply filters
   const applyFilters = () => {
     // Filter flights
@@ -260,7 +294,7 @@ export default function TravelPlanner() {
 
           {/* FLIGHTS CARD */}
           <ScrollStackItem>
-            <div className="w-full max-w-5xl mx-auto min-h-[80vh] bg-zinc-900 border border-white/10 rounded-3xl p-8 shadow-2xl mb-10">
+             <div className="w-full max-w-5xl mx-auto h-[80vh] overflow-y-auto custom-scrollbar bg-zinc-900 border border-white/10 rounded-3xl p-8 shadow-2xl mb-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-blue-600/20 rounded-xl">
                   <Plane className="w-6 h-6 text-blue-500" />
@@ -341,7 +375,12 @@ export default function TravelPlanner() {
                        </div>
                        <div className="text-right">
                           <p className="text-2xl font-bold text-blue-400">₹{f.price}</p>
-                          <button className="mt-2 px-4 py-2 bg-white text-black rounded-lg text-sm font-bold hover:bg-gray-200">Book</button>
+                          <button 
+                           onClick={() => navigate('/payment', { state: { type: 'flight', data: f } })}
+                           className="mt-2 px-4 py-2 bg-white text-black rounded-lg text-sm font-bold hover:bg-gray-200 active:scale-95 transition-transform"
+                          >
+                            Book
+                          </button>
                        </div>
                     </div>
                   ))}
@@ -357,7 +396,7 @@ export default function TravelPlanner() {
 
           {/* HOTELS CARD */}
           <ScrollStackItem>
-             <div className="w-full max-w-5xl mx-auto min-h-[80vh] bg-zinc-900 border border-white/10 rounded-3xl p-8 shadow-2xl mb-10">
+              <div className="w-full max-w-5xl mx-auto h-[80vh] overflow-y-auto custom-scrollbar bg-zinc-900 border border-white/10 rounded-3xl p-8 shadow-2xl mb-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-violet-600/20 rounded-xl">
                   <Hotel className="w-6 h-6 text-violet-500" />
@@ -436,7 +475,12 @@ export default function TravelPlanner() {
                             </div>
                             <div className="flex justify-between items-center mt-4">
                                <p className="text-xl font-bold text-violet-400">₹{h.pricePerNight}</p>
-                               <button className="px-3 py-1.5 bg-violet-600 rounded-md text-sm font-bold hover:bg-violet-700">Book</button>
+                               <button 
+                                 onClick={() => navigate('/payment', { state: { type: 'hotel', data: h } })}
+                                 className="px-3 py-1.5 bg-violet-600 rounded-md text-sm font-bold hover:bg-violet-700 active:scale-95 transition-transform"
+                               >
+                                 Book
+                               </button>
                             </div>
                          </div>
                       </div>
@@ -446,9 +490,65 @@ export default function TravelPlanner() {
             </div>
           </ScrollStackItem>
 
-          {/* HOSPITALS CARD */}
+          {/* VISA CARD */}
           <ScrollStackItem>
-             <div className="w-full max-w-5xl mx-auto min-h-[80vh] bg-zinc-900 border border-white/10 rounded-3xl p-8 shadow-2xl">
+             <div className="w-full max-w-5xl mx-auto min-h-[50vh] bg-zinc-900 border border-white/10 rounded-3xl p-8 shadow-2xl mb-10">
+               <div className="flex items-center gap-3 mb-8">
+                <div className="p-3 bg-orange-600/20 rounded-xl">
+                  {/* Using Plane temporarily as Globe might not be imported, but we can import it */}
+                  <Plane className="w-6 h-6 text-orange-500" />
+                </div>
+                <h2 className="text-3xl font-heading font-bold">Visa Checker</h2>
+              </div>
+
+               <div className="flex gap-4 mb-4">
+                <input
+                  type="text"
+                  placeholder="Enter destination country (e.g., India, USA)"
+                  value={visaSearch}
+                  onChange={(e) => setVisaSearch(e.target.value)}
+                  className="flex-1 px-4 py-3 bg-zinc-800 border-zinc-700 text-white rounded-lg focus:ring-2 focus:ring-orange-600 outline-none"
+                />
+                <button
+                  onClick={handleVisaCheck}
+                  className="px-8 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition font-bold"
+                  disabled={loadingVisa}
+                >
+                  {loadingVisa ? "Checking..." : "Check Requirements"}
+                </button>
+              </div>
+
+              {visaResult && (
+                <div className="bg-zinc-800/50 rounded-xl p-6 border border-white/5 mt-6">
+                  <h3 className="text-xl font-bold text-orange-400 mb-4">Visa Requirements for {visaResult.country}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-bold mb-2">Required Documents</h4>
+                      <ul className="list-disc pl-5 text-zinc-300 space-y-1">
+                        {visaResult.required_documents?.map((doc, i) => (
+                          <li key={i}>{doc}</li>
+                        )) || <li>No specific documents listed.</li>}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-bold mb-2">Additional Notes</h4>
+                      <p className="text-zinc-400 text-sm">{visaResult.special_notes}</p>
+                      <div className="mt-4 p-3 bg-orange-900/20 rounded-lg border border-orange-500/20">
+                         <p className="text-xs text-orange-300">
+                           Processing Time: {visaResult.processing_time}<br/>
+                           Financials: {visaResult.financial_requirements}
+                         </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+             </div>
+          </ScrollStackItem>
+
+          {/* HOSPITALS CARD (Existing) */}
+          <ScrollStackItem>
+             <div className="w-full max-w-5xl mx-auto h-[80vh] overflow-y-auto custom-scrollbar bg-zinc-900 border border-white/10 rounded-3xl p-8 shadow-2xl">
                <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-emerald-600/20 rounded-xl">
                   <Hospital className="w-6 h-6 text-emerald-500" />

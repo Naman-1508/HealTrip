@@ -54,10 +54,46 @@ def recommend_hotels(
     """
     Recommend hotels based on location, filters, and content similarity.
     """
-    location = location.lower().strip()
+    # City name normalization mapping
+    city_mapping = {
+        'bangalore': 'bengaluru',
+        'bengaluru': 'bengaluru',
+        'bombay': 'mumbai',
+        'mumbai': 'mumbai',
+        'new delhi': 'delhi',
+        'delhi': 'delhi',
+        'kolkata': 'kolkata',
+        'calcutta': 'kolkata',
+        'chennai': 'chennai',
+        'madras': 'chennai',
+        'hyderabad': 'hyderabad',
+        'thiruvananthapuram': 'thiruvananthapuram',
+        'trivandrum': 'thiruvananthapuram',
+        'kochi': 'kochi',
+        'cochin': 'kochi',
+        'goa': 'goa',
+        'ahmedabad': 'ahmedabad',
+        'pune': 'pune'
+    }
+    
+    location_lower = location.lower().strip()
+    
+    # Try to find a known city in the input string
+    normalized_location = location_lower # distinct default
+    
+    found_city = False
+    for k, v in city_mapping.items():
+        if k in location_lower:
+            normalized_location = v
+            found_city = True
+            break
+            
+    if not found_city:
+         # Fallback to original logic if no city found
+         normalized_location = location_lower
     
     # 1. Base Filter (Location is mandatory)
-    filtered_df = df[df['City'].str.contains(location, na=False)].copy()
+    filtered_df = df[df['City'].str.lower().str.contains(normalized_location, na=False)].copy()
     
     if filtered_df.empty:
         return {"count": 0, "results": [], "message": f"No hotels found in {location}"}
@@ -74,7 +110,7 @@ def recommend_hotels(
     # 3. Content-Based Sorting (if query provided)
     if query:
         # Transform query to vector
-        query_vec = tfidf.transform([query + " " + location])
+        query_vec = tfidf.transform([query + " " + normalized_location])
         
         # Calculate similarity ONLY for the filtered subset
         # We need to rely on original indices to map back to tfidf_matrix

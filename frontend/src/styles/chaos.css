@@ -1,0 +1,97 @@
+/* Chaos Mode Styles */
+
+/* When body has .chaos-mode class */
+body.chaos-mode * {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Shake Animation */
+@keyframes chaos-shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Random Rotation */
+@keyframes chaos-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Color Shift */
+@keyframes chaos-color {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(180deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Pulse Scale */
+@keyframes chaos-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Apply random animations to elements when chaos mode is on */
+/* WE target specific elements to avoid breaking layout too much but still be chaotic */
+
+/* Chaos Mode is BACK! */
+body.chaos-mode div:nth-child(2n) {
+  animation: chaos-shake 0.5s infinite;
+}
+
+body.chaos-mode div:nth-child(3n) {
+  animation: chaos-color 2s infinite linear;
+}
+
+body.chaos-mode img {
+  animation: chaos-spin 3s infinite linear;
+}
+
+body.chaos-mode button {
+  animation: chaos-pulse 0.5s infinite;
+}
+
+body.chaos-mode p, body.chaos-mode h1, body.chaos-mode h2 {
+   animation: chaos-shake 0.8s infinite reverse;
+   color: red !important;
+   font-family: 'Comic Sans MS', cursive !important;
+}
+
+/* The Toggle Button Itself - Should stay stable and ALWAYS be visible */
+.chaos-toggle-btn {
+  position: fixed;
+  bottom: 80px; /* Moved up slightly */
+  right: 20px; /* Moved to RIGHT side */
+  z-index: 2147483647 !important; /* Max Z-Index to stay on top of everything */
+  background: black;
+  color: #0f0;
+  border: 3px solid #0f0;
+  font-family: monospace;
+  padding: 15px 25px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #0f0, 0 0 40px rgba(0, 255, 0, 0.5); /* extra glow */
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  
+  /* CRITICAL: Do NOT animate this button so user can stop the chaos! */
+  animation: none !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+.chaos-toggle-btn:hover {
+  background: #0f0;
+  color: black;
+  box-shadow: 0 0 50px #0f0;
+}

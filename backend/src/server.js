@@ -1,5 +1,5 @@
+import 'dotenv/config';
 import express from 'express';
-import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './config/db.js';
 
@@ -13,11 +13,10 @@ import paymentRoutes from './routes/payment.routes.js';
 import flightRoutes from './routes/flight.routes.js';
 
 
-import aiRoutes from './routes/ai.routes.js';
-import chatRoutes from './routes/chat.routes.js';
+
 
 // Load environment variables
-dotenv.config();
+// Environment variables loaded via import 'dotenv/config'
 
 // Initialize Express app
 const app = express();
@@ -53,9 +52,7 @@ app.use('/api/diagnosis', diagnosisRoutes);
 app.use('/api/wellness', wellnessRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/flights', flightRoutes);
-app.use('/api/flights', flightRoutes);
-app.use('/api/ai', aiRoutes);
-app.use('/api/chat', chatRoutes);
+
 
 // 404 handler
 app.use((req, res) => {
@@ -79,7 +76,7 @@ app.use((err, req, res, next) => {
 });
 
 // Connect to database and start server
-const PORT = process.env.PORT || 5000;
+const PORT = 5000; // Hardcoded to 5000 as per user request to resolve EADDRINUSE
 
 const startServer = async () => {
     try {
@@ -112,5 +109,6 @@ const startServer = async () => {
 };
 
 startServer();
+// Server restart trigger v2
 
 export default app;

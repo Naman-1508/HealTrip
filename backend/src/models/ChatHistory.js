@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const chatHistorySchema = new mongoose.Schema({
   userId: {
@@ -9,7 +9,7 @@ const chatHistorySchema = new mongoose.Schema({
   messages: [{
     role: {
       type: String,
-      enum: ['user', 'assistant'],
+      enum: ['user', 'assistant', 'bot'],
       required: true
     },
     content: {
@@ -32,6 +32,9 @@ const chatHistorySchema = new mongoose.Schema({
         hospital: String,
         hotel: String,
         flight: String,
+        hotelCost: Number,
+        flightCost: Number,
+        hospitalCost: Number,
         totalCost: Number
       }],
       pdfAnalysis: {
@@ -48,4 +51,4 @@ const chatHistorySchema = new mongoose.Schema({
 // Index for faster queries
 chatHistorySchema.index({ userId: 1, 'messages.timestamp': -1 });
 
-module.exports = mongoose.model('ChatHistory', chatHistorySchema);
+export default mongoose.model('ChatHistory', chatHistorySchema);

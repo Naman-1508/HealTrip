@@ -1,0 +1,184 @@
+import axios from 'axios';
+import dotenv from 'dotenv';
+dotenv.config();
+
+class RAGService {
+    constructor() {
+        this.medicalKnowledge = this.initializeMedicalKnowledge();
+    }
+
+    /**
+     * Initialize medical knowledge base
+     */
+    initializeMedicalKnowledge() {
+        return {
+            greetings: [
+                "Hello! I'm your HealTrip medical assistant. How can I help you today?",
+                "Hi there! I'm here to help you with your medical travel needs. What can I do for you?",
+                "Welcome! I'm your friendly medical tourism guide. How may I assist you?"
+            ],
+            helpTopics: {
+                hospitals: "I can help you find the best hospitals for your condition. Just upload your medical report or tell me what you're looking for!",
+                packages: "I can recommend complete travel packages including flights, hotels, and hospital bookings. Would you like to see some options?",
+                pdf: "You can upload your medical reports (PDF), and I'll analyze them to recommend the best hospitals for you.",
+                general: "I can help you with hospital recommendations, travel packages, medical consultations, and more!"
+            }
+        };
+    }
+
+    /**
+     * Generate friendly response using Groq API with context
+     */
+    async generateResponse(userMessage, chatHistory = [], context = {}) {
+        try {
+            const { GROQ_API_KEY } = process.env;
+
+            if (!GROQ_API_KEY) {
+                throw new Error('GROQ_API_KEY not configured');
+            }
+
+            // Build conversation history
+            const messages = [
+                {
+                    role: 'system',
+                    content: this.buildSystemPrompt(context)
+                },
+                ...chatHistory.slice(-10).map(msg => ({
+                    role: msg.role === 'bot' ? 'assistant' : msg.role,
+                    content: msg.content
+                })),
+                {
+                    role: 'user',
+                    content: userMessage
+                }
+            ];
+
+            const response = await axios.post(
+                'https://api.groq.com/openai/v1/chat/completions',
+                {
+                    model: 'llama-3.3-70b-versatile',
+                    messages: messages,
+                    temperature: 0.1,
+                    max_tokens: 1000
+                },
+                {
+                    headers: {
+                        'Authorization': `Bearer ${GROQ_API_KEY}`,
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+
+            return response.data.choices[0].message.content;
+        } catch (error) {
+            console.error('RAG generation error:', error);
+            return this.getFallbackResponse(userMessage);
+        }
+    }
+
+    /**
+     * Build system prompt with context
+     */
+    buildSystemPrompt(context) {
+        let prompt = `You are a friendly and empathetic medical tourism assistant for HealTrip. 
+
+Your role:
+- Help users find the best hospitals for their medical needs
+- Recommend complete travel packages (flights + hotels + hospital)
+- Analyze medical reports and suggest appropriate care
+- Provide warm, supportive, and professional guidance
+
+Guidelines:
+- Be conversational and friendly, not robotic
+- Show empathy for medical concerns
+- Keep responses concise but helpful (2-3 sentences max)
+- When recommending hospitals or packages, be specific
+- Always prioritize user safety and well-being
+- Encourage users to upload medical reports for better recommendations
+- Use emojis sparingly to add warmth
+- **ALWAYS display prices in Indian Rupees (₹)**. Do not use USD.`;
+
+        if (context.userName) {
+            prompt += `\n\nUser's name: ${context.userName}`;
+        }
+
+        if (context.hospitals && context.hospitals.length > 0) {
+            prompt += `\n\nAvailable hospitals:\n`;
+            context.hospitals.forEach((h, i) => {
+                prompt += `${i + 1}. ${h.name} in ${h.city} - Rating: ${h.rating}/5, Specialty: ${h.specialty}\n`;
+            });
+        }
+
+        if (context.packages && context.packages.length > 0) {
+            prompt += `\n\nAvailable packages (shown as cards above):\n`;
+            context.packages.forEach((p, i) => {
+                prompt += `${i + 1}. ${p.hospital} package - Total: ₹${p.totalCost.toLocaleString()}\n`;
+            });
+            prompt += `\nPlease introduce these packages briefly and ask the user to click "Book Package" on the cards above.`;
+        }
+
+        if (context.extractedDisease) {
+            prompt += `\n\nExtracted condition from medical report: ${context.extractedDisease}`;
+        }
+
+        return prompt;
+    }
+
+    /**
+     * Fallback response for errors
+     */
+    getFallbackResponse(message) {
+        const lowerMessage = message.toLowerCase();
+
+        if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
+            return this.medicalKnowledge.greetings[0];
+        }
+
+        if (lowerMessage.includes('hospital')) {
+            return this.medicalKnowledge.helpTopics.hospitals;
+        }
+
+        if (lowerMessage.includes('package')) {
+            return this.medicalKnowledge.helpTopics.packages;
+        }
+
+        if (lowerMessage.includes('help')) {
+            return this.medicalKnowledge.helpTopics.general;
+        }
+
+        return "I'm here to help! You can ask me about hospitals, travel packages, or upload your medical reports for personalized recommendations. 😊";
+    }
+
+    /**
+     * Suggest packages based on hospital
+     */
+    async suggestPackages(hospital) {
+        try {
+            // Get hotels in the same city
+            const hotelsResponse = await axios.get(`http://localhost:8000/recommend?location=${hospital.city}`);
+            const hotels = hotelsResponse.data.hotels || [];
+
+            if (hotels.length === 0) {
+                return [];
+            }
+
+            // Create package suggestions
+            const packages = hotels.slice(0, 3).map(hotel => ({
+                hospital: hospital.name,
+                hotel: hotel.name,
+                flight: `Flight to ${hospital.city}`,
+                hotelCost: hotel.price_per_night * 7, // 7 nights
+                flightCost: 8000, // Estimated
+                hospitalCost: 50000, // Estimated
+                totalCost: (hotel.price_per_night * 7) + 8000 + 50000
+            }));
+
+            return packages;
+        } catch (error) {
+            console.error('Package suggestion error:', error);
+            return [];
+        }
+    }
+}
+
+export default new RAGService();

@@ -11,35 +11,107 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 # Define paths
-# Define paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(BASE_DIR, 'data', 'airlines_flights_data.csv')
+DOMESTIC_DATA_PATH = os.path.join(BASE_DIR, 'data', 'airlines_flights_data.csv')
+INTERNATIONAL_DATA_PATH = os.path.join(BASE_DIR, 'data', 'international_flights_india_1000 (1).csv')
 MODELS_DIR = BASE_DIR
 
 os.makedirs(MODELS_DIR, exist_ok=True)
 
+# City name normalization mapping
+CITY_MAPPING = {
+    'bengaluru': 'Bengaluru',
+    'bangalore': 'Bengaluru',
+    'mumbai': 'Mumbai',
+    'bombay': 'Mumbai',
+    'new delhi': 'Delhi',
+    'delhi': 'Delhi',
+    'kolkata': 'Kolkata',
+    'calcutta': 'Kolkata',
+    'chennai': 'Chennai',
+    'madras': 'Chennai',
+    'hyderabad': 'Hyderabad',
+    'thiruvananthapuram': 'Thiruvananthapuram',
+    'trivandrum': 'Thiruvananthapuram',
+    'kochi': 'Kochi',
+    'cochin': 'Kochi',
+    'goa': 'Goa',
+    'ahmedabad': 'Ahmedabad',
+    'pune': 'Pune',
+    'jaipur': 'Jaipur'
+}
+
+def normalize_city_name(city):
+    """Normalize city names to handle spelling variations"""
+    if pd.isna(city):
+        return city
+    city_lower = str(city).strip().lower()
+    return CITY_MAPPING.get(city_lower, str(city).strip().title())
+
 def load_and_clean_data():
     print("Loading data...")
-    if not os.path.exists(DATA_PATH):
-        raise FileNotFoundError(f"Data file not found at {DATA_PATH}")
     
-    df = pd.read_csv(DATA_PATH)
+    # Load domestic flights
+    if not os.path.exists(DOMESTIC_DATA_PATH):
+        raise FileNotFoundError(f"Domestic data file not found at {DOMESTIC_DATA_PATH}")
     
-    # Standardize column names (strip whitespace, title case)
-    df.columns = [col.strip().title() for col in df.columns]
+    df_domestic = pd.read_csv(DOMESTIC_DATA_PATH)
+    print(f"Loaded {len(df_domestic)} domestic flights")
     
-    # Rename specifically if needed to match requirements exactly
-    # Assuming columns might be like 'Airline', 'Date_of_Journey', 'Source', 'Destination', 'Route', 'Dep_Time', 'Arrival_Time', 'Duration', 'Total_Stops', 'Additional_Info', 'Price'
-    # The user request asks to standardize: Origin, Destination, Price, Airline, Duration, Stops
-    # Let's map common names if they differ, or ensure we have them.
-    # For now, let's assume the CSV has these loosely.
+    # Load international flights
+    df_international = None
+    if os.path.exists(INTERNATIONAL_DATA_PATH):
+        df_international = pd.read_csv(INTERNATIONAL_DATA_PATH)
+        print(f"Loaded {len(df_international)} international flights")
+    else:
+        print(f"Warning: International data file not found at {INTERNATIONAL_DATA_PATH}")
     
-    # Clean missing values
-    df.dropna(inplace=True)
+    # Process domestic data
+    df_domestic.columns = [col.strip().title() for col in df_domestic.columns]
     
-    # Standardize specific column names if they are different in the dataset
-    # We will check and rename for consistency
-    utils_rename = {
+    
+    # Process international data if available
+    if df_international is not None:
+        df_international.columns = [col.strip().replace('_', ' ').title().replace(' ', '_') for col in df_international.columns]
+        
+        # Map international columns to domestic format
+        intl_rename = {
+            'Origin_City': 'Origin',
+            'Destination_City': 'Destination',
+            'Economy_Price_Inr': 'Price',
+            'Duration_Minutes': 'Duration_Min'
+        }
+        df_international.rename(columns=intl_rename, inplace=True)
+        
+        # Convert duration from minutes to "Xh Ym" format for international
+        if 'Duration_Min' in df_international.columns:
+            def minutes_to_duration(minutes):
+                if pd.isna(minutes):
+                    return None
+                h = int(minutes) // 60
+                m = int(minutes) % 60
+                if m > 0:
+                    return f"{h}h {m}m"
+                return f"{h}h"
+            df_international['Duration'] = df_international['Duration_Min'].apply(minutes_to_duration)
+        
+        # Map stops format
+        if 'Stops' in df_international.columns:
+            def normalize_stops(stops):
+                if pd.isna(stops):
+                    return 'non-stop'
+                stops_str = str(stops).lower()
+                if 'direct' in stops_str or stops_str == '0':
+                    return 'non-stop'
+                elif '1' in stops_str:
+                    return '1 stop'
+                elif '2+' in stops_str or '2 stop' in stops_str:
+                    return '2 stops'
+                return stops_str
+            df_international['Stops'] = df_international['Stops'].apply(normalize_stops)
+    
+    # Standardize domestic column names
+    domestic_rename = {
         'Source_City': 'Origin',
         'Source': 'Origin',
         'Destination_City': 'Destination',
@@ -47,9 +119,28 @@ def load_and_clean_data():
         'Total_Stops': 'Stops',
         'Stops': 'Stops'
     }
-    # Only rename if columns exist
-    relevant_rename = {k: v for k, v in utils_rename.items() if k in df.columns}
-    df.rename(columns=relevant_rename, inplace=True)
+    relevant_rename = {k: v for k, v in domestic_rename.items() if k in df_domestic.columns}
+    df_domestic.rename(columns=relevant_rename, inplace=True)
+    
+    # Merge datasets
+    if df_international is not None:
+        # Select common columns
+        common_cols = ['Origin', 'Destination', 'Airline', 'Duration', 'Stops', 'Price']
+        df_domestic_subset = df_domestic[[col for col in common_cols if col in df_domestic.columns]]
+        df_intl_subset = df_international[[col for col in common_cols if col in df_international.columns]]
+        
+        # Combine
+        df = pd.concat([df_domestic_subset, df_intl_subset], ignore_index=True)
+        print(f"Combined dataset: {len(df)} total flights")
+    else:
+        df = df_domestic
+    
+    # Clean missing values
+    df.dropna(subset=['Origin', 'Destination', 'Airline', 'Price'], inplace=True)
+    
+    # Normalize city names
+    df['Origin'] = df['Origin'].apply(normalize_city_name)
+    df['Destination'] = df['Destination'].apply(normalize_city_name)
     
     # Ensure required columns exist
     required_cols = ['Origin', 'Destination', 'Airline', 'Duration', 'Stops', 'Price']
@@ -58,6 +149,8 @@ def load_and_clean_data():
         raise ValueError(f"Missing columns after renaming: {missing}. Available: {df.columns.tolist()}")
     
     print(f"Data loaded and cleaned. Shape: {df.shape}")
+    print(f"Sample cities - Origin: {df['Origin'].unique()[:10]}")
+    print(f"Sample cities - Destination: {df['Destination'].unique()[:10]}")
     return df
 
 def feature_engineering(df):

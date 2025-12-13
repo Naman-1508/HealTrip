@@ -19,11 +19,13 @@ import Payment from "./pages/Payment";
 import SSOCallback from "./pages/SSOCallback";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import HealChat from "./pages/HealChat";
+// import HealChat from "./pages/HealChat";
 import SmoothScroll from "./components/SmoothScroll";
 import CustomCursor from "./components/CustomCursor";
 import LoadingAnimation from "./components/LoadingAnimation";
-import ChatWidget from "./components/ChatWidget";
+
+
+import ChaosToggle from "./components/ChaosToggle";
 
 function Layout() {
   const location = useLocation();
@@ -44,9 +46,9 @@ function Layout() {
     <SmoothScroll>
       <LoadingAnimation onComplete={() => setIsLoading(false)} />
       <CustomCursor />
+      <ChaosToggle />
       <div className="noise-overlay" />
 
-      {!isLoading && <ChatWidget />}
       {!hideNav && location.pathname !== '/package' && location.pathname !== '/package/' && <Navbar />}
 
       <Routes>
@@ -65,7 +67,7 @@ function Layout() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
-        <Route path="/heal-chat" element={<HealChat />} />
+        {/* <Route path="/heal-chat" element={<HealChat />} /> */}
         <Route path="/sso-callback" element={<SSOCallback />} />
       </Routes>
 

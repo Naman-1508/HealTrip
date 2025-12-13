@@ -12,13 +12,26 @@ import { successResponse, errorResponse } from '../utils/apiResponse.js';
  */
 export const getAllHospitals = async (req, res) => {
     try {
-        const { city, country, treatment, minRating, page = 1, limit = 10 } = req.query;
+        const { city, country, treatment, minRating, search, page = 1, limit = 10 } = req.query;
 
         const query = { isActive: true };
 
+        // Universal Search (Name, City, Treatment Name, Treatment Category)
+        if (search) {
+            const searchRegex = new RegExp(search, 'i');
+            query.$or = [
+                { name: searchRegex },
+                { 'location.city': searchRegex },
+                { 'location.country': searchRegex },
+                { 'treatments.name': searchRegex },
+                { 'treatments.category': searchRegex }
+            ];
+        }
+
+        // Specific Filters (can refine search further)
         if (city) query['location.city'] = new RegExp(city, 'i');
         if (country) query['location.country'] = new RegExp(country, 'i');
-        if (treatment) query['treatments.category'] = new RegExp(treatment, 'i');
+        if (treatment && treatment !== 'All') query['treatments.category'] = new RegExp(treatment, 'i');
         if (minRating) query['ratings.overall'] = { $gte: parseFloat(minRating) };
 
         const skip = (parseInt(page) - 1) * parseInt(limit);

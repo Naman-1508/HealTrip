@@ -1,0 +1,19 @@
+
+.circular-gallery {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+    z-index: 10;
+}
+
+.circular-gallery:active {
+    cursor: grabbing;
+}
+
+.circular-gallery canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

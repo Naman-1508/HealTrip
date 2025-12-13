@@ -159,7 +159,7 @@ export const handleWebhook = async (req, res) => {
  */
 const notifyBackend = async (paymentIntent, status) => {
     try {
-        const backendUrl = process.env.BACKEND_URL || 'http://localhost:5000';
+        const backendUrl = process.env.BACKEND_URL || 'http://localhost:5';
 
         await fetch(`${backendUrl}/api/payment/webhook-update`, {
             method: 'POST',

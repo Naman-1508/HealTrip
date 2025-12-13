@@ -1,6 +1,5 @@
 import User from '../models/User.js';
 import { successResponse, errorResponse } from '../utils/apiResponse.js';
-import { getClerkUser } from '../utils/verifyToken.js';
 import { uploadToCloudinary } from '../utils/uploader.js';
 
 /**

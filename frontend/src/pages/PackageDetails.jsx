@@ -5,10 +5,35 @@ import Threads from "../components/Threads";
 import { ArrowLeft, MapPin, Star, Plane, Hotel, Hospital, Calendar, Users, CreditCard, Check } from "lucide-react";
 import toast from "react-hot-toast";
 
+// Helper to safely format address/location
+const formatAddress = (data) => {
+  if (!data) return "Location unavailable";
+  
+  // Handle if data itself is the string
+  if (typeof data === 'string') return data;
+  
+  // Handle fallback data or schema variations where it might be 'address' or 'location'
+  const addr = data.location || data.address || data; // 'data' fallback for when only the address object is passed
+
+  if (!addr) return "Location unavailable";
+
+  if (typeof addr === 'string') return addr;
+  
+  if (typeof addr === 'object') {
+    const city = addr.city || '';
+    const country = addr.country || '';
+    // Filter out empty parts and join
+    const parts = [city, country].filter(p => p && p.trim().length > 0);
+    return parts.length > 0 ? parts.join(', ') : "Location unavailable";
+  }
+  
+  return "Location unavailable";
+};
+
 export default function PackageDetails() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { hospital } = location.state || {};
+  const { hospital } = location.state || {}; // hospital object
 
   const [hotels, setHotels] = useState([]);
   const [flights, setFlights] = useState([]);
@@ -21,6 +46,8 @@ export default function PackageDetails() {
   const [travelers, setTravelers] = useState(1);
   const [originCity, setOriginCity] = useState("");
 
+  const hospitalAddressStr = formatAddress(hospital);
+
   // Redirect if no hospital selected
   useEffect(() => {
     if (!hospital) {
@@ -30,7 +57,7 @@ export default function PackageDetails() {
 
   // Auto-load hotels when component mounts
   useEffect(() => {
-    if (hospital?.address) {
+    if (hospitalAddressStr) {
       loadHotels();
     }
   }, [hospital]);
@@ -38,7 +65,8 @@ export default function PackageDetails() {
   const loadHotels = async () => {
     setLoadingHotels(true);
     try {
-      const response = await fetch(`http://localhost:8000/recommend?location=${hospital.address}`);
+      // Use formatted string
+      const response = await fetch(`http://localhost:8000/recommend?location=${hospitalAddressStr}`);
       if (response.ok) {
         const data = await response.json();
         if (data.results && data.results.length > 0) {
@@ -61,6 +89,53 @@ export default function PackageDetails() {
     }
   };
 
+  // Helper function to format duration from minutes to "Xh Ym"
+  const formatDuration = (duration) => {
+    // If duration is a number (minutes), convert to "Xh Ym" format
+    if (typeof duration === 'number') {
+      const hours = Math.floor(duration / 60);
+      const minutes = duration % 60;
+      return minutes > 0 ? `${hours}h ${minutes}m` : `${hours}h`;
+    }
+    // If already formatted string, return as is
+    return duration;
+  };
+
+  // VISA LOGIC
+  const [visaInfo, setVisaInfo] = useState(null);
+  
+  useEffect(() => {
+     const fetchVisa = async () => {
+         try {
+             // Use destination country from selected flight, or default to India
+             let country = "India";
+             
+             // If user has selected a flight, extract destination country
+             if (selectedFlight && selectedFlight.destination) {
+                 // Try to extract country from destination
+                 // For international flights, destination might be like "Bangkok, Thailand"
+                 const destParts = selectedFlight.destination.split(',');
+                 if (destParts.length > 1) {
+                     country = destParts[destParts.length - 1].trim();
+                 }
+             }
+             
+             const res = await fetch('http://localhost:8003/visa-requirements', {
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json' },
+                 body: JSON.stringify({ country, visa_type: "Medical" })
+             });
+             if (res.ok) {
+                 const data = await res.json();
+                 setVisaInfo(data);
+             }
+         } catch (e) {
+             console.error("Visa Fetch Error", e);
+         }
+     };
+     fetchVisa();
+  }, [selectedFlight]);
+
   const loadFlights = async () => {
     if (!originCity) {
       toast.error("Please enter your origin city");
@@ -69,20 +144,20 @@ export default function PackageDetails() {
 
     setLoadingFlights(true);
     try {
-      const response = await fetch(`http://localhost:8002/recommend-flights?origin=${originCity}&destination=${hospital.address}`);
+      const response = await fetch(`http://localhost:8002/recommend-flights?origin=${originCity}&destination=${hospitalAddressStr}`);
       if (response.ok) {
         const data = await response.json();
         if (data && data.length > 0) {
           const mappedFlights = data.slice(0, 4).map((f, i) => ({
-            airline: f.Airline,
+            airline: f.airline,
             flightNumber: `HT-${100 + i}`,
-            origin: f.Origin,
-            destination: f.Destination,
+            origin: f.origin,
+            destination: f.destination,
             departureTime: new Date().setHours(8 + i, 0),
             arrivalTime: new Date().setHours(8 + i + (f.duration_minutes / 60), (f.duration_minutes % 60)),
-            price: f.Price,
+            price: f.price,
             duration: `${Math.floor(f.duration_minutes / 60)}h ${f.duration_minutes % 60}m`,
-            stops: f.num_stops
+            stops: f.stops
           }));
           setFlights(mappedFlights);
           setSelectedFlight(mappedFlights[0]); // Auto-select first
@@ -197,11 +272,11 @@ export default function PackageDetails() {
                     <div className="flex items-center gap-3 text-sm text-zinc-400 mt-1">
                       <span className="flex items-center gap-1">
                         <MapPin className="w-3.5 h-3.5" />
-                        {hospital.address}
+                        {hospitalAddressStr}
                       </span>
                       <span className="flex items-center gap-1">
                         <Star className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
-                        {hospital.rating}
+                        {hospital.rating || 4.5}
                       </span>
                     </div>
                   </div>
@@ -268,9 +343,9 @@ export default function PackageDetails() {
                         <div className="flex justify-between items-center">
                           <div>
                             <p className="font-semibold">{flight.airline}</p>
-                            <p className="text-sm text-zinc-400">{flight.duration} • {flight.stops} stops</p>
+                            <p className="text-sm text-zinc-400">{formatDuration(flight.duration)} • {flight.stops} stops</p>
                           </div>
-                          <p className="text-lg font-bold text-blue-400">₹{flight.price.toLocaleString()}</p>
+                          <p className="text-lg font-bold text-blue-400">₹{(flight.price || flight.Price || 0).toLocaleString('en-IN')}</p>
                         </div>
                       </div>
                     ))}
@@ -291,7 +366,7 @@ export default function PackageDetails() {
                   <div className="text-center py-12">
                     <div className="animate-spin w-8 h-8 border-4 border-violet-500 border-t-transparent rounded-full mx-auto"></div>
                   </div>
-                ) : (
+                ) : hotels.length > 0 ? (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {hotels.map((hotel, i) => (
                       <div
@@ -314,8 +389,39 @@ export default function PackageDetails() {
                       </div>
                     ))}
                   </div>
+                ) : (
+                   <div className="text-center py-12 border border-dashed border-zinc-700 rounded-xl">
+                      <Hotel className="w-10 h-10 text-zinc-600 mx-auto mb-3" />
+                      <p className="text-zinc-400">No hotels found near {hospitalAddressStr}</p>
+                      <button onClick={loadHotels} className="mt-3 text-violet-400 text-sm hover:underline">Retry Search</button>
+                   </div>
                 )}
               </div>
+
+               {/* VISA REQUIREMENTS SECTION */}
+               {visaInfo && (
+                <div className="bg-zinc-900/80 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                   <div className="flex items-center gap-3 mb-5">
+                    <div className="w-10 h-10 bg-orange-600/20 rounded-lg flex items-center justify-center">
+                      <CreditCard className="w-5 h-5 text-orange-400" /> 
+                    </div>
+                    <h3 className="text-lg font-bold">Visa Requirements ({visaInfo.country})</h3>
+                  </div>
+                  
+                  <div className="bg-zinc-800/30 rounded-lg p-4 border border-zinc-700/50">
+                     <p className="text-sm text-zinc-300 mb-2 font-bold">Required Documents:</p>
+                     <ul className="list-disc pl-5 text-sm text-zinc-400 mb-4 space-y-1">
+                        {visaInfo.required_documents?.slice(0, 4).map((d, i) => (
+                          <li key={i}>{d}</li>
+                        )) || <li>Standard documents required</li>}
+                     </ul>
+                     <div className="flex justify-between items-center text-xs text-zinc-500 border-t border-zinc-700/50 pt-3">
+                        <span>Processing: {visaInfo.processing_time}</span>
+                        <span>{visaInfo.financial_requirements}</span>
+                     </div>
+                  </div>
+                </div>
+               )}
             </div>
 
             {/* Sidebar - Package Summary */}

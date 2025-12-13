@@ -1,101 +1,114 @@
-"""
-HealTrip ML Services Launcher
-Starts all three ML services (Hotels, Hospitals, Flights) in parallel
-"""
 import subprocess
-import sys
 import time
 import os
+import sys
 
-def start_service(name, port, directory):
-    """Start a single ML service"""
-    print(f"[{name}] Starting on port {port}...")
-    
-    # Change to service directory and start uvicorn
-    cmd = [
-        sys.executable, "-m", "uvicorn",
-        "main:app",
-        "--host", "0.0.0.0",
-        "--port", str(port),
-        "--reload"
-    ]
-    
-    process = subprocess.Popen(
-        cmd,
-        cwd=directory,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        text=True,
-        bufsize=1
-    )
-    
-    return process
+# Define services with their directory and port
+services = [
+    {
+        "name": "Hotels ML Service",
+        "path": "backend/ml/hotels",
+        "port": 8000,
+        "command": "python main.py"
+    },
+    {
+        "name": "Hospitals ML Service",
+        "path": "backend/ml/hospitals",
+        "port": 8001,
+        "command": "python main.py"
+    },
+    {
+        "name": "Flights ML Service",
+        "path": "backend/ml/flights",
+        "port": 8002,
+        "command": "python main.py"
+    },
+    {
+        "name": "Visa ML Service",
+        "path": "backend/ml/visa/backend",
+        "port": 8003,
+        "command": "python main.py"
+    },
+    {
+        "name": "Mental Health ML Service",
+        "path": "backend/ml/ml-mental",
+        "port": 8004,
+        "command": "python main.py"
+    },
+    {
+        "name": "Yoga ML Service",
+        "path": "backend/ml/ml-yoga",
+        "port": 8005,
+        "command": "python main.py"
+    }
+]
 
-def main():
-    print("=" * 60)
-    print("HealTrip ML Services Launcher")
-    print("=" * 60)
-    print()
-    
-    # Get base directory
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    ml_dir = os.path.join(base_dir, "backend", "ml")
-    
-    # Service configurations
-    services = [
-        ("Hotels", 8000, os.path.join(ml_dir, "hotels")),
-        ("Hospitals", 8001, os.path.join(ml_dir, "hospitals")),
-        ("Flights", 8002, os.path.join(ml_dir, "flights"))
-    ]
-    
+def start_services():
     processes = []
+    base_dir = os.getcwd()
     
-    try:
-        # Start all services
-        for name, port, directory in services:
-            if not os.path.exists(directory):
-                print(f"[ERROR] Directory not found: {directory}")
-                continue
+    print("🚀 Starting HealTrip ML Services...")
+    print("========================================")
+
+    for service in services:
+        print(f"⏳ Starting {service['name']} on port {service['port']}...")
+        
+        # Construct absolute path to the service directory
+        service_dir = os.path.join(base_dir, service['path'])
+        
+        if not os.path.exists(service_dir):
+            print(f"❌ Error: Directory not found - {service_dir}")
+            continue
+
+        try:
+            # Start the process - using string command with shell=True for flexibility
+            # or separate args if we wanted to be more strict. shell=True works well for 'python main.py'
+            # We use creationflags=subprocess.CREATE_NEW_CONSOLE to open in new windows on Windows
+            # so output doesn't get mixed up, if preferred. 
+            # User asked for "check if its properly working or not" -> typically easier to debug if they share a console or log to file.
+            # But separate consoles is safer for distinct service logs.
+            
+            # For this implementation, let's spawn them in new console windows so the user can see each running.
+            if sys.platform == "win32":
+                p = subprocess.Popen(
+                    f"cd {service['path']} && {service['command']}", 
+                    shell=True, 
+                    creationflags=subprocess.CREATE_NEW_CONSOLE,
+                    cwd=base_dir # Execute from base, but cd inside the command string
+                )
                 
-            process = start_service(name, port, directory)
-            processes.append((name, port, process))
-            time.sleep(1)  # Small delay between starts
-        
-        print()
-        print("=" * 60)
-        print("All services started!")
-        print("=" * 60)
-        print()
-        print("Services running on:")
-        for name, port, _ in processes:
-            print(f"  • {name:12} http://localhost:{port}")
-        print()
-        print("Press Ctrl+C to stop all services...")
-        print()
-        
-        # Keep running and monitor processes
+                # ALTERNATIVE: cwd argument to Popen
+                # p = subprocess.Popen(
+                #     ["python", "main.py"],
+                #     cwd=service_dir,
+                #     creationflags=subprocess.CREATE_NEW_CONSOLE
+                # )
+                
+            else:
+                # tailored for linux/mac if needed later
+                p = subprocess.Popen(
+                    ["python", "main.py"],
+                    cwd=service_dir
+                )
+            
+            processes.append(p)
+            print(f"✅ {service['name']} started.")
+            time.sleep(2) # Wait a bit between starts
+            
+        except Exception as e:
+            print(f"❌ Failed to start {service['name']}: {e}")
+
+    print("========================================")
+    print("All services attempted.")
+    print("Press Ctrl+C in the individual windows to stop them.")
+    print("To stop this script, press Ctrl+C (it won't stop the spawned windows automatically unless managed).")
+
+    # Simple keep-alive
+    try:
         while True:
             time.sleep(1)
-            
-            # Check if any process has died
-            for name, port, process in processes:
-                if process.poll() is not None:
-                    print(f"[WARNING] {name} service stopped unexpectedly!")
-                    
     except KeyboardInterrupt:
-        print("\n\nStopping all services...")
-        
-        # Terminate all processes
-        for name, port, process in processes:
-            print(f"[{name}] Stopping...")
-            process.terminate()
-            
-        # Wait for all to finish
-        for name, port, process in processes:
-            process.wait()
-            print(f"[{name}] Stopped")
-            
-        print("\nAll services stopped!")
+        print("\nExiting launcher...")
 
 if __name__ == "__main__":
-    main()
+    start_services()

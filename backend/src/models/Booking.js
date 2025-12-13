@@ -23,6 +23,8 @@ const bookingSchema = new mongoose.Schema(
         },
         // Hospital Booking Details
         hospital: {
+            name: String, // Populated from ML result if ID not available
+            location: String,
             hospitalId: {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'Hospital',
@@ -35,6 +37,8 @@ const bookingSchema = new mongoose.Schema(
         },
         // Hotel Booking Details
         hotel: {
+            name: String, // Populated from ML result if ID not available
+            location: String,
             hotelId: {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'Hotel',
@@ -44,6 +48,18 @@ const bookingSchema = new mongoose.Schema(
             checkOutDate: Date,
             numberOfGuests: Number,
             specialRequests: String,
+        },
+        // Flight Details
+        flight: {
+            airline: String,
+            flightNumber: String,
+            origin: String,
+            destination: String,
+            price: Number,
+            departureTime: Date,
+            arrivalTime: Date,
+            duration: String,
+            stops: Number,
         },
         // Package Booking (Combined Hospital + Hotel + Travel)
         package: {
@@ -94,11 +110,10 @@ const bookingSchema = new mongoose.Schema(
                 type: String,
                 enum: ['pending', 'completed', 'failed', 'refunded'],
                 default: 'pending',
-                index: true,
             },
             method: {
                 type: String,
-                enum: ['razorpay', 'stripe', 'other'],
+                enum: ['razorpay', 'stripe', 'upi', 'card', 'qr', 'other'],
             },
             transactionId: String,
             paidAt: Date,

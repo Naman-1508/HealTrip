@@ -85,7 +85,7 @@ export default function HealChat() {
         }
 
         // Call Backend AI
-        const response = await fetch('http://localhost:5000/api/ai/chat', {
+        const response = await fetch('http://localhost:5174/api/ai/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

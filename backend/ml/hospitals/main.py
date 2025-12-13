@@ -103,11 +103,11 @@ async def predict_all_endpoint(
     # 3. Rank
     hospitals = ranker.get_top_hospitals(disease, specialty)
     
-    return {
-        "disease": disease,
-        "specialty": specialty,
-        "top_hospitals": hospitals
-    }
+    return FullPredictionResponse(
+        disease=disease,
+        specialty=specialty,
+        top_hospitals=hospitals
+    )
 
 @app.get("/hospitals-by-city", response_model=List[HospitalResponse])
 def get_hospitals_by_city(city: str = Query(..., description="City name")):
@@ -158,6 +158,7 @@ def get_hospitals_by_city(city: str = Query(..., description="City name")):
                 "name": str(name),
                 "rating": float(row['Rating_5_Scale']),
                 "city": str(row['City']),
+              
                 "summary": str(row.get('Review_Summary', '')),
                 "match_score": float(row['Rating_5_Scale']) / 5.0
             })
