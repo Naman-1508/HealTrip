@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollStack, { ScrollStackItem } from "../components/ScrollStack";
-import Threads from "../components/Threads";
+import BackgroundSwitcher from "../components/BackgroundSwitcher";
 import { Plane, Hotel, Hospital, Search } from "lucide-react";
 import toast from "react-hot-toast";
 
@@ -262,7 +262,7 @@ export default function TravelPlanner() {
     <div className="relative min-h-screen bg-zinc-950 text-white overflow-hidden">
       {/* Background Threads */}
       <div className="absolute inset-0 z-0">
-        <Threads amplitude={1} distance={0} color={[0.4, 0.2, 0.8]} />
+        <BackgroundSwitcher />
       </div>
 
       <div className="relative z-10 h-screen">

@@ -24,9 +24,8 @@ import SmoothScroll from "./components/SmoothScroll";
 import CustomCursor from "./components/CustomCursor";
 import LoadingAnimation from "./components/LoadingAnimation";
 import ChatWidget from "./components/ChatWidget";
-
-
 import ChaosToggle from "./components/ChaosToggle";
+import { ChaosProvider } from "./contexts/ChaosContext";
 
 function Layout() {
   const location = useLocation();
@@ -80,8 +79,10 @@ function Layout() {
 
 export default function App() {
   return (
-    <Router>
-      <Layout />
-    </Router>
+    <ChaosProvider>
+      <Router>
+        <Layout />
+      </Router>
+    </ChaosProvider>
   );
 }

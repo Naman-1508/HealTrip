@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CheckCircle, CreditCard, QrCode, Smartphone, ShieldCheck, ArrowLeft } from "lucide-react";
-import Threads from "../components/Threads";
+import BackgroundSwitcher from "../components/BackgroundSwitcher";
 import { useAuth } from "@clerk/clerk-react";
 import axios from 'axios';
 import toast from "react-hot-toast";
@@ -47,7 +47,7 @@ export default function Payment() {
     return (
       <div className="relative min-h-screen bg-zinc-950 text-white flex items-center justify-center px-6">
         <div className="absolute inset-0 z-0">
-          <Threads amplitude={1} distance={0} color={[0.4, 0.2, 0.8]} />
+          <BackgroundSwitcher />
         </div>
         
         <motion.div
@@ -75,7 +75,7 @@ export default function Payment() {
   return (
     <div className="relative min-h-screen bg-zinc-950 text-white">
       <div className="absolute inset-0 z-0">
-        <Threads amplitude={1} distance={0} color={[0.4, 0.2, 0.8]} />
+        <BackgroundSwitcher />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-10">

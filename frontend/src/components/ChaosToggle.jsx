@@ -1,24 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../styles/chaos.css';
 import { Zap, ZapOff } from 'lucide-react';
+import { useChaos } from '../contexts/ChaosContext';
 
 export default function ChaosToggle() {
-  const [isChaos, setIsChaos] = useState(false);
-
-  useEffect(() => {
-    if (isChaos) {
-      document.body.classList.add('chaos-mode');
-      
-      // Play a sound if possible? Maybe too annoying.
-      // Let's stick to visual chaos.
-    } else {
-      document.body.classList.remove('chaos-mode');
-    }
-    
-    return () => {
-      document.body.classList.remove('chaos-mode');
-    };
-  }, [isChaos]);
+  const { isChaos, setIsChaos } = useChaos();
 
   return (
     <button

@@ -3,7 +3,7 @@ import { useSignIn, useUser } from "@clerk/clerk-react";
 import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import SpotlightCard from "../components/SpotlightCard";
-import Threads from "../components/Threads";
+import BackgroundSwitcher from "../components/BackgroundSwitcher";
 import Button from "../components/Button";
 import toast from "react-hot-toast";
 
@@ -56,7 +56,7 @@ export default function Login() {
     <div className="relative min-h-screen bg-zinc-950 flex justify-center items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <Threads amplitude={1} distance={0} color={[0.4, 0.2, 0.8]} />
+        <BackgroundSwitcher />
       </div>
 
       <motion.div

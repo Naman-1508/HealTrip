@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import Threads from "../components/Threads";
+import BackgroundSwitcher from "../components/BackgroundSwitcher";
 import { ArrowLeft, MapPin, Star, Plane, Hotel, Hospital, Calendar, Users, CreditCard, Check } from "lucide-react";
 import toast from "react-hot-toast";
 
@@ -234,7 +234,7 @@ export default function PackageDetails() {
   return (
     <div className="relative min-h-screen bg-zinc-950 text-white">
       <div className="absolute inset-0 z-0">
-        <Threads amplitude={1} distance={0} color={[0.4, 0.2, 0.8]} />
+        <BackgroundSwitcher />
       </div>
 
       <div className="relative z-10">

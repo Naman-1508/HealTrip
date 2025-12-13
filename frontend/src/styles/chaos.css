@@ -1,9 +1,12 @@
 /* Chaos Mode Styles */
 
 /* When body has .chaos-mode class */
+/* DISABLED: We only want to switch backgrounds, not make UI chaotic */
+/* 
 body.chaos-mode * {
   transition: all 0.2s ease-in-out;
 }
+*/
 
 /* Shake Animation */
 @keyframes chaos-shake {
@@ -40,10 +43,9 @@ body.chaos-mode * {
   100% { transform: scale(1); }
 }
 
-/* Apply random animations to elements when chaos mode is on */
-/* WE target specific elements to avoid breaking layout too much but still be chaotic */
-
-/* Chaos Mode is BACK! */
+/* DISABLED: Apply random animations to elements when chaos mode is on */
+/* We only want the background to change, not the UI to go crazy */
+/*
 body.chaos-mode div:nth-child(2n) {
   animation: chaos-shake 0.5s infinite;
 }
@@ -65,34 +67,37 @@ body.chaos-mode p, body.chaos-mode h1, body.chaos-mode h2 {
    color: red !important;
    font-family: 'Comic Sans MS', cursive !important;
 }
+*/
 
 /* The Toggle Button Itself - Should stay stable and ALWAYS be visible */
 .chaos-toggle-btn {
-  display: none !important; /* Hidden for Demo */
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  right: auto;
+  top: 20px;
+  right: 20px;
   z-index: 2147483647 !important;
-  background: black;
-  color: #0f0;
-  border: 3px solid #0f0;
-  font-family: monospace;
-  padding: 15px 25px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: 12px 20px;
   cursor: pointer;
-  box-shadow: 0 0 20px #0f0, 0 0 40px rgba(0, 255, 0, 0.5);
-  font-weight: 900;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  font-weight: 700;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 0.875rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  letter-spacing: 0.5px;
   
+  /* Prevent chaos mode from affecting the button itself */
   animation: none !important;
   transform: none !important;
   filter: none !important;
-  transition: none !important;
+  transition: all 0.3s ease !important;
 }
 
 .chaos-toggle-btn:hover {
-  background: #0f0;
-  color: black;
-  box-shadow: 0 0 50px #0f0;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  transform: translateY(-2px) !important;
 }

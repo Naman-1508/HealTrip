@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Sparkles, Brain, Heart, MapPin, DollarSign, Clock, Filter } from "lucide-react";
-import Threads from "../components/Threads";
+import BackgroundSwitcher from "../components/BackgroundSwitcher";
 import MagicBento from "../components/MagicBento";
 import toast from "react-hot-toast";
 
@@ -76,7 +76,7 @@ export default function YogaWellness() {
     <div className="pt-28 px-8 pb-20 min-h-screen bg-zinc-950 text-white relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <Threads amplitude={1} distance={0} color={[0.4, 0.2, 0.8]} />
+        <BackgroundSwitcher />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">

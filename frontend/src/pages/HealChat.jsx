@@ -4,7 +4,7 @@ import { useUser } from "@clerk/clerk-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Paperclip, FileText, X, Bot, User, ChevronRight, Sparkles } from "lucide-react";
 import toast from "react-hot-toast";
-import Threads from "../components/Threads";
+import BackgroundSwitcher from "../components/BackgroundSwitcher";
 import SpotlightCard from "../components/SpotlightCard";
 
 export default function HealChat() {
@@ -105,7 +105,7 @@ export default function HealChat() {
     <div className="relative pt-24 pb-10 min-h-screen bg-zinc-950 flex justify-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 z-0">
-            <Threads amplitude={1} distance={0} color={[0.4, 0.2, 0.8]} />
+            <BackgroundSwitcher />
         </div>
 
       <div className="relative z-10 w-full max-w-4xl px-4 flex flex-col h-[85vh]">

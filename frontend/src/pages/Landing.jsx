@@ -6,7 +6,6 @@ import HeroSection from "../components/HeroSection";
 import Section from "../components/Section";
 import Button from "../components/Button";
 import SpotlightCard from "../components/SpotlightCard";
-import Threads from "../components/Threads";
 import { motion } from "framer-motion";
 
 export default function Landing() {
@@ -246,7 +245,7 @@ export default function Landing() {
               Precision Diagnosis. <br /> Global Care.
             </motion.h2>
             <p className="text-xl text-zinc-400 leading-relaxed font-light">
-              Our AI analyzes your reports instantly, matching you with the world's top specialists.
+              Our AI analyzes your data that you input instantly, matching you with the India's top specialists.
               No more waiting. No more uncertainty. Just world-class healthcare at your fingertips.
             </p>
             <Button variant="outline" className="mt-8 px-8 py-3">
@@ -277,7 +276,7 @@ export default function Landing() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             { title: "AI Diagnostics", icon: "🧠", desc: "Instant analysis of medical reports with 99% accuracy." },
-            { title: "Global Hospitals", icon: "🌍", desc: "Access to accredited hospitals in 20+ countries." },
+            { title: "Trusted Hospitals", icon: "🌍", desc: "Access to accredited hospitals in 20+ countries." },
             { title: "Wellness Travel", icon: "🧘", desc: "Recover in serenity with curated yoga & spa retreats." }
           ].map((feature, i) => (
             <SpotlightCard key={i} className="p-8">
