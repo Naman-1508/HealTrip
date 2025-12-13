@@ -84,7 +84,6 @@ HealTrip/
 │   └── main.py              # ML service entry
 └── README.md
 
-
 ## 🎯 Objective
 To make medical tourism accessible, reliable, and user-friendly by providing a unified AI-powered platform that supports patients throughout their medical travel journey.
 
@@ -97,3 +96,4 @@ Contributions are welcome. Feel free to fork the repository and submit a pull re
 
 ## 📝 License
 MIT License
+
