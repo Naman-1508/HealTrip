@@ -68,6 +68,8 @@ export default function YogaWellness() {
     } catch (error) {
       console.error("Error fetching mental health sessions:", error);
       toast.error("Failed to load mental health sessions");
+    } finally {
+      setLoading(false);
     }
   };
 

@@ -18,12 +18,15 @@ export default function Payment() {
   const location = useLocation();
   const navigate = useNavigate();
   const { getToken } = useAuth();
-  const { packageData } = location.state || {};
+  const stateData = location.state || {};
+  const packageData = stateData.packageData || stateData; // Handle both wellness and package data
   const [method, setMethod] = useState("upi");
   const [paid, setPaid] = useState(false);
 
-  // Get total amount from package data or use default
-  const totalAmount = packageData?.packageDetails?.totalAmount || 999;
+  // Get total amount based on booking type
+  const totalAmount = packageData?.type === "wellness"
+    ? packageData.data?.Price || packageData.data?.Fee || 999
+    : packageData?.packageDetails?.totalAmount || 999;
 
   const handlePayment = async () => {
     try {
@@ -103,53 +106,85 @@ export default function Payment() {
         {/* Package Summary */}
         {packageData && (
           <div className="bg-zinc-900/50 backdrop-blur-xl border border-white/10 rounded-2xl p-6 mt-6">
-            <h3 className="text-xl font-semibold mb-4">Package Summary</h3>
-            <div className="space-y-3 text-sm">
-              <div className="flex justify-between">
-                <span className="text-zinc-400">Hospital:</span>
-                <span className="font-medium">{packageData.hospital.name}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-zinc-400">Hotel:</span>
-                <span className="font-medium">
-                  {packageData.hotel.name} (
-                  {packageData.packageDetails.duration} nights)
-                </span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-zinc-400">Flight:</span>
-                <span className="font-medium">
-                  {packageData.flight.airline} (
-                  {packageData.packageDetails.travelers} travelers × 2)
-                </span>
-              </div>
-              <div className="border-t border-white/10 pt-3 mt-3">
-                <div className="flex justify-between text-zinc-400">
-                  <span>Hospital Cost:</span>
-                  <span>
-                    ₹{packageData.breakdown.hospitalCost.toLocaleString()}
+            <h3 className="text-xl font-semibold mb-4">
+              {packageData.type === "wellness" ? "Session Summary" : "Package Summary"}
+            </h3>
+            
+            {packageData.type === "wellness" ? (
+              // Wellness Session Summary
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-zinc-400">Session:</span>
+                  <span className="font-medium">
+                    {packageData.data?.Center_Name || packageData.data?.Session_Name}
                   </span>
                 </div>
-                <div className="flex justify-between text-zinc-400">
-                  <span>Hotel Cost:</span>
-                  <span>
-                    ₹{packageData.breakdown.hotelCost.toLocaleString()}
+                <div className="flex justify-between">
+                  <span className="text-zinc-400">Type:</span>
+                  <span className="font-medium">
+                    {packageData.data?.Yoga_Style || packageData.data?.Session_Type}
                   </span>
                 </div>
-                <div className="flex justify-between text-zinc-400">
-                  <span>Flight Cost:</span>
-                  <span>
-                    ₹{packageData.breakdown.flightCost.toLocaleString()}
+                <div className="flex justify-between">
+                  <span className="text-zinc-400">Location:</span>
+                  <span className="font-medium">{packageData.data?.City}</span>
+                </div>
+                <div className="flex justify-between font-bold text-xl border-t border-white/10 pt-3 mt-3">
+                  <span>Total Amount:</span>
+                  <span className="text-emerald-400">
+                    ₹{totalAmount.toLocaleString()}
                   </span>
                 </div>
               </div>
-              <div className="flex justify-between font-bold text-xl border-t border-white/10 pt-3 mt-3">
-                <span>Total Amount:</span>
-                <span className="text-emerald-400">
-                  ₹{totalAmount.toLocaleString()}
-                </span>
+            ) : (
+              // Travel Package Summary
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-zinc-400">Hospital:</span>
+                  <span className="font-medium">{packageData.hospital.name}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-zinc-400">Hotel:</span>
+                  <span className="font-medium">
+                    {packageData.hotel.name} (
+                    {packageData.packageDetails.duration} nights)
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-zinc-400">Flight:</span>
+                  <span className="font-medium">
+                    {packageData.flight.airline} (
+                    {packageData.packageDetails.travelers} travelers × 2)
+                  </span>
+                </div>
+                <div className="border-t border-white/10 pt-3 mt-3">
+                  <div className="flex justify-between text-zinc-400">
+                    <span>Hospital Cost:</span>
+                    <span>
+                      ₹{packageData.breakdown.hospitalCost.toLocaleString()}
+                    </span>
+                  </div>
+                  <div className="flex justify-between text-zinc-400">
+                    <span>Hotel Cost:</span>
+                    <span>
+                      ₹{packageData.breakdown.hotelCost.toLocaleString()}
+                    </span>
+                  </div>
+                  <div className="flex justify-between text-zinc-400">
+                    <span>Flight Cost:</span>
+                    <span>
+                      ₹{packageData.breakdown.flightCost.toLocaleString()}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex justify-between font-bold text-xl border-t border-white/10 pt-3 mt-3">
+                  <span>Total Amount:</span>
+                  <span className="text-emerald-400">
+                    ₹{totalAmount.toLocaleString()}
+                  </span>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         )}
 

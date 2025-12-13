@@ -45,45 +45,9 @@ export default function Dashboard() {
       );
 
       if (res.data.success) {
-        // Prepare Real Bookings
+        // Use only real bookings from the backend
         const realBookings = res.data.data.bookings;
-
-        // MOCK DATA: Inject a demo Yoga & Mental session for visibility (as requested "fast")
-        // In production, these would come from the backend with type='wellness'
-        const mockWellnessBookings = [
-          {
-            _id: "mock_yoga_1",
-            type: "wellness",
-            status: "confirmed",
-            createdAt: new Date().toISOString(),
-            pricing: { total: 1500 },
-            payment: { method: "upi" },
-            data: {
-              Center_Name: "Zenith Yoga Studio",
-              City: "Rishikesh",
-              Yoga_Style: "Hatha & Vinyasa",
-              Price: 1500,
-            },
-          },
-          {
-            _id: "mock_mental_1",
-            type: "wellness",
-            status: "pending",
-            createdAt: new Date().toISOString(),
-            pricing: { total: 2000 },
-            payment: { method: "card" },
-            data: {
-              Session_Name: "Anxiety Relief Session",
-              City: "Online",
-              Session_Type: "CBT Therapy",
-              Fee: 2000,
-              topics: "Stress, Panic Attacks",
-            },
-          },
-        ];
-
-        // Combine real + mock (ensure mock is only added if not present)
-        setBookings([...realBookings, ...mockWellnessBookings]);
+        setBookings(realBookings);
       }
     } catch (error) {
       console.error("Failed to fetch bookings", error);
