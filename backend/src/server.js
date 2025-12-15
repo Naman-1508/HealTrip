@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
     const mlScriptPath = path.join(PROJECT_ROOT, 'start_ml_services.py');
 
     try {
-        const mlProcess = spawn('python3', [mlScriptPath], {
+        const mlProcess = spawn('python', [mlScriptPath], {
             cwd: PROJECT_ROOT,
             stdio: 'inherit',
         });
