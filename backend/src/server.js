@@ -3,6 +3,11 @@ import express from 'express';
 import cors from 'cors';
 import connectDB from './config/db.js';
 
+// ML + Path imports
+import { spawn } from 'child_process';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 // Import routes
 import authRoutes from './routes/auth.routes.js';
 import hospitalRoutes from './routes/hospital.routes.js';
@@ -13,27 +18,56 @@ import paymentRoutes from './routes/payment.routes.js';
 import flightRoutes from './routes/flight.routes.js';
 import buddyRoutes from './routes/buddy.routes.js';
 
-// Load environment variables
-// Environment variables loaded via import 'dotenv/config'
+// -------------------- PATH SETUP (ES MODULE FIX) --------------------
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Initialize Express app
+// HealTrip root directory (from backend/src → HealTrip)
+const PROJECT_ROOT = path.resolve(__dirname, '../../');
+
+// -------------------- START ML SERVICES (RAILWAY) --------------------
+if (process.env.NODE_ENV === 'production') {
+    const mlScriptPath = path.join(PROJECT_ROOT, 'start_ml_services.py');
+
+    try {
+        const mlProcess = spawn('python3', [mlScriptPath], {
+            cwd: PROJECT_ROOT,
+            stdio: 'inherit',
+        });
+
+        mlProcess.on('error', (err) => {
+            console.error('❌ ML service failed to start:', err);
+        });
+
+        console.log('🧠 ML services started from project root');
+    } catch (err) {
+        console.error('❌ Error starting ML services:', err);
+    }
+}
+
+// -------------------- EXPRESS APP INIT --------------------
 const app = express();
 
-// Middleware
+// -------------------- MIDDLEWARE --------------------
 app.use(cors({
-    origin: [process.env.FRONTEND_URL, 'http://localhost:5173', 'http://localhost:3000'],
+    origin: [
+        process.env.FRONTEND_URL,
+        'http://localhost:5173',
+        'http://localhost:3000',
+    ],
     credentials: true,
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Request logging middleware
+// Request logger
 app.use((req, res, next) => {
     console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
     next();
 });
 
-// Health check route
+// -------------------- HEALTH CHECK --------------------
 app.get('/health', (req, res) => {
     res.json({
         success: true,
@@ -42,7 +76,7 @@ app.get('/health', (req, res) => {
     });
 });
 
-// API Routes
+// -------------------- API ROUTES --------------------
 app.use('/api/auth', authRoutes);
 app.use('/api/hospitals', hospitalRoutes);
 app.use('/api/hotels', hotelRoutes);
@@ -52,8 +86,7 @@ app.use('/api/payment', paymentRoutes);
 app.use('/api/flights', flightRoutes);
 app.use('/api/buddy', buddyRoutes);
 
-
-// 404 handler
+// -------------------- 404 HANDLER --------------------
 app.use((req, res) => {
     res.status(404).json({
         success: false,
@@ -62,7 +95,7 @@ app.use((req, res) => {
     });
 });
 
-// Global error handler
+// -------------------- GLOBAL ERROR HANDLER --------------------
 app.use((err, req, res, next) => {
     console.error('Global error handler:', err);
 
@@ -74,31 +107,18 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Connect to database and start server
-const PORT = 5000; // Hardcoded to 5000 as per user request to resolve EADDRINUSE
+// -------------------- START SERVER --------------------
+const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {
     try {
-        // Connect to MongoDB
         await connectDB();
 
-        // Start server
         app.listen(PORT, () => {
             console.log('='.repeat(50));
-            console.log(`🚀 HealTrip Backend Server`);
+            console.log('🚀 HealTrip Backend Server Started');
             console.log(`📍 Environment: ${process.env.NODE_ENV || 'development'}`);
             console.log(`🌐 Server running on port ${PORT}`);
-            console.log(`🔗 API Base URL: http://localhost:${PORT}/api`);
-            console.log('='.repeat(50));
-            console.log('\n📋 Available Routes:');
-            console.log('  - /api/auth          (Authentication & User Profile)');
-            console.log('  - /api/hospitals     (Hospital Discovery & Search)');
-            console.log('  - /api/hotels        (Hotel Search & Booking)');
-            console.log('  - /api/diagnosis     (AI Recommendations & Cost Estimation)');
-            console.log('  - /api/wellness      (Yoga Shivir & Wellness Sessions)');
-            console.log('  - /api/payment       (Payment & Booking Management)');
-            console.log('  - /api/flights       (Flight Search & Booking)');
-
             console.log('='.repeat(50));
         });
     } catch (error) {
@@ -108,6 +128,5 @@ const startServer = async () => {
 };
 
 startServer();
-// Server restart trigger v2
 
 export default app;
