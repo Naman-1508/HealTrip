@@ -70,7 +70,7 @@ export default function TravelPlanner() {
 
     try {
       const response = await fetch(
-        `http://localhost:8002/recommend-flights?origin=${flightSearch.from}&destination=${flightSearch.to}`,
+        `${process.env.REACT_APP_API_URL}/ml/flights/recommend-flights?origin=${flightSearch.from}&destination=${flightSearch.to}`,
       );
       if (response.ok) {
         const data = await response.json();
@@ -136,7 +136,7 @@ export default function TravelPlanner() {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/recommend?location=${loc}`,
+        `${process.env.REACT_APP_API_URL}/ml/hotels/recommend?location=${loc}`,
       );
       if (response.ok) {
         const data = await response.json();
@@ -181,7 +181,7 @@ export default function TravelPlanner() {
     try {
       // Calls ML City-based Service
       const response = await fetch(
-        `http://localhost:8001/hospitals-by-city?city=${encodeURIComponent(hospitalCity)}`,
+        `${process.env.REACT_APP_API_URL}/ml/hospitals/hospitals-by-city?city=${encodeURIComponent(hospitalCity)}`,
       );
 
       if (response.ok) {
@@ -227,7 +227,7 @@ export default function TravelPlanner() {
     setLoadingVisa(true);
     try {
       // POST request to Visa Service
-      const response = await fetch("http://localhost:8003/visa-requirements", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/ml/visa/visa-requirements`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ country: visaSearch, visa_type: "Tourist" }),

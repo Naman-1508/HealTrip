@@ -37,8 +37,8 @@ export default function YogaWellness() {
     try {
       const url =
         city && focus
-          ? `http://localhost:8005/api/recommend/yoga?city=${city}&focus=${focus}`
-          : `http://localhost:8005/api/sessions/yoga`;
+          ? `${process.env.REACT_APP_API_URL}/ml/yoga/api/recommend/yoga?city=${city}&focus=${focus}`
+          : `${process.env.REACT_APP_API_URL}/ml/yoga/api/sessions/yoga`;
 
       const response = await fetch(url);
       if (response.ok) {
@@ -57,8 +57,8 @@ export default function YogaWellness() {
     try {
       const url =
         city && focus
-          ? `http://localhost:8004/api/recommend/mental?city=${city}&type=${focus}`
-          : `http://localhost:8004/api/sessions/mental`;
+          ? `${process.env.REACT_APP_API_URL}/ml/mental/api/recommend/mental?city=${city}&type=${focus}`
+          : `${process.env.REACT_APP_API_URL}/ml/mental/api/sessions/mental`;
 
       const response = await fetch(url);
       if (response.ok) {

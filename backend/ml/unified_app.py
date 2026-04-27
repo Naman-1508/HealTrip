@@ -57,3 +57,7 @@ def home():
         "message": "HealTrip Unified ML Engine",
         "endpoints": [f"/{s[1]}" for s in services]
     }
+if __name__ == "__main__":
+    import uvicorn
+    # Use port 8000 for the unified engine
+    uvicorn.run(app, host="0.0.0.0", port=8000)

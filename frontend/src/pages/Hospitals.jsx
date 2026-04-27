@@ -81,7 +81,7 @@ export default function Hospitals() {
       const promises = [];
 
       // 1. Backend Search (Name/Specialty)
-      let backendUrl = "http://localhost:5000/api/hospitals?limit=50";
+      let backendUrl = `${process.env.REACT_APP_API_URL}/hospitals?limit=50`;
       if (debouncedSearch) backendUrl += `&search=${debouncedSearch}`;
       if (specialty && specialty !== "All")
         backendUrl += `&treatment=${specialty}`;
@@ -94,7 +94,7 @@ export default function Hospitals() {
         promises.push(
           axios
             .get(
-              `http://localhost:8001/hospitals-by-city?city=${debouncedSearch}`,
+              `${process.env.REACT_APP_API_URL}/ml/hospitals/hospitals-by-city?city=${debouncedSearch}`,
             )
             .catch((e) => ({ data: [] })),
         );
@@ -151,11 +151,11 @@ export default function Hospitals() {
           const promises = [
             axios
               .get(
-                `http://localhost:5000/api/hospitals?search=${search}&limit=5`,
+                `${process.env.REACT_APP_API_URL}/hospitals?search=${search}&limit=5`,
               )
               .catch((e) => ({ data: { success: false } })), // Backend
             axios
-              .get(`http://localhost:8001/hospitals-by-city?city=${search}`)
+              .get(`${process.env.REACT_APP_API_URL}/ml/hospitals/hospitals-by-city?city=${search}`)
               .catch((e) => ({ data: [] })), // ML
           ];
 

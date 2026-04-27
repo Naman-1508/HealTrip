@@ -36,7 +36,7 @@ export default function Dashboard() {
       console.log("----------");
       // Fetch user's bookings with auth token
       const res = await axios.get(
-        "http://localhost:5000/api/payment/my-bookings",
+        `${process.env.REACT_APP_API_URL}/payment/my-bookings`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

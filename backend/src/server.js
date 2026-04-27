@@ -17,6 +17,7 @@ import wellnessRoutes from './routes/wellness.routes.js';
 import paymentRoutes from './routes/payment.routes.js';
 import flightRoutes from './routes/flight.routes.js';
 import buddyRoutes from './routes/buddy.routes.js';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 // -------------------- PATH SETUP (ES MODULE FIX) --------------------
 const __filename = fileURLToPath(import.meta.url);
@@ -25,23 +26,26 @@ const __dirname = path.dirname(__filename);
 // HealTrip root directory (from backend/src → HealTrip)
 const PROJECT_ROOT = path.resolve(__dirname, '../../');
 
-// -------------------- START ML SERVICES (RAILWAY) --------------------
+// -------------------- START UNIFIED ML ENGINE --------------------
 if (process.env.NODE_ENV === 'production') {
-    const mlScriptPath = path.join(PROJECT_ROOT, 'start_ml_services.py');
+    const mlScriptPath = path.join(__dirname, '../ml/unified_app.py');
+    console.log('🚀 Starting Unified ML Engine at:', mlScriptPath);
 
     try {
         const mlProcess = spawn('python', [mlScriptPath], {
-            cwd: PROJECT_ROOT,
             stdio: 'inherit',
+            shell: true
         });
 
         mlProcess.on('error', (err) => {
             console.error('❌ ML service failed to start:', err);
         });
 
-        console.log('🧠 ML services started from project root');
+        process.on('exit', () => {
+            mlProcess.kill();
+        });
     } catch (err) {
-        console.error('❌ Error starting ML services:', err);
+        console.error('❌ ML startup exception:', err);
     }
 }
 
@@ -66,6 +70,20 @@ app.use((req, res, next) => {
     console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
     next();
 });
+
+// -------------------- ML PROXY GATEWAY --------------------
+// This routes all /api/ml requests to our internal Unified ML Engine
+app.use('/api/ml', createProxyMiddleware({
+    target: 'http://localhost:8000',
+    changeOrigin: true,
+    pathRewrite: {
+        '^/api/ml': '', // remove /api/ml prefix when sending to the ML engine
+    },
+    onError: (err, req, res) => {
+        console.error('Proxy Error:', err);
+        res.status(502).json({ success: false, message: 'ML Service Unavailable' });
+    }
+}));
 
 // -------------------- HEALTH CHECK --------------------
 app.get('/health', (req, res) => {

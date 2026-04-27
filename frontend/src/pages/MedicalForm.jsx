@@ -28,7 +28,7 @@ export default function MedicalForm() {
     console.log("Form Data: ", formData);
 
     // Navigate to diagnosis result
-    navigate("/diagnosis", { state: { formData } });
+    navigate("/diagnosis-result", { state: { formData } });
   };
 
   return (

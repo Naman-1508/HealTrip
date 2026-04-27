@@ -43,7 +43,7 @@ export default function HealChat() {
   // Load History
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/api/buddy/history?userId=${user.id}`)
+      fetch(`${process.env.REACT_APP_API_URL}/buddy/history?userId=${user.id}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.status === "success" && data.data.length > 0) {
@@ -75,7 +75,7 @@ export default function HealChat() {
     setIsTyping(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/buddy/chat", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/buddy/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
