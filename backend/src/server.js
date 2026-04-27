@@ -56,6 +56,8 @@ app.use('/api/ml', createProxyMiddleware({
     pathRewrite: {
         '^/api/ml': '', // remove /api/ml prefix when sending to the ML engine
     },
+    proxyTimeout: 60000, // 60 seconds
+    timeout: 60000,
     onError: (err, req, res) => {
         console.error('Proxy Error:', err);
         res.status(502).json({ success: false, message: 'ML Service Unavailable' });

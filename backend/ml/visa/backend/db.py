@@ -27,8 +27,11 @@ def load_visa_data() -> Dict[str, Dict[str, str]]:
 
 
 # Global cache
-_VISA_DATA_CACHE = load_visa_data()
+_VISA_DATA_CACHE = None
 
 
 def get_country_data(country_name: str) -> Optional[Dict[str, str]]:
+    global _VISA_DATA_CACHE
+    if _VISA_DATA_CACHE is None:
+        _VISA_DATA_CACHE = load_visa_data()
     return _VISA_DATA_CACHE.get(country_name.lower())

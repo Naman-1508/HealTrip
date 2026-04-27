@@ -43,7 +43,7 @@ export default function Hospitals() {
   const defaultImages = [
     "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
     "https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1538108190963-0475f893f437?auto=format&fit=crop&q=80&w=800",
     "https://images.unsplash.com/photo-1516549655169-df83a253836f?auto=format&fit=crop&q=80&w=800",
     "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800",
     "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=800",

@@ -18,20 +18,31 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load Artifacts
-print("Loading ML Artifacts...")
-MODEL_DIR = os.path.dirname(os.path.abspath(__file__))
+# Global artifacts
+rf_model = None
+le = None
+tfidf = None
+tfidf_matrix = None
+df = None
 
-try:
-    rf_model = joblib.load(os.path.join(MODEL_DIR, "hotel_price_model.pkl"))
-    le = joblib.load(os.path.join(MODEL_DIR, "location_encoder.pkl"))
-    tfidf = joblib.load(os.path.join(MODEL_DIR, "tfidf_vectorizer.pkl"))
-    tfidf_matrix = joblib.load(os.path.join(MODEL_DIR, "tfidf_matrix.pkl"))
-    df = joblib.load(os.path.join(MODEL_DIR, "hotel_data_processed.pkl"))
-    print("Artifacts loaded successfully.")
-except Exception as e:
-    print(f"Error loading artifacts: {e}")
-    print("Ensure you ran train_model.py first!")
+def load_artifacts():
+    global rf_model, le, tfidf, tfidf_matrix, df
+    if df is not None:
+        return True
+        
+    print("Loading Hotel ML Artifacts...")
+    MODEL_DIR = os.path.dirname(os.path.abspath(__file__))
+    try:
+        rf_model = joblib.load(os.path.join(MODEL_DIR, "hotel_price_model.pkl"))
+        le = joblib.load(os.path.join(MODEL_DIR, "location_encoder.pkl"))
+        tfidf = joblib.load(os.path.join(MODEL_DIR, "tfidf_vectorizer.pkl"))
+        tfidf_matrix = joblib.load(os.path.join(MODEL_DIR, "tfidf_matrix.pkl"))
+        df = joblib.load(os.path.join(MODEL_DIR, "hotel_data_processed.pkl"))
+        print("Hotel artifacts loaded successfully.")
+        return True
+    except Exception as e:
+        print(f"Error loading hotel artifacts: {e}")
+        return False
 
 
 # Request Models
@@ -94,6 +105,10 @@ def recommend_hotels(
         # Fallback to original logic if no city found
         normalized_location = location_lower
 
+    load_artifacts()
+    if df is None or df.empty:
+        return {"count": 0, "results": [], "message": f"No hotels found in {location}"}
+
     # 1. Base Filter (Location is mandatory)
     filtered_df = df[
         df["City"].str.lower().str.contains(normalized_location, na=False)
@@ -153,6 +168,7 @@ def predict_price(req: PricePredictionRequest):
     """
     Predict hotel price based on features.
     """
+    load_artifacts()
     try:
         # Encode City
         try:

@@ -56,14 +56,14 @@ async def startup():
 @router.get("/sessions/mental")
 def get_mental():
     if "mental" not in data:
-        raise HTTPException(503, "Not loaded")
+        load_models()
     return data["mental"].replace({np.nan: None}).head(50).to_dict(orient="records")
 
 
 @router.get("/recommend/mental")
 def rec_mental(city: str, type: str, budget: float = None):
     if "mental" not in data:
-        raise HTTPException(503, "Not loaded")
+        load_models()
     q = f"{city} {type}"
     vec = models["vec"].transform([q])
     sim = cosine_similarity(vec, models["mat"]).flatten()
@@ -82,7 +82,7 @@ def rec_mental(city: str, type: str, budget: float = None):
 @router.post("/predict-price/mental")
 def pred_mental(req: MentalFeeRequest):
     if "price" not in models:
-        raise HTTPException(503, "Not loaded")
+        load_models()
     enc = models["encoders"]["mental_encoders"]
     fee = models["price"].predict(
         [
@@ -100,7 +100,7 @@ def pred_mental(req: MentalFeeRequest):
 @router.get("/cluster-info/mental")
 def get_mental_cluster(session_title: str):
     if "mental" not in data:
-        raise HTTPException(503, "Not loaded")
+        load_models()
     match = data["mental"][
         data["mental"]["Session_Name"].str.contains(session_title, case=False, na=False)
     ]

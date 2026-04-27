@@ -39,17 +39,10 @@ def load_app(module_path, module_name):
     sys.modules[module_name] = module
     spec.loader.exec_module(module)
     
-    # FORCE LOAD MODELS (Trigger startup logic manually)
-    # Using dynamic import to prevent IDE warnings and ensure correct module loading
-    try:
-        import importlib
-        routes_module = importlib.import_module("api.routes")
-        if hasattr(routes_module, "load_models"):
-            routes_module.load_models()
-            print(f"📦 Models force-loaded for {module_name}")
-    except Exception as e:
-        print(f"ℹ️ Note: No load_models needed for {module_name} or already loaded.")
-
+    # We remove the synchronous load_models() call here because it causes 504 timeouts on Render
+    # The models will now load the first time they are actually requested (Lazy Loading)
+    # This ensures the server starts instantly and respects Render's 512MB RAM limit.
+    
     return module.app
 
 # Load all sub-apps

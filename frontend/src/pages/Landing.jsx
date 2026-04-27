@@ -283,7 +283,7 @@ export default function Landing() {
               </Button>
             </div>
             <div className="h-[400px] w-full bg-gradient-to-br from-zinc-800 to-zinc-950 rounded-2xl flex items-center justify-center relative overflow-hidden group">
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1538108190963-0475f893f437?auto=format&fit=crop&q=80&w=800')] bg-cover bg-center opacity-40 group-hover:scale-105 transition-transform duration-700" />
               <div className="z-10 bg-black/50 backdrop-blur-md p-6 rounded-xl border border-white/10">
                 <span className="text-4xl">🏥</span>
               </div>

@@ -55,14 +55,14 @@ async def startup():
 @router.get("/sessions/yoga")
 def get_yoga():
     if "yoga" not in data:
-        raise HTTPException(503, "Not loaded")
+        load_models()
     return data["yoga"].replace({np.nan: None}).head(50).to_dict(orient="records")
 
 
 @router.get("/recommend/yoga")
 def rec_yoga(city: str, focus: str, budget: float = None):
     if "yoga" not in data:
-        raise HTTPException(503, "Not loaded")
+        load_models()
     q = f"{city} {focus}"
     vec = models["vec"].transform([q])
     sim = cosine_similarity(vec, models["mat"]).flatten()
@@ -81,7 +81,7 @@ def rec_yoga(city: str, focus: str, budget: float = None):
 @router.post("/predict-price/yoga")
 def pred_yoga(req: YogaPriceRequest):
     if "price" not in models:
-        raise HTTPException(503, "Not loaded")
+        load_models()
     enc = models["encoders"]["yoga_encoders"]
     price = models["price"].predict(
         [
@@ -98,7 +98,7 @@ def pred_yoga(req: YogaPriceRequest):
 @router.get("/cluster-info/yoga")
 def get_yoga_cluster(session_title: str):
     if "yoga" not in data:
-        raise HTTPException(503, "Not loaded")
+        load_models()
     match = data["yoga"][
         data["yoga"]["Center_Name"].str.contains(session_title, case=False, na=False)
     ]

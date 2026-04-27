@@ -8,14 +8,14 @@ import toast from "react-hot-toast";
 
 // Image pools for visual variety
 const HOTEL_IMAGES = [
-  "https://images.unsplash.com/photo-1566073771259-6a8506099945",
-  "https://images.unsplash.com/photo-1512678080530-7760d81faba6",
-  "https://images.unsplash.com/photo-1551776235-dde6d4829808",
-  "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb",
-  "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9",
-  "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
-  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
-  "https://images.unsplash.com/photo-1611892440504-42a792e24d32",
+  "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1551776235-dde6d4829808?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&q=80&w=800",
+  "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&q=80&w=800",
 ];
 
 export default function TravelPlanner() {

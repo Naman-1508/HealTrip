@@ -64,6 +64,9 @@ def health_check():
 
 @app.get("/recommend-flights")
 def recommend_flights(origin: str, destination: str):
+    global df
+    if df.empty:
+        df = load_data()
     if df.empty:
         raise HTTPException(status_code=503, detail="Flight data not loaded")
 
