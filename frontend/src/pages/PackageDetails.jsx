@@ -78,7 +78,7 @@ export default function PackageDetails() {
     try {
       // Use formatted string
       const response = await fetch(
-        `http://localhost:8000/recommend?location=${hospitalAddressStr}`,
+        `${process.env.REACT_APP_API_URL}/ml/hotels/recommend?location=${hospitalAddressStr}`,
       );
       if (response.ok) {
         const data = await response.json();
@@ -135,7 +135,7 @@ export default function PackageDetails() {
           }
         }
 
-        const res = await fetch("http://localhost:8003/visa-requirements", {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/ml/visa/visa-requirements`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ country, visa_type: "Medical" }),
@@ -160,7 +160,7 @@ export default function PackageDetails() {
     setLoadingFlights(true);
     try {
       const response = await fetch(
-        `http://localhost:8002/recommend-flights?origin=${originCity}&destination=${hospitalAddressStr}`,
+        `${process.env.REACT_APP_API_URL}/ml/flights/recommend-flights?origin=${originCity}&destination=${hospitalAddressStr}`,
       );
       if (response.ok) {
         const data = await response.json();
@@ -192,10 +192,11 @@ export default function PackageDetails() {
 
   const getRandomImage = (name) => {
     const images = [
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
-      "https://images.unsplash.com/photo-1551776235-dde6d4829808",
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb",
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&q=80&w=800",
     ];
     let hash = 0;
     for (let i = 0; i < name.length; i++)
