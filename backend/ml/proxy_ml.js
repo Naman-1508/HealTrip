@@ -1,4 +1,4 @@
-const http = require('http');
+import http from 'http';
 
 // This script ensures that your existing backend code (which looks for ports 8001-8005)
 // continues to work even though we consolidated all ML services into port 8000.
