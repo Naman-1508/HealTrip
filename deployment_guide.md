@@ -31,7 +31,14 @@ I have added 4 files to your project that consolidate your services into a singl
     *   `MONGODB_URI`: (Your MongoDB connection string)
     *   `CLERK_SECRET_KEY`: (Your Clerk Secret)
     *   `GROQ_API_KEY`: (Your Groq API Key)
-    *   *(Add any other keys from your `backend/.env`)*
+    *   `WEATHER_API_KEY`: (Your Weather API Key)
+    *   `RAZORPAY_KEY_ID`: (From payment-service/.env)
+    *   `RAZORPAY_KEY_SECRET`: (From payment-service/.env)
+    *   `STRIPE_SECRET_KEY`: (From payment-service/.env)
+    *   `STRIPE_PUBLISHABLE_KEY`: (From payment-service/.env)
+    *   `PAYMENT_SERVICE_URL`: `http://localhost:5001`
+    *   `BACKEND_URL`: `http://localhost:5000`
+    *   *(Add any other keys from your .env files)*
 6.  **Deploy**: Click **Create Web Service**.
 
 ---
