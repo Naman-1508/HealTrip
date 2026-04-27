@@ -1,0 +1,59 @@
+import importlib.util
+import sys
+import os
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI(title="HealTrip Unified ML Service")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def load_app(module_path, module_name):
+    """Dynamically loads a FastAPI app from a file path."""
+    abs_path = os.path.join(BASE_DIR, module_path)
+    if not os.path.exists(abs_path):
+        print(f"⚠️ Warning: Could not find {abs_path}")
+        return None
+    
+    # Add the service directory to sys.path so it can find its own local imports
+    service_dir = os.path.dirname(abs_path)
+    if service_dir not in sys.path:
+        sys.path.insert(0, service_dir)
+        
+    spec = importlib.util.spec_from_file_location(module_name, abs_path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[module_name] = module
+    spec.loader.exec_module(module)
+    return module.app
+
+# Load all sub-apps
+services = [
+    ("hotels/main.py", "hotels"),
+    ("hospitals/main.py", "hospitals"),
+    ("flights/main.py", "flights"),
+    ("visa/backend/main.py", "visa"),
+    ("ml-mental/main.py", "mental"),
+    ("ml-yoga/main.py", "yoga"),
+]
+
+for path, name in services:
+    sub_app = load_app(path, name)
+    if sub_app:
+        app.mount(f"/{name}", sub_app)
+        print(f"✅ Mounted {name} service at /{name}")
+
+@app.get("/")
+def home():
+    return {
+        "status": "online",
+        "message": "HealTrip Unified ML Engine",
+        "endpoints": [f"/{s[1]}" for s in services]
+    }
