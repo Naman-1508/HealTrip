@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 // Image pools for visual variety
 const HOTEL_IMAGES = [
   "https://images.unsplash.com/photo-1566073771259-6a8506099945",
-  "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b",
+  "https://images.unsplash.com/photo-1512678080530-7760d81faba6",
   "https://images.unsplash.com/photo-1551776235-dde6d4829808",
   "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb",
   "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9",

@@ -17,21 +17,37 @@ app.add_middleware(
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def load_app(module_path, module_name):
-    """Dynamically loads a FastAPI app from a file path."""
+    """Dynamically loads a FastAPI app and ensures models are loaded."""
     abs_path = os.path.join(BASE_DIR, module_path)
     if not os.path.exists(abs_path):
         print(f"⚠️ Warning: Could not find {abs_path}")
         return None
     
-    # Add the service directory to sys.path so it can find its own local imports
+    # Isolate imports for this service
     service_dir = os.path.dirname(abs_path)
     if service_dir not in sys.path:
         sys.path.insert(0, service_dir)
+        
+    # Clear any previously loaded 'api' modules to prevent shadowing
+    if 'api' in sys.modules:
+        del sys.modules['api']
+    if 'api.routes' in sys.modules:
+        del sys.modules['api.routes']
         
     spec = importlib.util.spec_from_file_location(module_name, abs_path)
     module = importlib.util.module_from_spec(spec)
     sys.modules[module_name] = module
     spec.loader.exec_module(module)
+    
+    # FORCE LOAD MODELS (Trigger startup logic manually)
+    # Most services have a load_models in their routes
+    try:
+        from api.routes import load_models
+        load_models()
+        print(f"📦 Models force-loaded for {module_name}")
+    except Exception as e:
+        print(f"ℹ️ Note: No load_models found for {module_name} or already loaded: {e}")
+
     return module.app
 
 # Load all sub-apps
