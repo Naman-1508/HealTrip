@@ -3,5 +3,8 @@ uvicorn
 pandas
 numpy
 scikit-learn
-sentence-transformers
-torch
+pypdf
+requests
+httpx
+python-multipart
+joblib
