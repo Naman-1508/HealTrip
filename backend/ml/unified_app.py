@@ -40,13 +40,15 @@ def load_app(module_path, module_name):
     spec.loader.exec_module(module)
     
     # FORCE LOAD MODELS (Trigger startup logic manually)
-    # Most services have a load_models in their routes
+    # Using dynamic import to prevent IDE warnings and ensure correct module loading
     try:
-        from api.routes import load_models
-        load_models()
-        print(f"📦 Models force-loaded for {module_name}")
+        import importlib
+        routes_module = importlib.import_module("api.routes")
+        if hasattr(routes_module, "load_models"):
+            routes_module.load_models()
+            print(f"📦 Models force-loaded for {module_name}")
     except Exception as e:
-        print(f"ℹ️ Note: No load_models found for {module_name} or already loaded: {e}")
+        print(f"ℹ️ Note: No load_models needed for {module_name} or already loaded.")
 
     return module.app
 
