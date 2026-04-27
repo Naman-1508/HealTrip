@@ -33,6 +33,7 @@ const app = express();
 app.use(cors({
     origin: [
         process.env.FRONTEND_URL,
+        'https://heal-trip.vercel.app',
         'http://localhost:5173',
         'http://localhost:3000',
     ],
@@ -58,6 +59,11 @@ app.use('/api/ml', createProxyMiddleware({
     },
     proxyTimeout: 60000, // 60 seconds
     timeout: 60000,
+    onProxyRes: (proxyRes, req, res) => {
+        proxyRes.headers['Access-Control-Allow-Origin'] = 'https://heal-trip.vercel.app';
+        proxyRes.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS, PUT, DELETE';
+        proxyRes.headers['Access-Control-Allow-Headers'] = 'X-Requested-With, content-type, Authorization';
+    },
     onError: (err, req, res) => {
         console.error('Proxy Error:', err);
         res.status(502).json({ success: false, message: 'ML Service Unavailable' });

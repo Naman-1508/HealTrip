@@ -559,6 +559,10 @@ export default function TravelPlanner() {
                       <div className="h-48 overflow-hidden relative">
                         <img
                           src={h.images[0]}
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800";
+                          }}
                           alt={h.name}
                           className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                         />

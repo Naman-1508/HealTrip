@@ -41,13 +41,13 @@ export default function Hospitals() {
 
   // Premium Hospital Images (Defined at top for scope access)
   const defaultImages = [
-    "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1538108190963-0475f893f437?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1516549655169-df83a253836f?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=800",
+    "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800",
+    "https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=800",
+    "https://images.unsplash.com/photo-1538108190963-0475f893f437?w=800",
+    "https://images.unsplash.com/photo-1516549655169-df83a253836f?w=800",
+    "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800",
+    "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=800",
+    "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=800",
   ];
 
   // Common specialties for filter
@@ -399,8 +399,12 @@ export default function Hospitals() {
                         <img
                           src={
                             h.image ||
-                            "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d"
+                            "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800"
                           }
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800";
+                          }}
                           alt={h.name}
                           className="w-full h-full object-cover"
                         />

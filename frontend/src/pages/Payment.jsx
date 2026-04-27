@@ -38,7 +38,7 @@ export default function Payment() {
 
       const token = await getToken();
       await axios.post(
-        "http://localhost:5000/api/payment/book-package",
+        `${process.env.REACT_APP_API_URL}/payment/book-package`,
         {
           packageData,
           paymentMethod: method,

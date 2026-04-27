@@ -192,11 +192,11 @@ export default function PackageDetails() {
 
   const getRandomImage = (name) => {
     const images = [
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800",
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800",
+      "https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=800",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800",
     ];
     let hash = 0;
     for (let i = 0; i < name.length; i++)
@@ -427,6 +427,10 @@ export default function PackageDetails() {
                       >
                         <img
                           src={hotel.image}
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800";
+                          }}
                           alt={hotel.name}
                           className="w-full h-28 object-cover"
                         />
