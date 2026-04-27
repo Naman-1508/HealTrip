@@ -26,29 +26,6 @@ const __dirname = path.dirname(__filename);
 // HealTrip root directory (from backend/src → HealTrip)
 const PROJECT_ROOT = path.resolve(__dirname, '../../');
 
-// -------------------- START UNIFIED ML ENGINE --------------------
-if (process.env.NODE_ENV === 'production') {
-    const mlScriptPath = path.join(__dirname, '../ml/unified_app.py');
-    console.log('🚀 Starting Unified ML Engine at:', mlScriptPath);
-
-    try {
-        const mlProcess = spawn('python', [mlScriptPath], {
-            stdio: 'inherit',
-            shell: true
-        });
-
-        mlProcess.on('error', (err) => {
-            console.error('❌ ML service failed to start:', err);
-        });
-
-        process.on('exit', () => {
-            mlProcess.kill();
-        });
-    } catch (err) {
-        console.error('❌ ML startup exception:', err);
-    }
-}
-
 // -------------------- EXPRESS APP INIT --------------------
 const app = express();
 
